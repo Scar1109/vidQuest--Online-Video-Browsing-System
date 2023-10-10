@@ -5,8 +5,13 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+
+<link rel = "stylesheets"   href = "../css/vidplay.css" >
+   
 </head>
 <body>
+
+<!-- video player UI --> 
 
 <div class="video-container">
         <div class="video-player">
@@ -25,9 +30,19 @@
             </div>
         </div>
     </div>
+ 
+ <!--Collect comments from a form-->
+    
+<form action ="a" method ="post">
 
+      <h2>Comments</h2><br>
+      <input type = "text" name ="comment">
+      <input type ="submit" name ="submit" value ="comment">
+
+
+</form>
     <div class="comments-section">
-        <h2>Comments</h2>
+       
         <!-- Add comment section here -->
     </div>
 
