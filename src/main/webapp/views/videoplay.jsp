@@ -6,7 +6,7 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 
-<link rel = "stylesheets"   href = "../css/vidplay.css" >
+<link href="../css/vidplay.css" rel="stylesheet" />
    
 </head>
 <body>
