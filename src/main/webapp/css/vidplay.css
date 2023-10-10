@@ -1,0 +1,159 @@
+/* Reset some default styles */
+body, h1, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set a background color or image for the body */
+body {
+    background-color: #f8f8f8; /* You can use an image or another color */
+    font-family: Arial, sans-serif;
+}
+
+/* Style the header */
+header {
+    background-color: rgba(255, 255, 255, 0.95); /* Header with 95% opacity */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo img {
+    height: 32px;
+    width: auto;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Search bar with 80% opacity */
+    border-radius: 20px;
+    padding: 6px 12px;
+}
+
+.search-bar input[type="text"] {
+    border: none;
+    background: transparent;
+    padding: 6px;
+    font-size: 16px;
+    width: 250px;
+    outline: none;
+}
+
+.search-bar button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+/* Style the video container */
+.video-container {
+    margin-top: 80px; /* Adjust as needed to prevent overlap with header */
+    display: flex;
+    justify-content: center; /* Center the video player horizontally */
+    align-items: flex-end; /* Position the info at the bottom of the player */
+}
+
+.video-player {
+    flex: 1;
+    padding: 20px;
+}
+
+.video-info {
+    background-color: rgba(0, 0, 0, 0.6); /* Background with 60% opacity */
+    padding: 20px;
+    color: #fff; /* Text color for the info */
+}
+
+.video-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.video-stats {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.video-description {
+    font-size: 16px;
+}
+
+/* Style the comments section */
+.comments-section {
+    margin: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.95); /* Comments section with 95% opacity */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+h2 {
+    font-size: 24px;
+}
+
+/* Style the footer */
+footer {
+    background-color: rgba(255, 255, 255, 0.95); /* Footer with 95% opacity */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.footer-logo img {
+    height: 24px;
+    width: auto;
+    margin-right: 20px;
+}
+
+.footer-links {
+    margin: 10px;
+}
+
+.footer-links a {
+    color: #666;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .search-bar {
+        margin-top: 20px;
+    }
+
+    .search-bar input[type="text"] {
+        width: 100%;
+    }
+
+    .video-container {
+        flex-direction: column;
+    }
+
+    .video-info {
+        margin-top: 20px;
+    }
+}
+
