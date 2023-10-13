@@ -1,159 +1,263 @@
-/* Reset some default styles */
-body, h1, p, ul, li {
-    margin: 0;
-    padding: 0;
+/* Define custom CSS variables */
+:root {
+  --primary-color: dodgerblue;
+  --font-color: white;
+}
+#play-btn {
+  font-size: 20px;
+}
+.fas {
+  font-size: 10px; /* Decreased the font size for other icons */
 }
 
-/* Set a background color or image for the body */
+#volume-icon {
+  font-size: 20px; /* Adjust the volume icon size */
+  margin-left: 10px;
+}
+
+#expand-icon {
+  font-size: 20px; /* Adjust the full screen icon size */
+}
+
+/* Set basic styling for the body */
 body {
-    background-color: #f8f8f8; /* You can use an image or another color */
-    font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Helvetica, sans-serif;
 }
 
-/* Style the header */
-header {
-    background-color: rgba(255, 255, 255, 0.95); /* Header with 95% opacity */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
+/* Style for font-awesome icons */
+.fas {
+  color: var(--font-color);
+  font-size: 35px;
 }
 
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
+/* Style for the video player container */
+.player {
+  height: inherit;
+  position: relative;
+  cursor: pointer;
 }
 
-.logo img {
-    height: 32px;
-    width: auto;
+/* Style for the video element within the player */
+video {
+  width: 100%;
 }
 
-.search-bar {
-    display: flex;
-    align-items: center;
-    background-color: rgba(255, 255, 255, 0.8); /* Search bar with 80% opacity */
-    border-radius: 20px;
-    padding: 6px 12px;
+/* Controls Container */
+.show-controls {
+  width: 100%;
+  height: 20%;
+  z-index: 2;
+  position: absolute;
+  bottom: 5px;
+  cursor: default;
 }
 
-.search-bar input[type="text"] {
-    border: none;
-    background: transparent;
-    padding: 6px;
-    font-size: 16px;
-    width: 250px;
-    outline: none;
+/* Container for control elements */
+.controls-container {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 70px;
+  margin-top: -95px;
+  background: rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  z-index: 5;
+  display: flex;
+  justify-content: space-between;
+  opacity: 0;
+  transition: all 0.5s ease-out 2s;
 }
 
-.search-bar button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    outline: none;
+/* Show controls when hovering */
+.show-controls:hover .controls-container {
+  opacity: 1;
+  transition: all 0.2s ease-out;
 }
 
-/* Style the video container */
-.video-container {
-    margin-top: 80px; /* Adjust as needed to prevent overlap with header */
-    display: flex;
-    justify-content: center; /* Center the video player horizontally */
-    align-items: flex-end; /* Position the info at the bottom of the player */
+/* Control group styling */
+.control-group {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
-.video-player {
-    flex: 1;
-    padding: 20px;
+/* Styles for left and right control sections */
+.controls-left,
+.controls-right {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  top: 40px;
 }
 
-.video-info {
-    background-color: rgba(0, 0, 0, 0.6); /* Background with 60% opacity */
-    padding: 20px;
-    color: #fff; /* Text color for the info */
+/* Progress Bar Range */
+.progress-range {
+  height: 5px;
+  width: calc(100% - 30px);
+  background: rgba(202, 202, 202, 0.5);
+  margin: auto;
+  border-radius: 10px;
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  cursor: pointer;
+  transition: height 0.1s ease-in-out;
 }
 
-.video-title {
-    font-size: 24px;
-    margin-bottom: 10px;
+/* Increase progress bar height on hover */
+.progress-range:hover {
+  height: 10px;
 }
 
-.video-stats {
-    font-size: 14px;
-    margin-bottom: 10px;
+/* Progress Bar */
+.progress-bar {
+  background: var(--primary-color);
+  width: 20%;
+  height: 100%;
+  border-radius: 10px;
+  transition: all 0.5s ease;
 }
 
-.video-description {
-    font-size: 16px;
+/* Left Controls Section */
+.controls-left {
+  justify-content: flex-start;
+  margin-left: 15px;
 }
 
-/* Style the comments section */
-.comments-section {
-    margin: 20px;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.95); /* Comments section with 95% opacity */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+/* Play and Pause Control */
+.play-controls {
+  margin-right: 10px;
 }
 
-h2 {
-    font-size: 24px;
+/* Volume Control */
+.volume-icon {
+  cursor: pointer;
 }
 
-/* Style the footer */
-footer {
-    background-color: rgba(255, 255, 255, 0.95); /* Footer with 95% opacity */
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-    text-align: center;
-    padding: 20px 0;
+.volume-range {
+  height: 4px;
+  width: 100px;
+  background: rgba(70, 70, 70, 0.5);
+  border-radius: 10px;
+  position: relative;
+  top: -14px;
+  left: 45px;
+  cursor: pointer;
 }
 
-.footer-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+.volume-bar {
+  background: var(--font-color);
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.2s ease-in;
 }
 
-.footer-logo img {
-    height: 24px;
-    width: auto;
-    margin-right: 20px;
+/* Change volume bar color on hover */
+.volume-bar:hover {
+  background: var(--primary-color);
 }
 
-.footer-links {
-    margin: 10px;
+/* Right Controls Section */
+.controls-right {
+  justify-content: flex-end;
+  margin-right: 15px;
 }
 
-.footer-links a {
-    color: #666;
-    text-decoration: none;
-    margin: 0 10px;
+/* Playback Speed Control */
+.speed,
+.time {
+  position: relative;
+  top: 0px;
 }
 
-/* Media queries for responsiveness */
-@media (max-width: 768px) {
-    .header-container {
-        flex-direction: column;
-        align-items: center;
-        padding: 20px;
-    }
-
-    .search-bar {
-        margin-top: 20px;
-    }
-
-    .search-bar input[type="text"] {
-        width: 100%;
-    }
-
-    .video-container {
-        flex-direction: column;
-    }
-
-    .video-info {
-        margin-top: 20px;
-    }
+.speed {
+  margin-right: 15px;
 }
 
+select,
+option {
+  cursor: pointer;
+}
+
+select {
+  color: var(--font-color);
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  position: relative;
+  top: -2.5px;
+}
+
+select:focus {
+  outline: none;
+}
+
+select > option {
+  border: none;
+  font-size: 12px;
+  background-color: rgba(39, 38, 38, 0.5);
+}
+
+/* Elapsed Time and Duration Display */
+.time {
+  margin-right: 18px;
+  color: var(--font-color);
+  font-weight: bold;
+  user-select: none;
+}
+
+/* Fullscreen Control */
+.fullscreen {
+  cursor: pointer;
+}
+
+/* Position video for fullscreen mode */
+.video-fullscreen {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Layout for flex containers */
+.layout {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.vid{
+  padding-left: 10%;
+  padding-right: 5%;
+}
+
+/* Styling for box1 */
+.box1 {
+  width: 600px;
+}
+
+/* Container 1 (2/3 of the screen) */
+.grow2by3 {
+  flex-grow: 2;
+}
+
+/* Container 2 (1/3 of the screen) */
+.grow1by3 {
+  flex-grow: 1;
+}
+
+.box1 .container {
+  background-color: rgb(220, 220, 220);
+  margin-right:10% ;
+  height: 350px;
+  border-radius: 20px;
+  padding: 10;
+}
