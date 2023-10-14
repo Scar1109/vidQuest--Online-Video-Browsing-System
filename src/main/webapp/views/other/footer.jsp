@@ -1,11 +1,36 @@
-<div class="footerConatiner">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<!-- Google Font -->
+<link
+	href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap"
+	rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap"
+	rel="stylesheet">
+
+<!-- Css Styles -->
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+<link rel="stylesheet" href="css/style.css" type="text/css">
+<link rel="stylesheet" href="css/major.css" type="text/css">
+<script type="module"
+	src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule
+	src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</head>
+<body>
+	<!-- Footer Section Begin -->
 	<footer class="footer">
 		<div class="container">
 			<div class="footer__top">
 				<div class="row">
 					<div class="col-lg-6 col-md-6">
 						<div class="footer__top__logo">
-							<a href="#"><img src="other/img/logo.png" alt=""></a>
+							<a href="#"><img src="img/logo.png" alt=""></a>
 						</div>
 					</div>
 					<div class="col-lg-6 col-md-6">
@@ -29,6 +54,8 @@
 								power of visuals and the impact they can have on your creative
 								projects, whether you're a filmmaker, content creator, marketer,
 								or just someone looking to enhance your digital storytelling.</p>
+							<a href="#" class="read__more">Read more <span
+								class="arrow_right"></span></a>
 						</div>
 					</div>
 					<div class="col-lg-2 col-md-3 col-sm-3">
@@ -83,4 +110,6 @@
 			</div>
 		</div>
 	</footer>
-</div>
+	<!-- Footer Section End -->
+</body>
+</html>
