@@ -14,6 +14,13 @@ public class comment {
 		this.comment = comment;
 	}
 
+	 
+
+	public comment( String Comment) {
+		// TODO Auto-generated constructor stub
+	}
+
+
 	//create getters
 	public int getCommentID() {
 		return commentID;

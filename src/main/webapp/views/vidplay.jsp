@@ -60,10 +60,22 @@
 												<div class="inputSection--l-yAT">
 													<div class="textInputContainer--UKemN">
 														<div class="textInputField--xIcYM">
+														
+														
+														
+														<form action = "a" method="post" name = "comm">
 															<textarea
 																class="textInput--yG-0W textArea---vB9y input--8uJYQ"
 																placeholder="Add your comments..."
-																style="height: 19px !important;"></textarea>
+																style="height: 19px !important;"></textarea> <br>
+																
+																<input type = "submit" name ="submit" value ="post">
+																
+															</form>	
+															
+															
+															
+																
 														</div>
 													</div>
 												</div>
