@@ -1,0 +1,252 @@
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+.wrapper {
+  width: 70%;
+  background: #fff;
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.wrapper .box {
+  height: 167px;
+  background-color: white;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 5px;
+  border: 2px dashed #585858;
+  margin-top: 20px;
+}
+
+.box :where(p) {
+  color: #585858;
+}
+.box .icon12 {
+  font-size: 50px;
+  
+}
+
+form p {
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+section .row {
+  margin-bottom: 10px;
+  background: #ccc;
+  list-style: none;
+  padding: 15px 20px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+section .row i {
+  color: #585858;
+  font-size: 30px;
+}
+
+section .details span {
+  font-size: 14px;
+}
+
+.progress-area .row .content {
+  width: 100%;
+  margin-left: 15px;
+}
+
+.progress-area .details {
+  display: flex;
+  align-items: center;
+  margin-bottom: 7px;
+  justify-content: space-between;
+}
+
+.progress-area .content .progress-bar {
+  height: 6px;
+  width: 100%;
+  margin-bottom: 4px;
+  background: #fff;
+  border-radius: 30px;
+}
+
+.content .progress-bar .progress {
+  height: 100%;
+  width: 0%;
+  background: #585858;
+  border-radius: inherit;
+}
+
+.uploaded-area {
+  max-height: 232px;
+  overflow-y: scroll;
+}
+
+.uploaded-area.onprogress {
+  max-height: 150px;
+}
+
+.uploaded-area::-webkit-scrollbar {
+  width: 0px;
+}
+
+.uploaded-area .row .content {
+  display: flex;
+  align-items: center;
+}
+
+.uploaded-area .row .details {
+  display: flex;
+  margin-left: 15px;
+  flex-direction: column;
+}
+
+.uploaded-area .row .details .size {
+  color: #404040;
+  font-size: 11px;
+}
+
+.uploaded-area i.fa-check {
+  font-size: 16px;
+}
+
+/* Add styles for the remove button */
+.remove-button {
+  color: #585858;
+  background-color: #ccc;
+  border: none;
+  cursor: pointer;
+  font-size: 25px;
+  margin-left: 80px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+
+/* Add styles for the Title section */
+.title-section {
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  list-style: none;
+}
+
+.title-section input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #fff;
+  font-size: 16px;
+}
+
+/* Add styles for the Category Selector */
+.category-section {
+  border-radius: 5px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 15px 0px;
+  list-style: none;
+}
+
+.category-section select {
+  width: 40%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #fff;
+  font-size: 16px;
+}
+
+.middel-section {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Add styles for the Thumbnail upload section */
+.thumbnail-section {
+  margin-top: -15px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 15px 20px;
+  list-style: none;
+}
+
+.thumbnail-section p {
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #585858;
+}
+
+/* Add styles for the Description section */
+.description-section {
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 15px 0px;
+  list-style: none;
+}
+
+.description-section textarea {
+  width: 100%;
+  height: 100px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  background: #fff;
+  font-size: 16px;
+  font-family: 'poppins';
+}
+
+.uploadBox{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.visibility-section {
+  border-radius: 5px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding: 15px 0px;
+  list-style: none;
+}
+
+.visibility-section select {
+  width: 40%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #fff;
+  font-size: 16px;
+}
+
+.submit-section input[type="submit"] {
+  background-color: #262629;
+  color: #fff;
+  padding: 12px 50px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.submit-section {
+  display: flex;
+  justify-content: center;
+}
