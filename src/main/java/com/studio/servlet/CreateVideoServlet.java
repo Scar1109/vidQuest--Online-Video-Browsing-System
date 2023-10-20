@@ -19,17 +19,25 @@ import java.io.File;
 @MultipartConfig
 public class CreateVideoServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	String uploadPath = getServletContext().getRealPath("/") + "videos";
+		/*
+		 * String uploadPath =
+		 * "C:\\Users\\ASUS ROG STRIX\\Documents\\Projects\\vidQuest\\src\\main\\webapp\\videos"
+		 * ;
+		 */
+    	String videouploadPath = getServletContext().getRealPath("/").replace(".metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\", "") + "\\src\\main\\webapp\\uploads\\videos";
+    	String thumbnailploadPath = getServletContext().getRealPath("/").replace(".metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\", "") + "\\src\\main\\webapp\\uploads\\thumbnails";
+
+
         String uniqueVideoName = UUID.randomUUID().toString() + ".mp4"; // Change the extension as needed
         String uniqueThumbnailName = UUID.randomUUID().toString() + ".jpg"; // Change the extension as needed
 
         // Handle video upload
         Part videoPart = request.getPart("videoUpload");
-        videoPart.write(uploadPath + File.separator + uniqueVideoName);
+        videoPart.write(videouploadPath + File.separator + uniqueVideoName);
 
         // Handle thumbnail upload
         Part thumbnailPart = request.getPart("thumbnail");
-        thumbnailPart.write(uploadPath + File.separator + uniqueThumbnailName);
+        thumbnailPart.write(thumbnailploadPath + File.separator + uniqueThumbnailName);
 
         video videol = new video();
         videol.setTitle(request.getParameter("title"));

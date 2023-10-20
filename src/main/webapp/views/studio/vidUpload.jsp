@@ -103,14 +103,16 @@
 							<div class="middel-section">
 								<div class="category-section">
 									<select name="category">
-										<option selected value="category1">Category 1</option>
-										<option value="category2">Category 2</option>
-										<option value="category3">Category 3</option>
+										<option value="Nature">Nature</option>
+										<option value="Food">Food</option>
+										<option value="Technology">Technology</option>
+										<option value="Peoples">Peoples</option>
+										<option value="Animals">Animals</option>
 									</select>
 								</div>
 								<div class="thumbnail-section">
 									<p>Upload Thumbnail</p>
-									<input class="thumbnail-input" type="file" name="thumbnail" accept=".jpeg,.jpg,.png,.gif" required>
+									<input class="thumbnail-input" type="file" name="thumbnail" accept=".jpg" required>
 
 								</div>
 							</div>
@@ -121,7 +123,7 @@
 								<input type="text" name="sub-title" placeholder="Sub-title(optional)" >
 							</div>
 							<div class="box video-section">
-								<input class="file-input" type="file" name="videoUpload" accept=".mp4,.webm,.ogg,.mkv,.mov,.avi" required hidden>
+								<input class="file-input" type="file" name="videoUpload" accept=".mp4" required hidden>
 								<ion-icon name="cloud-upload-outline" style="color:#6990F2;"></ion-icon>
 								<p>Browse Video to Upload</p>
 							</div>
@@ -131,10 +133,10 @@
 
 
 							<div class="visibility-section">
-								<select name="category">
-									<option value="public">Public</option>
-									<option value="private">Private</option>
-									<option selected value="unlisted">Unlisted</option>
+								<select name="visibility">
+									<option value="Public">Public</option>
+									<option value="Private">Private</option>
+									<option selected value="Unlisted">Unlisted</option>
 								</select>
 							</div>
 
