@@ -11,6 +11,7 @@ const body = document.querySelector("body");
 body.classList.toggle('dark');
 
 
+
 // Function to toggle the logo based on the theme
 function toggleLogo() {
     const darkLogo = document.querySelector(".logo.dark-logo");
@@ -64,3 +65,6 @@ const fetchedData = fetch("./data.json")
         email.innerHTML += Email;
         joined.innerHTML += Joined;
     });
+    
+    
+    
