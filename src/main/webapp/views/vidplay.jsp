@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- saved from url=(0066)https://pixabay.com/videos/mount-fuji-morning-clouds-japan-173522/ -->
 <html lang="en" style="--vh: 7.07px;">
 <head>
 
@@ -60,10 +59,19 @@
 												<div class="inputSection--l-yAT">
 													<div class="textInputContainer--UKemN">
 														<div class="textInputField--xIcYM">
-															<textarea
+														
+														
+														<form id= "comment" action = "${pageContext.request.contextPath}/commentservlet" method= "post"  >
+														     <textarea
 																class="textInput--yG-0W textArea---vB9y input--8uJYQ"
+																name ="coms"
 																placeholder="Add your comments..."
 																style="height: 19px !important;"></textarea>
+																
+																<input type = "submit" value = "Post">
+														
+														</form>		
+																
 														</div>
 													</div>
 												</div>
@@ -71,6 +79,9 @@
 											</div>
 										</div>
 									</div>
+									
+									
+									
 									<!-- Comment section -->
 									<div class="commentsList--lpM12 scrolling--Ic5bb">
 										<div class="commentContainer--wcqd2">
@@ -106,6 +117,11 @@
 											</div>
 											
 										</div>
+										
+										
+										
+										
+										
 										<div class="commentContainer--wcqd2">
 											<div>
 												<a class="container--RXy5A default--iYncq hoverState--vIDz9"
