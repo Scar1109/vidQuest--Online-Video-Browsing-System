@@ -96,7 +96,7 @@
 					
 					
 					
-						<form action="#" method="post" class="upload-form">
+						<form action="${pageContext.request.contextPath}/createVideoServlet" method="post" enctype="multipart/form-data" class="upload-form">
 							<div class="title-section">
 								<input type="text" name="title" placeholder="Title" required>
 							</div>
