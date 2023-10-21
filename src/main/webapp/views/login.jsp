@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="boxicons/css/boxicons.min.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 	<div class="wrapper">
@@ -66,6 +67,7 @@
         </div>
 
         <!------------------- registration form -------------------------->
+       
         <div class="register-container" id="register">
             <div class="top">
                 <span>Have an account? <a href="#" onclick="login()">Login</a></span>
@@ -84,6 +86,16 @@
             <div class="input-box">
                 <input type="text" class="input-field" placeholder="Email">
                 <i class="bx bx-envelope"></i>
+            </div>
+            <div class="two-forms">
+                <div class="input-box">
+                    <input type="text" class="input-field" placeholder="Phone Number">
+                    <i class="fa fa-phone"></i>
+                </div>
+                <div class="input-box">
+                    <input type="text" class="input-field" placeholder="Username">
+                    <i class="bx bx-user"></i>
+                </div>
             </div>
             <div class="input-box">
                 <input type="password" class="input-field" placeholder="Password">
@@ -104,6 +116,7 @@
         </div>
     </div>
 </div>   
+
 
 
 <script>

@@ -86,7 +86,7 @@ body{
     align-items: center;
     justify-content: center;
     width: 512px;
-    height: 420px;
+    height: 620px;
     overflow: hidden;
     z-index: 2;
 }
@@ -147,6 +147,7 @@ header{
     color: #fff;
 }
 .input-box i{
+	
     position: relative;
     top: -35px;
     left: 17px;
