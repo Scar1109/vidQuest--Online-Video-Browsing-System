@@ -70,7 +70,7 @@ import com.comment.model.comment;
 	             Class.forName("com.mysql.cj.jdbc.Driver");
 	             connection = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
 	             
-	             String sql = "SELECT * FROM comments where VideoID = ?";
+	             String sql = "SELECT * FROM comment where VideoID = ?";
 	              
 	             
 	             preparedStatement = connection.prepareStatement(sql);
@@ -86,7 +86,6 @@ import com.comment.model.comment;
 	             	//create objects
 	                 comment comm = new comment( resultSet.getInt("VideoID"), resultSet.getInt("UserID"), resultSet.getString("comment"));
 	                 
-	              
 	                 com.add(comm);
 	             }
 	             
@@ -99,6 +98,8 @@ import com.comment.model.comment;
 	         return com;
 	     }
 	     
+	     
+	      
 	    
 	}
 

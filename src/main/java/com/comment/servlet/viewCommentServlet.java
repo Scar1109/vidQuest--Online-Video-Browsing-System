@@ -25,8 +25,8 @@ public class viewCommentServlet extends HttpServlet {
         List<comment> comments = commentDao.getAllComments(1);
 
         // Pass the customer data to the JSP view
-        request.setAttribute("comment", comments);
-        request.getRequestDispatcher("vidplay.jsp").forward(request, response);
+        request.setAttribute("Comment", comments);
+        request.getRequestDispatcher("views/vidplay.jsp").forward(request, response);
     }
 }
 
