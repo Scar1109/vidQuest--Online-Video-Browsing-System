@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page import="com.moderator.*"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,7 +40,6 @@
 <!-- Start wrapper-->
  <div id="wrapper">
 
-  <!--Start sidebar-wrapper-->
   <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
     <div class="brand-logo">
      <a href="index.html">
@@ -142,76 +145,85 @@
 </header>
 <!--End topbar header-->
 
-<!--End topbar header-->
-
 <div class="clearfix"></div>
 	
   <div class="content-wrapper">
     <div class="container-fluid">
-     
-      
-        <div class="col-lg-12">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">User Table</h5>
-			  <div class="table-responsive">
-              <table class="table table-hover">
-                <thead>
-                  <tr>
-                    <th scope="col">User-ID</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td><button type="button" class="btn btn-light">Delete</button></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td><button type="button" class="btn btn-light">Delete</button></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td><button type="button" class="btn btn-light">Delete</button></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            </div>
-          </div>
         </div>
-      </div><!--End Row-->
 
-     
-	  <!--start overlay-->
+        <div class="col-lg-12">
+           <div class="card">
+            <div class="card-body">
+            <ul class="nav nav-tabs nav-tabs-primary top-icon nav-justified">
+
+                <li class="nav-item">
+                    <a href="javascript:void();" data-target="#edit" data-toggle="pill" class="nav-link"><i class="icon-user"></i> <span class="hidden-xs">MY Profile</span></a>
+                </li>
+            </ul>
+            <div class="tab-content p-3"> 
+                <div class="tab-pane active" id="edit">
+                 <c:forEach var="usr" items="${userDetails}">
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Name</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="text" value="${usr.name}">
+                            </div>
+                        </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Email</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="email" value="mark@example.com">
+                            </div>
+                        </div>
+                  
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Mobile</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="text" value="jhonsanmark">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Password</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="password" value="11111122333">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Confirm password</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="password" value="11111122333">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label"></label>
+                            <div class="col-lg-9">
+                                <input type="reset" class="btn btn-secondary" value="Cancel">
+                                <input type="button" class="btn btn-primary" value="Save Changes">
+                            </div>
+                        </div>
+                        </c:forEach>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      </div>
+        
+    </div>
+
+	<!--start overlay-->
 		  <div class="overlay toggle-menu"></div>
 		<!--end overlay-->
-
+	
     </div>
     <!-- End container-fluid-->
-    
-    </div><!--End content-wrapper-->
+   </div><!--End content-wrapper-->
    <!--Start Back To Top Button-->
     <a href="javaScript:void();" class="back-to-top"><i class="fa fa-angle-double-up"></i> </a>
     <!--End Back To Top Button-->
 	
-	<!--Start footer-->
-	<footer class="footer">
-      <div class="container">
-        <div class="text-center">
-          Copyright © 2018 Dashtreme Admin
-        </div>
-      </div>
-    </footer>
-	<!--End footer-->
+	
 	
 	<!--start color switcher-->
    <div class="right-sidebar">

@@ -7,18 +7,34 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class addUserServelet
- */
+import com.moderator.util.moderatorDBUtil;
+
 @WebServlet("/addUserServelet")
 public class addUserServelet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
+		String name = request.getParameter("name");
+        String email = request.getParameter("email");
+        String mobile = request.getParameter("number");
+        String password = request.getParameter("password");
+        String confirmpassword = request.getParameter("confirmPassword");
+
+        boolean isSuccess;
+
+        isSuccess = moderatorDBUtil.insertCustomer(name, email, mobile, password, confirmpassword);
+
+        if (isSuccess) {
+            // Redirect to login.jsp
+        	response.sendRedirect(request.getContextPath() + "/views/admin/profile.jsp");
+
+        } else {
+            // Redirect to profile.jsp
+            response.sendRedirect(request.getContextPath() + "/profile.jsp");
+        }
+
+		
 	}
 
 }
