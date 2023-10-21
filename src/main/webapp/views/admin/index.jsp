@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,25 +47,25 @@
    <ul class="sidebar-menu do-nicescrol">
       <li class="sidebar-header">MAIN NAVIGATION</li>
       <li>
-        <a href="index.html">
+        <a href="index.jsp">
           <i class="zmdi zmdi-view-dashboard"></i> <span>Dashboard</span>
         </a>
       </li>
-
+	
       <li>
-        <a href="forms.html">
+        <a href="forms.jsp">
           <i class="zmdi zmdi-format-list-bulleted"></i> <span>Add user</span>
         </a>
       </li>
 
       <li>
-        <a href="tables.html">
+        <a href="tables.jsp">
           <i class="zmdi zmdi-grid"></i> <span>User-Details</span>
         </a>
       </li>
 
       <li>
-        <a href="profile.html">
+        <a href="profile.jsp">
           <i class="zmdi zmdi-face"></i> <span>Profile</span>
         </a>
       </li>
