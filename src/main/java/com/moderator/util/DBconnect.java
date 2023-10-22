@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class DBconnect {
 
-	private static String url = "jdbc:mysql://localhost:3306/newvid";
+	private static String url = "jdbc:mysql://localhost:3306/vidquest";
     private static String user = "root";
     private static String password = "1234";
     

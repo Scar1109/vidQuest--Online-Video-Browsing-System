@@ -24,17 +24,17 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String name = request.getParameter("uid");
+		String username = request.getParameter("uid");
 		String password = request.getParameter("pwd");
 		
 		try {
-		List<User> userDetails = moderatorDBUtil.validate(name, password);
+		List<User> userDetails = moderatorDBUtil.validate(username, password);
 		request.setAttribute("userDetails",userDetails);
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
 		
-		RequestDispatcher dis = request.getRequestDispatcher("views/admin/demoprofile.jsp");
+		RequestDispatcher dis = request.getRequestDispatcher("views/admin/profile.jsp");
 		dis.forward(request, response);
 	}
 

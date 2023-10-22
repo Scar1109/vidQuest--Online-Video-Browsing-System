@@ -1,28 +1,35 @@
 package com.moderator.model;
 
 public class User {
-	 private int id;
-	    private String name;
+	
+	 	private int UserID;
+	    private String firstName;
+	    private String lastName;
 	    private String email;
 	    private String mobile;
 	    private String password;
-	    private String confirm_password;
+	    private String username;
 
-	    public User(int id, String name, String email, String mobile, String password, String confirm_password) {
-	        this.id = id;
-	        this.name = name;
+	    public User(int UserID, String firstName,String lastName, String email, String mobile, String password, String username) {
+	        this.UserID = UserID;
+	        this.firstName = firstName;
+	        this.lastName=lastName;
 	        this.email = email;
 	        this.mobile = mobile;
 	        this.password = password;
-	        this.confirm_password = confirm_password;
+	        this.username = username;
 	    }
 
 	    public int getId() {
-	        return id;
+	        return UserID;
 	    }
 
-	    public String getName() {
-	        return name;
+	    public String getFirstName() {
+	        return firstName;
+	    }
+	    
+	    public String getlastName() {
+	        return lastName;
 	    }
 
 	    public String getEmail() {
@@ -37,7 +44,7 @@ public class User {
 	        return password;
 	    }
 
-	    public String getConfirmpassword() {
-	        return confirm_password;
+	    public String getUsername() {
+	        return username;
 	    }
 }

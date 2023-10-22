@@ -19,27 +19,29 @@ public class updateUserServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String id = request.getParameter("id");
-	    String name = request.getParameter("name");
+	    String firstName = request.getParameter("firstName");
+	    String lastName = request.getParameter("lastName");
+	    String username = request.getParameter("username");
 	    String email = request.getParameter("email");
 	    String mobile = request.getParameter("mobile");
 	    String password = request.getParameter("password");
 	    
 	    boolean isTrue;
 	   
-	    isTrue=moderatorDBUtil.updateUser(id, name, email, mobile, password);
+	    isTrue=moderatorDBUtil.updateUser(id,firstName,lastName,username, email, mobile, password);
 
 	    if(isTrue==true) {
 	    	
 	    	List<User> userDetails = moderatorDBUtil.getUserDetails(id);
 	    	request.setAttribute("userDetails", userDetails);
 	    	
-	    	RequestDispatcher dis = request.getRequestDispatcher("/views/admin/demoprofile.jsp");
+	    	RequestDispatcher dis = request.getRequestDispatcher("/views/admin/profile.jsp");
 	    	dis.forward(request, response);
 	    }else {
 	    	List<User> userDetails = moderatorDBUtil.getUserDetails(id);
 	    	request.setAttribute("userDetails", userDetails);
 	    	
-	    	RequestDispatcher dis = request.getRequestDispatcher("/views/admin/demoprofile.jsp");
+	    	RequestDispatcher dis = request.getRequestDispatcher("/views/admin/profile.jsp");
 	    	dis.forward(request, response);
 	    }
 	}

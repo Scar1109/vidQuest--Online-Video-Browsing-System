@@ -15,7 +15,7 @@ public class moderatorDBUtil {
 	private static boolean isSuccess;
 	private static ResultSet rs = null;
 
-	public static List<User> validate(String name, String password) {
+	public static List<User> validate(String username, String password) {
 
 		ArrayList<User> usr = new ArrayList<>();
 
@@ -23,22 +23,21 @@ public class moderatorDBUtil {
 
 			Connection con = DBconnect.getConnection();
 			stmt = con.createStatement();
-			String sql = "SELECT * FROM users WHERE name = '" + name + "' AND password = '" + password + "'";
+			String sql = "SELECT * FROM users WHERE username = '" + username + "' AND pwd = '" + password + "'";
 
-			// Print the SQL query for debugging
-			// System.out.println("SQL Query: " + sql);
 
 			ResultSet rs = stmt.executeQuery(sql);
 
 			if (rs.next()) {
-				int id = rs.getInt(1);
-				String name1 = rs.getString(2);
-				String email = rs.getString(3);
-				String number = rs.getString(4);
-				String passwdu = rs.getString(5);
-				String confirmpasswdu = rs.getString(6);
+				int UserID = rs.getInt(1);
+				String firstname = rs.getString(2);
+				String lastname = rs.getString(3);
+				String email = rs.getString(4);
+				String mobile = rs.getString(5);
+				String passwdu = rs.getString(6);
+				String usernameu = rs.getString(7);
 
-				User u = new User(id, name1, email, number, passwdu, confirmpasswdu);
+				User u = new User(UserID, firstname,lastname, email, mobile, passwdu, usernameu);
 				usr.add(u);
 			}
 		} catch (Exception e) {
@@ -71,12 +70,12 @@ public class moderatorDBUtil {
 		return isSuccess;
 	}
 
-	public static boolean updateUser(String id, String name, String email, String mobile, String password) {
+	public static boolean updateUser(String id, String firstName, String lastName,String username,String email, String mobile, String password) {
 
 		try {
 			con = DBconnect.getConnection();
 			stmt = con.createStatement();
-			String sql = "UPDATE users set name='" + name + "',email='" + email + "',mobile='" + mobile + "',password='"
+			String sql = "UPDATE users set firstname='" + firstName + "',lastName='"+lastName+"',username='"+username+"',email='" + email + "',mobile='" + mobile + "',password='"
 					+ password + "' WHERE id='" + id + "'";
 			int rs = stmt.executeUpdate(sql);
 
@@ -106,15 +105,16 @@ public class moderatorDBUtil {
 			rs = stmt.executeQuery(sql);
 
 			while (rs.next()) {
-				int id1 = rs.getInt(1);
-				String name = rs.getString(2);
-				String email = rs.getString(3);
-				String mobile = rs.getString(4);
-				String password = rs.getString(5);
-				String confirmPassword = rs.getString(6);
+				int UserID = rs.getInt(1);
+				String firstname = rs.getString(2);
+				String lastname = rs.getString(3);
+				String email = rs.getString(4);
+				String mobile = rs.getString(5);
+				String passwdu = rs.getString(6);
+				String usernameu = rs.getString(7);
 
-				User user = new User(id1, name, email, mobile, password, confirmPassword);
-				usr.add(user);
+				User u = new User(UserID, firstname,lastname, email, mobile, passwdu, usernameu);
+				usr.add(u);
 			}
 
 		} catch (Exception e) {
