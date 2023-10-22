@@ -10,16 +10,13 @@ import javax.servlet.http.HttpServletResponse;
 import com.User.model.User;
 import com.User.util.UserDbUtill;
 
-
-
-
-@WebServlet( urlPatterns ="/UserControllerServlet")
+@WebServlet( urlPatterns ="/UserCreateServlet")
 
 
 public class UserCreateServlet extends HttpServlet {
 	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
 		
 		   
 		    String firstName = request.getParameter("first-name");

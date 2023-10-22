@@ -14,8 +14,8 @@ public class userservelet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
  
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		 // Retrieve customer data from the database using a DAO class
-		viewUserDButil customerDao =new viewUserDButil();
+		 // Retrieve user data from the database using a DAO class
+		viewUserDButil userDao =new viewUserDButil();
 		
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}

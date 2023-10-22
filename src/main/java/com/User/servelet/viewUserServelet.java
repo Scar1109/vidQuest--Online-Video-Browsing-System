@@ -22,11 +22,11 @@ public class viewUserServelet extends HttpServlet {
    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		 // Retrieve customer data from the database using a DAO class
+		 // Retrieve user data from the database using a DAO class
 		viewUserDButil userDao = new viewUserDButil();
         List<User> users = userDao.getAllUsers();
 
-	 // Pass the customer data to the JSP view
+	 // Pass the user data to the JSP view
     request.setAttribute("user", users);
     request.getRequestDispatcher("userView.jsp").forward(request, response);
 }

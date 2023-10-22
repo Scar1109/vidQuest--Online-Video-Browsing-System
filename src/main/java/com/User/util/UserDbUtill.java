@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import com.User.model.User;
-customerdb
+
 
 public class UserDbUtill{
 	private static final String JDBC_URL = "jdbc:mysql://localhost:3306/vidquest";
@@ -24,7 +24,7 @@ public class UserDbUtill{
     try {
     	 Class.forName("com.mysql.cj.jdbc.Driver");
          connection = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
-         String sql = "INSERT INTO user (First_Name, Last_Name,Email,Phone_NO,Password,Username) VALUES (?, ?, ?,,?,?,?)";
+         String sql = "INSERT INTO users (firstName, lastName,Date,email,pNO,pwd,username) VALUES (?,?,?,?,?,?)";
          preparedStatement = connection.prepareStatement(sql);
 
 

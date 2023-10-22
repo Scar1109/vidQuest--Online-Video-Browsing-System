@@ -74,7 +74,7 @@
                 <span>Have an account? <a href="#" onclick="login()">Login</a></span>
                 <header>Sign Up</header>
             </div>
-            <form action="UserControllerServlet" method="post">
+            <form action="${pageContext.request.contextPath}/UserCreateServlet" method="post">
             <div class="two-forms">
                 <div class="input-box">
                     <input type="text" name="first-name"  class="input-field" placeholder="Firstname">
