@@ -84,7 +84,7 @@ import com.comment.model.comment;
 	             while (resultSet.next()) {
 	            	 
 	             	//create objects
-	                 comment comm = new comment( resultSet.getInt("VideoID"), resultSet.getInt("UserID"), resultSet.getString("comment"));
+	                 comment comm = new comment( resultSet.getInt("VideoID"), resultSet.getInt("UserID"), resultSet.getString("comment"),resultSet.getInt("commentID"));
 	                 
 	                 com.add(comm);
 	             }
@@ -97,6 +97,38 @@ import com.comment.model.comment;
 	         }
 	         return com;
 	     }
+
+	     
+	   
+	     
+	     
+	     
+	     
+	     
+
+		public static boolean deleteComment(int commentID) {
+			
+			  try {
+		            Class.forName("com.mysql.cj.jdbc.Driver");
+		            Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
+		            String sql = "DELETE FROM comment WHERE commentID = ?";
+		            
+		            PreparedStatement statement = connection.prepareStatement(sql);
+		            statement.setInt(1, commentID);
+		            
+		            int rowsAffected = statement.executeUpdate();
+		            
+		            statement.close();
+		            connection.close();
+		            
+		            // If the delete operation was successful (at least one row affected), return true
+		            return rowsAffected > 0;
+		        } catch (SQLException | ClassNotFoundException e) {
+		            e.printStackTrace();
+		            // If an exception occurs, return false to indicate failure
+		            return false;
+		        }
+		}
 	     
 	     
 	      
