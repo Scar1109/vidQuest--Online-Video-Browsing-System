@@ -1,6 +1,8 @@
 package com.moderator.servlet;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,23 +17,27 @@ public class addUserServelet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String name = request.getParameter("name");
+		String firstName = request.getParameter("firstname");
+		String lastName = request.getParameter("lastname");
+		String username = request.getParameter("username");
         String email = request.getParameter("email");
         String mobile = request.getParameter("number");
         String password = request.getParameter("password");
-        String confirmpassword = request.getParameter("confirmPassword");
+        
 
         boolean isSuccess;
 
-        isSuccess = moderatorDBUtil.insertCustomer(name, email, mobile, password, confirmpassword);
+        isSuccess = moderatorDBUtil.insertCustomer(firstName,lastName,username,email, mobile, password);
 
         if (isSuccess) {
             // Redirect to login.jsp
-        	response.sendRedirect(request.getContextPath() + "/views/admin/profile.jsp");
+        	RequestDispatcher dis = request.getRequestDispatcher("/views/admin/profile.jsp");
+	    	dis.forward(request, response);
 
         } else {
             // Redirect to profile.jsp
-            response.sendRedirect(request.getContextPath() + "/profile.jsp");
+        	RequestDispatcher dis = request.getRequestDispatcher("index.jsp");
+	    	dis.forward(request, response);
         }
 
 		

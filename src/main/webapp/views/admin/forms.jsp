@@ -160,8 +160,16 @@
            <hr>
             <form action="${pageContext.request.contextPath}/addUser" method="post">
            <div class="form-group">
-            <label for="input-6">Name</label>
-            <input type="text" class="form-control form-control-rounded" id="input-6" name="name" placeholder="Enter Your Name">
+            <label for="input-6">Firt Name</label>
+            <input type="text" class="form-control form-control-rounded" id="input-6" name="firstname" placeholder="Enter Your Name">
+           </div>
+           <div class="form-group">
+            <label for="input-6">Last Name</label>
+            <input type="text" class="form-control form-control-rounded" id="input-6" name="lastname" placeholder="Enter Your Name">
+           </div>
+           <div class="form-group">
+            <label for="input-6">UserName</label>
+            <input type="text" class="form-control form-control-rounded" id="input-6" name="username" placeholder="Enter Your Name">
            </div>
            <div class="form-group">
             <label for="input-7">Email</label>
@@ -175,13 +183,9 @@
             <label for="input-9">Password</label>
             <input type="text" class="form-control form-control-rounded" id="input-9" name="password" placeholder="Enter Password">
            </div>
-           <div class="form-group">
-            <label for="input-10">Confirm Password</label>
-            <input type="text" class="form-control form-control-rounded" id="input-10" name="confirmPassword" placeholder="Confirm Password">
-           </div>
            <div class="form-group py-2">
              <div class="icheck-material-white">
-            <input type="checkbox" id="user-checkbox2" checked=""/>
+            <input type="checkbox" id="user-checkbox2" checked="agree"/>
             <label for="user-checkbox2">I Agree Terms & Conditions</label>
             </div>
            </div>

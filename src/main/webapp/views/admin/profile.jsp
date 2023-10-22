@@ -248,8 +248,11 @@
 											<div class="col-lg-9">
 												<a href="${userupdate}"> <input type="button"
 													class="btn btn-primary" name="update" value="Update">
-												</a> <input type="reset" class="btn btn-secondary" name="delete"
+												</a>
+												<a href="${userdelete}">
+												 <input type="reset" class="btn btn-secondary" name="delete"
 													value="Delete">
+													</a>
 											</div>
 										</div>
 								</div>
