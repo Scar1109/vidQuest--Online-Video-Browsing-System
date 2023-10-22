@@ -12,19 +12,15 @@ public class UserDbUtill{
 	private static final String JDBC_URL = "jdbc:mysql://localhost:3306/vidquest";
     private static final String JDBC_USER = "root";
     private static final String JDBC_PASSWORD = "";
-
-	
-       
     
     public  static void adduser(User user) {
     	Connection connection = null;
         PreparedStatement preparedStatement = null;
-
-    
+        
     try {
     	 Class.forName("com.mysql.cj.jdbc.Driver");
          connection = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
-         String sql = "INSERT INTO users (firstName, lastName,Date,email,pNO,pwd,username) VALUES (?,?,?,?,?,?)";
+         String sql = "INSERT INTO users (firstName, lastName,email,pNO,pwd,username) VALUES (?,?,?,?,?,?)";
          preparedStatement = connection.prepareStatement(sql);
 
 
