@@ -16,26 +16,26 @@
 <title>Dashtreme Admin - Free Dashboard for Bootstrap 4 by
 	Codervent</title>
 <!-- loader-->
-<link href="assets/css/pace.min.css" rel="stylesheet" />
-<script src="assets/js/pace.min.js"></script>
+<link href="views/admin/assets/css/pace.min.css" rel="stylesheet" />
+<script src="views/admin/assets/js/pace.min.js"></script>
 <!--favicon-->
-<link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="views/admin/assets/images/favicon.ico" type="image/x-icon">
 <!-- simplebar CSS-->
-<link href="assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
+<link href="views/admin/assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
 <!-- Bootstrap core CSS-->
-<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+<link href="views/admin/assets/css/bootstrap.min.css" rel="stylesheet" />
 <!-- animate CSS-->
-<link href="assets/css/animate.css" rel="stylesheet" type="text/css" />
+<link href="views/admin/assets/css/animate.css" rel="stylesheet" type="text/css" />
 <!-- Icons CSS-->
-<link href="assets/css/icons.css" rel="stylesheet" type="text/css" />
+<link href="views/admin/assets/css/icons.css" rel="stylesheet" type="text/css" />
 <!-- Sidebar CSS-->
-<link href="assets/css/sidebar-menu.css" rel="stylesheet" />
+<link href="views/admin/assets/css/sidebar-menu.css" rel="stylesheet" />
 <!-- Custom Style-->
-<link href="assets/css/app-style.css" rel="stylesheet" />
+<link href="views/admin/assets/css/app-style.css" rel="stylesheet" />
 
 </head>
 
-<body class="bg-theme bg-theme1">
+<body class="bg-theme bg-theme2">
 
 	<!-- start loader -->
 	<div id="pageloader-overlay" class="visible incoming">
@@ -54,7 +54,7 @@
 		<div id="sidebar-wrapper" data-simplebar=""
 			data-simplebar-auto-hide="true">
 			<div class="brand-logo">
-				<a href="index.html"> <img src="assets/images/logo-icon.png"
+				<a href="index.html"> <img src="views/admin/assets/images/logo-icon.png"
 					class="logo-icon" alt="logo icon">
 					<h5 class="logo-text">VidQuest</h5>
 				</a>
@@ -164,7 +164,7 @@
 
 		<div class="content-wrapper">
 			<div class="container-fluid">
-				<div class="col-lg-12">
+				<div class="col-lg-13">
 					<div class="card">
 						<div class="card-body">
 							<h5 class="card-title">User Table</h5>
@@ -173,58 +173,44 @@
 									<thead>
 										<tr>
 											<th scope="col">User-ID</th>
-											<th scope="col">Name</th>
+											<th scope="col">First Name</th>
+											<th scope="col">Last Name</th>
+											<th scope="col">Date</th>
+											<th scope="col">Time</th>
 											<th scope="col">Email</th>
 											<th scope="col">Mobile</th>
-											<th scope="col">Password</th>
-											<th scope="col">Confirm Password</th>
+											<th scope="col">User Name</th>
+											<th scope="col">Action</th>
 										</tr>
 									</thead>
-									
-									<%-- <tbody>
-									<c:forEach var="cus" items="${customers}">
-									
-									${cus.id}
-									
-									</c:forEach>
-									</tbody>
-									
-									 --%>
-								<%-- 	<form action="${pageContext.request.contextPath}/viewCustomerServlet" method="get">
-    	
+											 
 	
 									<tbody>
-										<%
-										List<Customer> customers = (List<Customer>) request.getAttribute("customers");
-										if (customers != null) {
-											for (Customer cus : customers) {
-										%>
+										<c:forEach var="usr" items="${userDetails}">
+									
+											<c:set var="id" value="${usr.id}" />
+											<c:set var="firstName" value="${usr.firstName}" />
+											<c:set var="lastName" value="${usr.lastName}" />
+											<c:set var="username" value="${usr.username}" />
+											<c:set var="username" value="${usr.date}" />
+											<c:set var="username" value="${usr.time}" />
+											<c:set var="email" value="${usr.email}" />
+											<c:set var="mobile" value="${usr.mobile}" />
+											<c:set var="password" value="${usr.password}" />
 										<tr>
-											<th scope="row"><%=cus.getId()%></th>
-											<td><%=cus.getName()%></td>
-											<td><%=cus.getEmail()%></td>
-											<td><%=cus.getMobile()%></td>
-											<td><%=cus.getPassword()%></td>
-											<td><%=cus.getConfirm_password()%></td>
-											<td>
-												<!-- <button type="button" class="btn btn-light">Delete</button> -->
-												
-											</td>
+											<th scope="row">${usr.id}</th>	
+											<td>${usr.firstName}</td>
+											<td>${usr.lastName}</td>
+											<td>${usr.date}</td>
+											<td>${usr.time}</td>
+											<td>${usr.email}</td>
+											<td>${usr.mobile}</td>
+											<td>${usr.username}</td>
+											<td><button type="button" class="btn btn-outline-danger">Delete</button></td>
 										</tr>
-										<%
-										}
-										} else {
-										%>
-										<tr>
-											<td colspan="7">No customers found.</td>
-										</tr>
-										<%
-										}
-										%>
+										</c:forEach>
 									</tbody>
-									<input type="submit" value="Fetch Customer Data">
-									</form> --%>
-
+									
 								</table>
 							</div>
 						</div>
@@ -250,11 +236,7 @@
 	<!--End Back To Top Button-->
 
 	<!--Start footer-->
-	<footer class="footer">
-		<div class="container">
-			<div class="text-center">Copyright Â© 2018 Dashtreme Admin</div>
-		</div>
-	</footer>
+	
 	<!--End footer-->
 
 	<!--start color switcher-->
@@ -300,17 +282,17 @@
 
 
 	<!-- Bootstrap core JavaScript-->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/popper.min.js"></script>
-	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="views/admin/assets/js/jquery.min.js"></script>
+	<script src="views/admin/assets/js/popper.min.js"></script>
+	<script src="views/admin/assets/js/bootstrap.min.js"></script>
 
 	<!-- simplebar js -->
-	<script src="assets/plugins/simplebar/js/simplebar.js"></script>
+	<script src="views/admin/assets/plugins/simplebar/js/simplebar.js"></script>
 	<!-- sidebar-menu js -->
-	<script src="assets/js/sidebar-menu.js"></script>
+	<script src="views/admin/assets/js/sidebar-menu.js"></script>
 
 	<!-- Custom scripts -->
-	<script src="assets/js/app-script.js"></script>
+	<script src="views/admin/assets/js/app-script.js"></script>
 
 </body>
 </html>

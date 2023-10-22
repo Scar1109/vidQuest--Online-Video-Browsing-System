@@ -14,28 +14,28 @@
 <title>Dashtreme Admin - Free Dashboard for Bootstrap 4 by
 	Codervent</title>
 <!-- loader-->
-<link href="views/admin/assets/css/pace.min.css" rel="stylesheet" />
-<script src="views/admin/assets/js/pace.min.js"></script>
+<link href="assets/css/pace.min.css" rel="stylesheet" />
+<script src="assets/js/pace.min.js"></script>
 <!--favicon-->
-<link rel="icon" href="views/admin/assets/images/favicon.ico"
+<link rel="icon" href="assets/images/favicon.ico"
 	type="image/x-icon">
 <!-- simplebar CSS-->
-<link href="views/admin/assets/plugins/simplebar/css/simplebar.css"
+<link href="assets/plugins/simplebar/css/simplebar.css"
 	rel="stylesheet" />
 <!-- Bootstrap core CSS-->
-<link href="views/admin/assets/css/bootstrap.min.css" rel="stylesheet" />
+<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
 <!-- animate CSS-->
-<link href="views/admin/assets/css/animate.css" rel="stylesheet"
+<link href="assets/css/animate.css" rel="stylesheet"
 	type="text/css" />
 <!-- Icons CSS-->
-<link href="views/admin/assets/css/icons.css" rel="stylesheet"
+<link href="assets/css/icons.css" rel="stylesheet"
 	type="text/css" />
 <!-- Sidebar CSS-->
-<link href="views/admin/assets/css/sidebar-menu.css" rel="stylesheet" />
+<link href="assets/css/sidebar-menu.css" rel="stylesheet" />
 <!-- Custom Style-->
-<link href="views/admin/assets/css/app-style.css" rel="stylesheet" />
+<link href="assets/css/app-style.css" rel="stylesheet" />
 </head>
-<body class="bg-theme bg-theme1">
+<body class="bg-theme bg-theme2">
 	<!-- start loader -->
 	<div id="pageloader-overlay" class="visible incoming">
 		<div class="loader-wrapper-outer">
@@ -52,7 +52,7 @@
 			data-simplebar-auto-hide="true">
 			<div class="brand-logo">
 				<a href="index.html"> <img
-					src="views/admin/assets/images/logo-icon.png" class="logo-icon"
+					src="assets/images/logo-icon.png" class="logo-icon"
 					alt="logo icon">
 					<h5 class="logo-text">VidQuest</h5>
 				</a>
@@ -170,91 +170,101 @@
 							<div class="tab-content p-3">
 								<div class="tab-pane active" id="edit">
 									<c:forEach var="usr" items="${userDetails}">
-									
-											<c:set var="id" value="${usr.id}" />
-											<c:set var="firstName" value="${usr.firstName}" />
-											<c:set var="lastName" value="${usr.lastName}" />
-											<c:set var="username" value="${usr.username}" />
-											<c:set var="email" value="${usr.email}" />
-											<c:set var="mobile" value="${usr.mobile}" />
-											<c:set var="password" value="${usr.password}" />
 
-											<div class="form-group row">
-												<label class="col-lg-3 col-form-label form-control-label">User
-													ID </label>
-												<div class="col-lg-9">
-													<input class="form-control" type="text" value="${usr.id}"
-														readonly>
-												</div>
-											</div>
-											<div class="form-group row">
-												<label class="col-lg-3 col-form-label form-control-label">FIRST
-													NAME</label>
-												<div class="col-lg-9">
-													<input class="form-control" type="text"
-														value="${usr.firstName}" readonly>
-												</div>
-											</div>
-											<div class="form-group row">
-												<label class="col-lg-3 col-form-label form-control-label">Last
-													Name</label>
-												<div class="col-lg-9">
-													<input class="form-control" type="text"
-														value="${usr.lastName}" readonly>
-												</div>
-											</div>
-											<div class="form-group row">
-												<label class="col-lg-3 col-form-label form-control-label">User
-													Name</label>
-												<div class="col-lg-9">
-													<input class="form-control" type="text"
-														value="${usr.username}" readonly>
-												</div>
-											</div>
-											<div class="form-group row">
-												<label class="col-lg-3 col-form-label form-control-label">Email</label>
-												<div class="col-lg-9">
-													<input class="form-control" type="email"
-														value="${usr.email}" readonly>
-												</div>
-											</div>
-											<div class="form-group row">
-												<label class="col-lg-3 col-form-label form-control-label">Mobile</label>
-												<div class="col-lg-9">
-													<input class="form-control" type="text"
-														value="${usr.mobile}" readonly>
-												</div>
-											</div>
-											<div class="form-group row">
-												<label class="col-lg-3 col-form-label form-control-label">Password</label>
-												<div class="col-lg-9">
-													<input class="form-control" type="password"
-														value="${usr.password}" readonly>
-												</div>
-											</div>
-										</c:forEach>
+										<c:set var="id" value="${usr.id}" />
+										<c:set var="firstName" value="${usr.firstName}" />
+										<c:set var="lastName" value="${usr.lastName}" />
+										<c:set var="username" value="${usr.username}" />
+										<c:set var="email" value="${usr.email}" />
+										<c:set var="mobile" value="${usr.mobile}" />
+										<c:set var="password" value="${usr.password}" />
 
-										<c:url value="/views/admin/UpdateProfile.jsp" var="userupdate">
-											<c:param name="id" value="${id}" />
-											<c:param name="FirstName" value="${firstName}" />
-											<c:param name="LastName" value="${lastName}" />
-											<c:param name="username" value="${username}" />
-											<c:param name="email" value="${email}" />
-											<c:param name="mobile" value="${mobile}" />
-											<c:param name="password" value="${password}" />
-										</c:url>
 										<div class="form-group row">
-											<label class="col-lg-3 col-form-label form-control-label"></label>
+											<label class="col-lg-3 col-form-label form-control-label">User
+												ID </label>
 											<div class="col-lg-9">
-												<a href="${userupdate}"> <input type="button"
-													class="btn btn-primary" name="update" value="Update">
-												</a>
-												<a href="${userdelete}">
-												 <input type="reset" class="btn btn-secondary" name="delete"
-													value="Delete">
-													</a>
+												<input class="form-control" type="text" value="${usr.id}" name="id"
+													readonly>
 											</div>
 										</div>
+										<div class="form-group row">
+											<label class="col-lg-3 col-form-label form-control-label ">FIRST
+												NAME</label>
+											<div class="col-lg-9">
+												<input class="form-control" type="text" name="firstName"
+													value="${usr.firstName}" readonly>
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-lg-3 col-form-label form-control-label">Last
+												Name</label>
+											<div class="col-lg-9">
+												<input class="form-control" type="text" name="lastName"
+													value="${usr.lastName}" readonly>
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-lg-3 col-form-label form-control-label">User
+												Name</label>
+											<div class="col-lg-9">
+												<input class="form-control" type="text" name="username"
+													value="${usr.username}" readonly>
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-lg-3 col-form-label form-control-label">Email</label>
+											<div class="col-lg-9">
+												<input class="form-control" type="email" name="email"
+													value="${usr.email}" readonly>
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-lg-3 col-form-label form-control-label">Mobile</label>
+											<div class="col-lg-9">
+												<input class="form-control" type="text" name="mobile"
+													value="${usr.mobile}" readonly>
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-lg-3 col-form-label form-control-label">Password</label>
+											<div class="col-lg-9">
+												<input class="form-control" type="password" name="password"
+													value="${usr.password}" readonly>
+											</div>
+										</div>
+									</c:forEach>
+
+									<c:url value="/views/admin/UpdateProfile.jsp" var="userupdate">
+										<c:param name="id" value="${id}" />
+										<c:param name="firstName" value="${firstName}" />
+										<c:param name="lastName" value="${lastName}" />
+										<c:param name="username" value="${username}" />
+										<c:param name="email" value="${email}" />
+										<c:param name="mobile" value="${mobile}" />
+										<c:param name="password" value="${password}" />
+									</c:url>
+									<div class="form-group row">
+										<label class="col-lg-3 col-form-label form-control-label"></label>
+										<div class="col-lg-9">
+											<a href="${userupdate}"> <input type="button"
+												class="btn btn-primary" name="update" value="Update">
+											</a>
+
+											<c:url value="/views/admin/DeleteUser.jsp"
+												var="userdelete">
+												<c:param name="id" value="${id}" />
+												<c:param name="firstName" value="${firstName}" />
+												<c:param name="lastName" value="${lastName}" />
+												<c:param name="username" value="${username}" />
+												<c:param name="email" value="${email}" />
+												<c:param name="mobile" value="${mobile}" />
+												<c:param name="password" value="${password}" />
+											</c:url>
+											<a href="${userdelete}"> <input type="reset"
+												class="btn btn-secondary" name="delete" value="Delete">
+											</a>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -265,17 +275,17 @@
 	</div>
 	<!-- ... (Your script and closing body and HTML tags) ... -->
 	<!-- Bootstrap core JavaScript-->
-	<script src="views/admin/assets/js/jquery.min.js"></script>
-	<script src="views/admin/assets/js/popper.min.js"></script>
-	<script src="views/admin/assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/popper.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
 
 	<!-- simplebar js -->
-	<script src="views/admin/assets/plugins/simplebar/js/simplebar.js"></script>
+	<script src="assets/plugins/simplebar/js/simplebar.js"></script>
 	<!-- sidebar-menu js -->
-	<script src="views/admin/assets/js/sidebar-menu.js"></script>
+	<script src="assets/js/sidebar-menu.js"></script>
 
 	<!-- Custom scripts -->
-	<script src="views/admin/assets/js/app-script.js"></script>
+	<script src="assets/js/app-script.js"></script>
 
 </body>
 </html>

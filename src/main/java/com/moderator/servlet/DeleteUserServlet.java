@@ -30,7 +30,7 @@ public class DeleteUserServlet extends HttpServlet {
 	            List<User> userDetails = moderatorDBUtil.getUserDetails(id);
 	            request.setAttribute("userDetails", userDetails);
 
-	            RequestDispatcher dis = request.getRequestDispatcher("/views/admin/deleteProfile.jsp");
+	            RequestDispatcher dis = request.getRequestDispatcher("/views/admin/Profile.jsp");
 	            dis.forward(request, response);
 	        }
 	}

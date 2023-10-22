@@ -13,16 +13,11 @@ import javax.servlet.http.HttpServletResponse;
 import com.moderator.model.*;
 import com.moderator.util.moderatorDBUtil;
 
-/**
- * Servlet implementation class LoginServlet
- */
+
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String username = request.getParameter("uid");
 		String password = request.getParameter("pwd");
@@ -34,7 +29,7 @@ public class LoginServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		RequestDispatcher dis = request.getRequestDispatcher("views/admin/profile.jsp");
+		RequestDispatcher dis = request.getRequestDispatcher("views/admin/index.jsp");
 		dis.forward(request, response);
 	}
 

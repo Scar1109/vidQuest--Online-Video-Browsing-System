@@ -19,12 +19,12 @@ public class updateUserServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String id = request.getParameter("id");
-	    String firstName = request.getParameter("FirstName");
-	    String lastName = request.getParameter("LastName");
-	    String username = request.getParameter("username");
+	    String firstName = request.getParameter("firstName");
+	    String lastName = request.getParameter("lastName");
 	    String email = request.getParameter("email");
 	    String mobile = request.getParameter("mobile");
 	    String password = request.getParameter("password");
+	    String username = request.getParameter("username");
 	    
 	    boolean isTrue;
 	   

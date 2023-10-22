@@ -14,12 +14,13 @@
 <title>Dashtreme Admin - Free Dashboard for Bootstrap 4 by
 	Codervent</title>
 <!-- loader-->
-<link href="assets/css/pace.min.css" rel="stylesheet" />
-<script src="assets/js/pace.min.js"></script>
+<link href="views/admin/assets/css/pace.min.css" rel="stylesheet" />
+<script src="views/admin/assets/js/pace.min.js"></script>
 <!--favicon-->
 <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
 <!-- simplebar CSS-->
-<link href="assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
+<link href="views/admin/assets/plugins/simplebar/css/simplebar.css"
+	rel="stylesheet" />
 <!-- Bootstrap core CSS-->
 <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
 <!-- animate CSS-->
@@ -47,8 +48,9 @@
 		<div id="sidebar-wrapper" data-simplebar=""
 			data-simplebar-auto-hide="true">
 			<div class="brand-logo">
-				<a href="index.html"> <img src="assets/images/logo-icon.png"
-					class="logo-icon" alt="logo icon">
+				<a href="index.html"> <img
+					src="assets/images/logo-icon.png" class="logo-icon"
+					alt="logo icon">
 					<h5 class="logo-text">VidQuest</h5>
 				</a>
 			</div>
@@ -157,29 +159,28 @@
 							<ul class="nav nav-tabs nav-tabs-primary top-icon nav-justified">
 								<li class="nav-item"><a href="javascript:void();"
 									data-target="#edit" data-toggle="pill" class="nav-link"> <i
-										class="icon-user"></i> <span class="hidden-xs">MY
-											Profile</span>
+										class="icon-user"></i> <span class="hidden-xs"> DELETE USER
+											</span>
 								</a></li>
 							</ul>
 
-
-							<%
-							String id = request.getParameter("id");
-							String firstName = request.getParameter("firstName");
-							String lastName = request.getParameter("lastName");
-							String username = request.getParameter("username");
-							String email = request.getParameter("email");
-							String mobile = request.getParameter("mobile");
-							String password = request.getParameter("password");
-							%>
-						<form action="${pageContext.request.contextPath}/updateUser" method="post">
 							<div class="tab-content p-3">
 								<div class="tab-pane active" id="edit">
+									<%
+									String id = request.getParameter("id");
+									String firstName = request.getParameter("firtName");
+									String lastName = request.getParameter("lastName");
+									String username = request.getParameter("username");
+									String email = request.getParameter("email");
+									String mobile = request.getParameter("mobile");
+									String password = request.getParameter("password");
+									%>
+									<form action="${pageContext.request.contextPath}/deleteUser" method="post">
 									<div class="form-group row">
 										<label class="col-lg-3 col-form-label form-control-label">User
 											ID </label>
 										<div class="col-lg-9">
-											<input class="form-control" type="text" value="<%= id %>"
+											<input class="form-control" type="text" name= "id" value="<%=id%>"
 												readonly>
 										</div>
 									</div>
@@ -188,56 +189,58 @@
 											NAME</label>
 										<div class="col-lg-9">
 											<input class="form-control" type="text" name="firstName"
-												value="<%=firstName%>">
+												value="<%=firstName%>" readonly>
 										</div>
 									</div>
 									<div class="form-group row">
 										<label class="col-lg-3 col-form-label form-control-label">Last
 											Name</label>
 										<div class="col-lg-9">
-											<input class="form-control" type="text"
-												value="<%=lastName%>">
+											<input class="form-control" type="text" name="lastName"
+												value="<%=lastName%>" readonly>
 										</div>
 									</div>
 									<div class="form-group row">
 										<label class="col-lg-3 col-form-label form-control-label">User
 											Name</label>
 										<div class="col-lg-9">
-											<input class="form-control" type="text"
-												value="<%= username %>">
+											<input class="form-control" type="text" name="username"
+												value="<%=username%>" readonly>
 										</div>
 									</div>
 									<div class="form-group row">
 										<label class="col-lg-3 col-form-label form-control-label">Email</label>
 										<div class="col-lg-9">
-											<input class="form-control" type="email" value="<%= email %>"
-											>
+											<input class="form-control" type="email" value="<%=email%>"
+												readonly>
 										</div>
 									</div>
 									<div class="form-group row">
 										<label class="col-lg-3 col-form-label form-control-label">Mobile</label>
 										<div class="col-lg-9">
-											<input class="form-control" type="text" value="<%= mobile %>"
-												>
+											<input class="form-control" type="text" value="<%=mobile%>" name="email"
+												readonly>
 										</div>
 									</div>
 									<div class="form-group row">
 										<label class="col-lg-3 col-form-label form-control-label">Password</label>
 										<div class="col-lg-9">
-											<input class="form-control" type="password"
-												value="<%= password %>">
+											<input class="form-control" type="password" name="password"
+												value="<%=password%>" readonly>
 										</div>
 									</div>
+								
 									<div class="form-group row">
 										<label class="col-lg-3 col-form-label form-control-label"></label>
 										<div class="col-lg-9">
-											<button type="submit"> Submit</button>
+										<input type="submit" name="submit" value="submit">
+											 
+											</a>
 										</div>
 									</div>
+									</form>
 								</div>
 							</div>
-							</form>
-
 						</div>
 					</div>
 				</div>

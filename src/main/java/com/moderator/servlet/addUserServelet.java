@@ -31,7 +31,7 @@ public class addUserServelet extends HttpServlet {
 
         if (isSuccess) {
             // Redirect to login.jsp
-        	RequestDispatcher dis = request.getRequestDispatcher("/views/admin/profile.jsp");
+        	RequestDispatcher dis = request.getRequestDispatcher("/views/admin/index.jsp");
 	    	dis.forward(request, response);
 
         } else {
