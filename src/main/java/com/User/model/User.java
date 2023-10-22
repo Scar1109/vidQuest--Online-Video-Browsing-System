@@ -1,4 +1,4 @@
- package com.User.util;
+ package com.User.model;
 
 public class User {
 	
@@ -11,8 +11,7 @@ public class User {
 	private String pwd;
 	private String username;
 	
-	public User( String firstName, String lastName, String email, String pNo, String pwd,
-			String username) {
+	public User( String firstName, String lastName, String email, String pNo, String pwd,String username) {
 		
 		
 		this.firstName = firstName;
@@ -25,10 +24,6 @@ public class User {
 	}
 	
 	// Getters and setters
-
-	public User() {
-		// TODO Auto-generated constructor stub
-	}
 
 	public String getFirstName() {
 		return firstName;
@@ -45,7 +40,7 @@ public class User {
 	public String getpNo() {
 		return pNo;
 	}
-	
+
 	public String getPwd() {
 		return pwd;
 	}
@@ -53,6 +48,8 @@ public class User {
 	public String getUsername() {
 		return username;
 	}
+
+	
 
 	
 

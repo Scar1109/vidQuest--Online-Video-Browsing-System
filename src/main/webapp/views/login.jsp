@@ -44,6 +44,7 @@
                 <span>Don't have an account? <a href="#" onclick="register()">Sign Up</a></span>
                 <header>Login</header>
             </div>
+           
             <div class="input-box">
                 <input type="text" class="input-field" placeholder="Username or Email">
                 <i class="bx bx-user"></i>
@@ -67,43 +68,46 @@
         </div>
 
         <!------------------- registration form -------------------------->
-       
+      
         <div class="register-container" id="register">
             <div class="top">
                 <span>Have an account? <a href="#" onclick="login()">Login</a></span>
                 <header>Sign Up</header>
             </div>
+            <form action="UserControllerServlet" method="post">
             <div class="two-forms">
                 <div class="input-box">
-                    <input type="text" class="input-field" placeholder="Firstname">
+                    <input type="text" name="first-name"  class="input-field" placeholder="Firstname">
                     <i class="bx bx-user"></i>
                 </div>
                 <div class="input-box">
-                    <input type="text" class="input-field" placeholder="Lastname">
+                    <input type="text" name="last-name" class="input-field" placeholder="Lastname">
                     <i class="bx bx-user"></i>
                 </div>
             </div>
             <div class="input-box">
-                <input type="text" class="input-field" placeholder="Email">
+                <input type="text" name="email" class="input-field" placeholder="Email">
                 <i class="bx bx-envelope"></i>
             </div>
             <div class="two-forms">
                 <div class="input-box">
-                    <input type="text" class="input-field" placeholder="Phone Number">
+                    <input type="text" name="pno" class="input-field" placeholder="Phone Number">
                     <i class="fa fa-phone"></i>
                 </div>
                 <div class="input-box">
-                    <input type="text" class="input-field" placeholder="Username">
+                    <input type="text" name="username" class="input-field" placeholder="Username">
                     <i class="bx bx-user"></i>
                 </div>
             </div>
             <div class="input-box">
-                <input type="password" class="input-field" placeholder="Password">
+                <input type="password" name = "pwd" class="input-field" placeholder="Password">
                 <i class="bx bx-lock-alt"></i>
             </div>
             <div class="input-box">
-                <input type="submit" class="submit" value="Register">
+                <input type="submit" name = "submit"  class="submit" value="Register">
             </div>
+            
+            </form>
             <div class="two-col">
                 <div class="one">
                     <input type="checkbox" id="register-check">

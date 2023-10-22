@@ -1,29 +1,35 @@
 package com.User.servelet;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.User.model.User;
 import com.User.util.viewUserDButil;
 
-@WebServlet("/userservelet")
-public class userservelet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
- 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		 // Retrieve customer data from the database using a DAO class
-		viewUserDButil customerDao =new viewUserDButil();
-		
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
 
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
+
+
+@WebServlet("/viewUserServelet")
+public class viewUserServelet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+   
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		 // Retrieve customer data from the database using a DAO class
+		viewUserDButil userDao = new viewUserDButil();
+        List<User> users = userDao.getAllUsers();
+
+	 // Pass the customer data to the JSP view
+    request.setAttribute("user", users);
+    request.getRequestDispatcher("userView.jsp").forward(request, response);
+}
+
 
 }

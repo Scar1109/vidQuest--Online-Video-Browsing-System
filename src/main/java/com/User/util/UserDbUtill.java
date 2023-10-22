@@ -5,9 +5,11 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+import com.User.model.User;
+customerdb
 
-public class UserDbUtill {
-	private static final String JDBC_URL = "jdbc:mysql://localhost:3306/customerdb";
+public class UserDbUtill{
+	private static final String JDBC_URL = "jdbc:mysql://localhost:3306/vidquest";
     private static final String JDBC_USER = "root";
     private static final String JDBC_PASSWORD = "";
 
