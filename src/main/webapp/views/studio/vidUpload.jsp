@@ -106,7 +106,7 @@
 										<option value="Nature">Nature</option>
 										<option value="Food">Food</option>
 										<option value="Technology">Technology</option>
-										<option value="Peoples">Peoples</option>
+										<option value="Peoples">People</option>
 										<option value="Animals">Animals</option>
 									</select>
 								</div>
@@ -136,14 +136,9 @@
 								<select name="visibility">
 									<option value="Public">Public</option>
 									<option value="Private">Private</option>
-									<option selected value="Unlisted">Unlisted</option>
+									<option selected value="unlisted">Unlisted</option>
 								</select>
 							</div>
-
-
-
-
-
 							<div class="submit-section">
 								<input type="submit" value="Upload">
 							</div>
@@ -163,7 +158,6 @@
 		src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 	<script src="asserts/creator.js"></script>
 	<script src="asserts/upload.js"></script>
-
 </body>
 
 </html>

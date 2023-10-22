@@ -1,5 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@page import="com.comment.model.comment"%>
+<%@page import="java.util.List"%>
+
+
 <!DOCTYPE html>
-<!-- saved from url=(0066)https://pixabay.com/videos/mount-fuji-morning-clouds-japan-173522/ -->
 <html lang="en" style="--vh: 7.07px;">
 <head>
 
@@ -8,7 +12,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <link rel="stylesheet"
-	href="./videoPlayer/asserts/client.58bcd74d963009b6d099.css"
+	href="views/videoPlayer/asserts/client.58bcd74d963009b6d099.css"
 	media="all">
 	<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="videoPlayer/asserts/mystyles.css">
@@ -31,7 +35,7 @@
 									<div class="container--pycH7" data-w="3840" data-h="2160"
 										style="padding-bottom: min(56.25%, 64vh, 2160px); width: min(3840px, 113.778vh, 100vw, 100%); max-height: 2160px;">
 										<iframe id="vimeoIframe"
-											src="videoPlayer/web-video-player/player.html"
+											src="views/videoPlayer/web-video-player/player.html"
 											allowfullscreen="" data-ready="true"></iframe>
 									</div>
 								</div>
@@ -52,7 +56,7 @@
 											<div>
 												<div class="container--RXy5A default--iYncq">
 													<img
-														src="./videoPlayer/asserts/orange.svg"
+														src="views/videoPlayer/asserts/orange.svg"
 														class="avatar--+DPkq">
 												</div>
 											</div>
@@ -60,10 +64,21 @@
 												<div class="inputSection--l-yAT">
 													<div class="textInputContainer--UKemN">
 														<div class="textInputField--xIcYM">
-															<textarea
+														
+														
+														<form id= "comment" action = "${pageContext.request.contextPath}/commentservlet" method= "post"  >
+														     <textarea
 																class="textInput--yG-0W textArea---vB9y input--8uJYQ"
+																name ="coms"
 																placeholder="Add your comments..."
 																style="height: 19px !important;"></textarea>
+																
+																<input type = "submit" value = "Post">
+														
+														</form>	
+														
+															
+																
 														</div>
 													</div>
 												</div>
@@ -71,13 +86,32 @@
 											</div>
 										</div>
 									</div>
+									
+									
+									
 									<!-- Comment section -->
 									<div class="commentsList--lpM12 scrolling--Ic5bb">
+									
+									 	
+									<%
+									try {
+										
+									
+										
+                                        List<comment> Comments = (List<comment>) request.getAttribute("Comment");//customers means comment
+                                    	if (Comments != null && ! Comments.isEmpty()) {
+                                        
+                                        for (comment comm : Comments) {
+                                        	
+                                        	
+                                     %>
+                                     
+                         
 										<div class="commentContainer--wcqd2">
 											<div>
 												<a class="container--RXy5A default--iYncq hoverState--vIDz9"
 													href="https://pixabay.com/users/u_4bw9j0oljj-40017775/"><img
-													src="./videoPlayer/asserts/green.svg"
+													src="views/videoPlayer/asserts/green.svg"
 													class="avatar--+DPkq"></a>
 											</div>
 											<div class="commentInner--ppayY">
@@ -95,22 +129,43 @@
 															<div class="dropdown" id="dropdown-menu">
 																<ul>
 																	<li><a href="#" id="edit-option">Edit</a></li>
-																	<li><a href="#" id="delete-option">Delete</a></li>
+																	<li><a href= "<%=request.getContextPath()%>/DeleteCommentServlet?commentId=<%= comm.getcommentID() %>">Delete</a></li>
 																</ul>
 															</div>
 															<!-- End of dropdown menu -->
 														</div>
 													</div>
 												</div>
-												<div class="text--Ja8D3">thanks</div>
+												<div class="text--Ja8D3"><%=comm.getComment() %></div>
 											</div>
 											
 										</div>
+										
+										<%
+                                 
+                                        }
+                                    	} else {
+                                    		
+                                    		%>                    		
+                                    		<div class="commentContainer--wcqd2"> <div class="text--Ja8D3">NO comments</div>   </div>
+                                    		<% 
+                                    	}
+                                        }
+									     catch (Exception e) {
+									    // Log the exception
+									    e.printStackTrace();
+									                        }
+									
+                                       %>
+										
+										
+										
+										
 										<div class="commentContainer--wcqd2">
 											<div>
 												<a class="container--RXy5A default--iYncq hoverState--vIDz9"
 													href="https://pixabay.com/users/u_oql2bnz4gy-39676539/"><img
-													src="./videoPlayer/asserts/yellow.svg"
+													src="views/videoPlayer/asserts/yellow.svg"
 													class="avatar--+DPkq"></a>
 											</div>
 											<div class="commentInner--ppayY">
@@ -139,7 +194,7 @@
 											<div>
 												<a class="container--RXy5A default--iYncq hoverState--vIDz9"
 													href="https://pixabay.com/users/u_q46lh2u7s7-39675521/"><img
-													src="./videoPlayer/asserts/orange.svg"
+													src="views/videoPlayer/asserts/orange.svg"
 													class="avatar--+DPkq"></a>
 											</div>
 											<div class="commentInner--ppayY">
@@ -168,7 +223,7 @@
 											<div>
 												<a class="container--RXy5A default--iYncq hoverState--vIDz9"
 													href="https://pixabay.com/users/u_q46lh2u7s7-39675521/"><img
-													src="./videoPlayer/asserts/orange.svg"
+													src="views/videoPlayer/asserts/orange.svg"
 													class="avatar--+DPkq"></a>
 											</div>
 											<div class="commentInner--ppayY">
@@ -197,7 +252,7 @@
 											<div>
 												<a class="container--RXy5A default--iYncq hoverState--vIDz9"
 													href="https://pixabay.com/users/u_diaunvisfx-34809769/"><img
-													src="./videoPlayer/asserts/yellow.svg"
+													src="views/videoPlayer/asserts/yellow.svg"
 													class="avatar--+DPkq"></a>
 											</div>
 											<div class="commentInner--ppayY">
@@ -222,7 +277,7 @@
 												<div class="text--Ja8D3">Thanks</div>
 											</div>
 										</div> 
-									</div> 
+									</div>  
 									<!--  End of comment section -->
 								</div>
 								<!-- Tags Section -->
@@ -321,7 +376,7 @@
 														<a class="container--RXy5A default--iYncq avatar--4wZk+"
 															href="#"
 															target="_blank"><img
-															src="./videoPlayer/asserts/07-49-26-304_96x96.jpg"
+															src="views/videoPlayer/asserts/07-49-26-304_96x96.jpg"
 															class="avatar--+DPkq" alt="Kanenori"></a>
 													</div>
 													<div class="usernameFollowersContainer--0odKZ">
@@ -356,9 +411,12 @@
 			</div>
 		</div>
 		<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-		<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+		<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"> </script>
+		
 		<script>
+		
 			document.addEventListener("DOMContentLoaded", function() {
+				
 			const dropdownButton = document.getElementById("dropdown-button");
 			const dropdownMenu = document.getElementById("dropdown-menu");
 			const editOption = document.getElementById("edit-option");
