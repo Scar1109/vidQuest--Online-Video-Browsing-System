@@ -7,16 +7,16 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="asserts/creator.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/views/studio/asserts/creator.css">
 <title>vidQuest</title>
-<link rel="stylesheet" href="asserts/upload.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/views/studio/asserts/upload.css">
 
 </head>
 
 <body>
 	<nav>
 		<div class="profileImg">
-			<img src="asserts/MyLogo.png" alt="">
+			<img src="${pageContext.request.contextPath}/views/studio/asserts/MyLogo.png" alt="">
 		</div>
 
 		<div class="profName">
@@ -25,14 +25,14 @@
 
 		<div class="menu-items">
 			<ul class="navLinks">
-				<li class="navList"><a href="#"> <ion-icon
+				<li class="navList"><a href="${pageContext.request.contextPath}/views/studio/dashboard.jsp"> <ion-icon
 							name="apps-outline"></ion-icon> <span class="links">Dashboard</span>
 				</a></li>
 				<li class="navList active"><a href="#"> <ion-icon
 							name="cloud-upload-outline"></ion-icon> <span class="links">Create
 							New</span>
 				</a></li>
-				<li class="navList"><a href="#"> <ion-icon
+				<li class="navList"><a href="<%=request.getContextPath()%>/retrieveVideoServlet"> <ion-icon
 							name="videocam-outline"></ion-icon> <span class="links">Contents</span>
 				</a></li>
 				<li class="navList"><a href="#"> <ion-icon
@@ -71,13 +71,13 @@
 			</button>
 			<div class="logo dark-logo">
 				<a href="#"><div class="logo-image">
-						<img src="asserts/logoWhite.png" alt="">
+						<img src="${pageContext.request.contextPath}/views/studio/asserts/logoWhite.png" alt="">
 					</div></a>
 			</div>
 			<div class="logo light-logo">
 				<a href="#"></a>
 				<div class="logo-image">
-					<img src="asserts/logoBlack.png" alt="">
+					<img src="${pageContext.request.contextPath}/views/studio/asserts/logoBlack.png" alt="">
 				</div>
 				</a>
 			</div>
@@ -106,7 +106,7 @@
 										<option value="Nature">Nature</option>
 										<option value="Food">Food</option>
 										<option value="Technology">Technology</option>
-										<option value="Peoples">People</option>
+										<option value="People">People</option>
 										<option value="Animals">Animals</option>
 									</select>
 								</div>
@@ -134,8 +134,8 @@
 
 							<div class="visibility-section">
 								<select name="visibility">
-									<option value="Public">Public</option>
-									<option value="Private">Private</option>
+									<option value="public">Public</option>
+									<option value="private">Private</option>
 									<option selected value="unlisted">Unlisted</option>
 								</select>
 							</div>
@@ -156,8 +156,8 @@
 		src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule
 		src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-	<script src="asserts/creator.js"></script>
-	<script src="asserts/upload.js"></script>
+	<script src="${pageContext.request.contextPath}/views/studio/asserts/creator.js"></script>
+	<script src="${pageContext.request.contextPath}/views/studio/asserts/upload.js"></script>
 </body>
 
 </html>
