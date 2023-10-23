@@ -86,9 +86,7 @@
 											</div>
 										</div>
 									</div>
-									
-									
-									
+																		
 									<!-- Comment section -->
 									<div class="commentsList--lpM12 scrolling--Ic5bb">
 									

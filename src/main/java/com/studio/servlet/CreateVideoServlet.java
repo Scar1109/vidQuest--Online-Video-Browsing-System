@@ -9,21 +9,18 @@ import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.Part;
 
 import com.studio.model.video;
-import com.studio.utill.VideoUtil;
+import com.studio.utill.videoUtil;
 
 import java.io.IOException;
 import java.util.UUID;
 import java.io.File;
 
+@SuppressWarnings("serial")
 @WebServlet("/createVideoServlet")
 @MultipartConfig
-public class CreateVideoServlet extends HttpServlet {
+public class createVideoServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		/*
-		 * String uploadPath =
-		 * "C:\\Users\\ASUS ROG STRIX\\Documents\\Projects\\vidQuest\\src\\main\\webapp\\videos"
-		 * ;
-		 */
+		
     	String videouploadPath = getServletContext().getRealPath("/").replace(".metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\", "") + "\\src\\main\\webapp\\uploads\\videos";
     	String thumbnailploadPath = getServletContext().getRealPath("/").replace(".metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\", "") + "\\src\\main\\webapp\\uploads\\thumbnails";
 
@@ -39,17 +36,16 @@ public class CreateVideoServlet extends HttpServlet {
         Part thumbnailPart = request.getPart("thumbnail");
         thumbnailPart.write(thumbnailploadPath + File.separator + uniqueThumbnailName);
 
-        video videol = new video();
-        videol.setTitle(request.getParameter("title"));
-        videol.setSubTitle(request.getParameter("sub-title"));
-        videol.setUserID(1);
-        videol.setDescription(request.getParameter("description"));
-        videol.setThumbnail(uniqueThumbnailName);
-        videol.setVideo(uniqueVideoName);
-        videol.setCategory(request.getParameter("category"));
-        videol.setVisibility(request.getParameter("visibility"));
+        video videol = new video(request.getParameter("title"),
+        		request.getParameter("sub-title"),
+        		1,
+        		request.getParameter("description"),
+        		uniqueThumbnailName,
+        		uniqueVideoName,
+        		request.getParameter("category"),
+        		request.getParameter("visibility"));
 
-        if (VideoUtil.createVideo(videol)) {
+        if (videoUtil.createVideo(videol)) {
         	response.sendRedirect("views/studio/dashboard.jsp");
         } else {
             // Data insertion failed
