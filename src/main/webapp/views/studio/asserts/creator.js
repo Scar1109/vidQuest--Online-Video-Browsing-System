@@ -44,27 +44,4 @@ darkToggle.addEventListener('click', () => {
     body.classList.toggle('dark');
     toggleLogo(); // Call the function to toggle the logo
 });
-
-const fetchedData = fetch("./data.json")
-    .then((data) => {
-        return data.json();
-    })
-    .then(response => {
-        console.log(response);
-        const items = response.item;
-        let Name = "";
-        let Email = "";
-        let Joined = "";
-
-        items.forEach((element) => {
-            Name += `<span class="data-list">${element.name}</span>`;
-            Email += `<span class="data-list">${element.email}</span>`;
-            Joined += `<span class="data-list">${element.joined}</span>`;
-        });
-        names.innerHTML += Name;
-        email.innerHTML += Email;
-        joined.innerHTML += Joined;
-    });
-    
-    
     

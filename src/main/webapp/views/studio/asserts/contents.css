@@ -1,0 +1,181 @@
+@charset "ISO-8859-1";
+
+body.dark {
+    --primary-color: #3a3b3c;
+    --nav-color: #181919;
+    --dash-color: #262629;
+    --logo-color: #ddd;
+    --text-color: #ccc;
+    --text-color-light: #ccc;
+    --white: #aaa;
+    --border-color: #404040;
+    --toggle-color: #ddd;
+    --box1-color: #3a3b3c;
+    --box2-color: #3a3b3c;
+    --box3-color: #3a3b3c;
+    --title-icon-color: #ddd;
+    --table-color: #333;
+}
+
+:root {
+    --primary-color: #447562;
+    --nav-color: #656f79;
+    --dash-color: #fff;
+    --logo-color: #fff;
+    --text-color: #000;
+    --text-color-light: #333;
+    --white: #fff;
+    --border-color: #ccc;
+    --toggle-color: #fff;
+    --box1-color: #09925d;
+    --box2-color: #c1d5a4;
+    --box3-color: #ffd39a;
+    --title-icon-color: #fff;
+    --hover-color: rgba(255, 64, 0, 0.6);
+    --table-color: #656f79;
+
+    --time-03: all 0.3s linear;
+    --time-02: all 0.2s linear;
+}
+
+
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: none;
+}
+
+.custom-table th, .custom-table td {
+    padding: 5px;
+    text-align: left;
+    vertical-align: top;
+    border: none;
+    width: 200px;
+}
+
+.custom-table th {
+    color: var(--text-color);
+    font-size: 15px;
+}
+
+.custom-table .thumbnail {
+    margin: 5px 0px;
+    max-width: 150px;
+    max-height: 150px;
+    border-radius: 5px;
+    vertical-align: middle;
+}
+
+.custom-table .title {
+    font-size: 13px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    color: var(--text-color);
+}
+
+.custom-table .description {
+    font-size: 10px;
+    margin-top: 10px;
+    color: var(--text-color);
+    max-width: 400px;
+    max-height: 2.4em;
+    line-height: 1.2em;
+    overflow: hidden;
+    white-space: normal;
+    text-overflow: ellipsis !important; ;
+}
+
+.custom-table td {
+    margin-top: 5px;
+    font-size: 14px;
+    color: var(--text-color);
+}
+.custom-table .public {
+    color: #27ae60;
+}
+
+.custom-table .unlisted {
+    color: #e74c3c;
+}
+
+.custom-table .private {
+    color: #f39c12;
+}
+
+.custom-table .approved {
+    color: #2ecc71;
+}
+
+.custom-table .pending {
+    color: #f39c12;
+}
+
+.custom-table tr {
+    border-top: 1px solid var(--table-color); 
+    border-bottom: 1px solid var(--table-color); 
+}
+
+.custom-table tr:first-child {
+    border-top: none;
+}
+
+.custom-table tr:last-child {
+    border-bottom: none;
+}
+
+.custom-table .title, .custom-table .description {
+    max-width: 400px;
+}
+
+.custom-table th.details-th, .custom-table td.details-td {
+    width: 40%; 
+}
+
+.custom-table a {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    padding: 1px;
+    font-size: 22px;
+    background-color: var(--primary-color); /* Background color for buttons */
+    color: var(--text-color); /* Text color for buttons */
+    text-decoration: none;
+    border-radius: 5px; /* Rounded corners */
+    margin: 5px; /* Add some spacing between the buttons */
+    text-align: center;
+    vertical-align: middle;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.custom-table a:hover {
+    background-color: var(--text-color); /* Background color on hover */
+    color: var(--primary-color); /* Text color on hover */
+}
+
+p.error-msg {
+	color: var(--text-color);
+	margin-left: 50px;
+}
+
+@media screen and (max-width: 768px) {
+    .custom-table td, .custom-table th {
+        width: auto; /* Allow columns to resize */
+        display: block;
+        text-align: left;
+    }
+
+    .custom-table .thumbnail {
+        max-width: 100%; /* Make images responsive */
+        height: auto;
+    }
+
+    .custom-table .title, .custom-table .description {
+        max-width: 100%; /* Full width for text content */
+    }
+
+    .custom-table a {
+        width: auto;
+        height: auto;
+        font-size: 16px;
+    }
+}
