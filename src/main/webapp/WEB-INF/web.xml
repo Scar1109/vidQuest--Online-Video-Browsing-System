@@ -69,5 +69,14 @@
         <servlet-name>UpdateVideoStatusServlet</servlet-name>
         <url-pattern>/UpdateStatus</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>RemoveVideoServlet</servlet-name>
+        <servlet-class>com.moderator.servlet.RemoveVideoServlet</servlet-class>
+    </servlet> 
+    <servlet-mapping>
+        <servlet-name>RemoveVideoServlet</servlet-name>
+        <url-pattern>/removevideo</url-pattern>
+    </servlet-mapping>
               
 </web-app>

@@ -17,19 +17,15 @@
 <link href="assets/css/pace.min.css" rel="stylesheet" />
 <script src="assets/js/pace.min.js"></script>
 <!--favicon-->
-<link rel="icon" href="assets/images/favicon.ico"
-	type="image/x-icon">
+<link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
 <!-- simplebar CSS-->
-<link href="assets/plugins/simplebar/css/simplebar.css"
-	rel="stylesheet" />
+<link href="assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
 <!-- Bootstrap core CSS-->
 <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
 <!-- animate CSS-->
-<link href="assets/css/animate.css" rel="stylesheet"
-	type="text/css" />
+<link href="assets/css/animate.css" rel="stylesheet" type="text/css" />
 <!-- Icons CSS-->
-<link href="assets/css/icons.css" rel="stylesheet"
-	type="text/css" />
+<link href="assets/css/icons.css" rel="stylesheet" type="text/css" />
 <!-- Sidebar CSS-->
 <link href="assets/css/sidebar-menu.css" rel="stylesheet" />
 <!-- Custom Style-->
@@ -51,21 +47,24 @@
 		<div id="sidebar-wrapper" data-simplebar=""
 			data-simplebar-auto-hide="true">
 			<div class="brand-logo">
-				<a href="index.html"> <img
-					src="assets/images/logo-icon.png" class="logo-icon"
-					alt="logo icon">
+				<a href="index.html"> <img src="assets/images/logo-icon.png"
+					class="logo-icon" alt="logo icon">
 					<h5 class="logo-text">VidQuest</h5>
 				</a>
 			</div>
 			<ul class="sidebar-menu do-nicescrol">
 				<li class="sidebar-header">MAIN NAVIGATION</li>
-				<li><a href="index.html"> <i
+				<li><a href="views/admin/index.html"> <i
 						class="zmdi zmdi-view-dashboard"></i> <span>Dashboard</span>
 				</a></li>
-				<li><a href="forms.html"> <i
+				<li><a href="views/admin/forms.html"> <i
 						class="zmdi zmdi-format-list-bulleted"></i> <span>Add user</span>
 				</a></li>
-				<li><a href="tables.html"> <i class="zmdi zmdi-grid"></i> <span>User-Details</span>
+				<li><a href="${pageContext.request.contextPath}/getuser"> <i
+						class="zmdi zmdi-grid"></i> <span>User-Details</span>
+				</a></li>
+				<li><a href="${pageContext.request.contextPath}/getvideo"> <i
+						class="zmdi zmdi-grid"></i> <span>Video-Details</span>
 				</a></li>
 				<li><a href="profile.html"> <i class="zmdi zmdi-face"></i>
 						<span>Profile</span>
@@ -183,8 +182,8 @@
 											<label class="col-lg-3 col-form-label form-control-label">User
 												ID </label>
 											<div class="col-lg-9">
-												<input class="form-control" type="text" value="${usr.id}" name="id"
-													readonly>
+												<input class="form-control" type="text" value="${usr.id}"
+													name="id" readonly>
 											</div>
 										</div>
 										<div class="form-group row">
@@ -250,8 +249,7 @@
 												class="btn btn-primary" name="update" value="Update">
 											</a>
 
-											<c:url value="/views/admin/DeleteUser.jsp"
-												var="userdelete">
+											<c:url value="/views/admin/DeleteUser.jsp" var="userdelete">
 												<c:param name="id" value="${id}" />
 												<c:param name="firstName" value="${firstName}" />
 												<c:param name="lastName" value="${lastName}" />

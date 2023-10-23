@@ -70,6 +70,9 @@
 				<li><a href="${pageContext.request.contextPath}/getuser"> <i
 						class="zmdi zmdi-grid"></i> <span>User-Details</span>
 				</a></li>
+				<li><a href="${pageContext.request.contextPath}/getvideo"> <i
+						class="zmdi zmdi-grid"></i> <span>Video-Details</span>
+				</a></li>
 
 				<li><a href="views/admin/profile.jsp"> <i
 						class="zmdi zmdi-face"></i> <span>Profile</span>
@@ -229,7 +232,7 @@
 
 
 											<tr>
-												<td>${vid.title}</td>
+												<td id="video_${vid.videoID}">${vid.title}</td>
 												<td>${vid.subTitle}</td>
 												<td>${vid.videoID}</td>
 												<td>${vid.userID}</td>
@@ -244,6 +247,8 @@
 												<td>
 													<button type="button" class="btn btn-light"
 														onclick="acceptVideo(${vid.videoID})">Accept</button>
+													<button type="button" class="btn btn-danger"
+														onclick="removeVideo(${vid.videoID})">Remove</button>
 												</td>
 
 											</tr>
@@ -347,7 +352,46 @@
 	    });
 	}
 	
-	</script>
+	
+	function removeVideo(videoID) {
+	    if (confirm("Are you sure you want to remove this video?")) {
+	        // Send an AJAX request to the server to remove the video.
+	        $.ajax({
+	            type: "POST",
+	            url: "${pageContext.request.contextPath}/removevideo",
+	            data: { videoId: videoID },
+	            success: function(response) {
+	                if (response === "Video removed successfully") {
+	                    // Remove the row from the table.
+	                	$('#video_' + videoID).remove();
+	                }
+	            }
+	        });
+	    }
+	}
+	
+    function removeVideo(videoID) {
+        if (confirm("Are you sure you want to remove this video?")) {
+            // Send an AJAX request to the server to remove the video.
+            $.ajax({
+                type: "POST",
+                url: "${pageContext.request.contextPath}/removevideo",
+                data: { videoId: videoID },
+                success: function(response) {
+                    if (response === "Video removed successfully") {
+                        // Remove the row from the table.
+                        $('#video_' + videoID).remove();
+                        // Reload the page to reflect the changes
+                        location.reload();
+                    }
+                }
+            });
+        }
+    }
+    
+</script>
+
+
 	<!--End wrapper-->
 
 	<!-- Bootstrap core JavaScript-->

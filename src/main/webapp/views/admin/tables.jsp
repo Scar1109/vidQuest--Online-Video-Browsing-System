@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@page import="com.moderator.model.*"%>
 <%@page import="java.util.List"%>
-<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,15 +19,19 @@
 <link href="views/admin/assets/css/pace.min.css" rel="stylesheet" />
 <script src="views/admin/assets/js/pace.min.js"></script>
 <!--favicon-->
-<link rel="icon" href="views/admin/assets/images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="views/admin/assets/images/favicon.ico"
+	type="image/x-icon">
 <!-- simplebar CSS-->
-<link href="views/admin/assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
+<link href="views/admin/assets/plugins/simplebar/css/simplebar.css"
+	rel="stylesheet" />
 <!-- Bootstrap core CSS-->
 <link href="views/admin/assets/css/bootstrap.min.css" rel="stylesheet" />
 <!-- animate CSS-->
-<link href="views/admin/assets/css/animate.css" rel="stylesheet" type="text/css" />
+<link href="views/admin/assets/css/animate.css" rel="stylesheet"
+	type="text/css" />
 <!-- Icons CSS-->
-<link href="views/admin/assets/css/icons.css" rel="stylesheet" type="text/css" />
+<link href="views/admin/assets/css/icons.css" rel="stylesheet"
+	type="text/css" />
 <!-- Sidebar CSS-->
 <link href="views/admin/assets/css/sidebar-menu.css" rel="stylesheet" />
 <!-- Custom Style-->
@@ -54,22 +58,28 @@
 		<div id="sidebar-wrapper" data-simplebar=""
 			data-simplebar-auto-hide="true">
 			<div class="brand-logo">
-				<a href="index.html"> <img src="views/admin/assets/images/logo-icon.png"
-					class="logo-icon" alt="logo icon">
+				<a href="index.html"> <img
+					src="views/admin/assets/images/logo-icon.png" class="logo-icon"
+					alt="logo icon">
 					<h5 class="logo-text">VidQuest</h5>
 				</a>
 			</div>
 			<ul class="sidebar-menu do-nicescrol">
 				<li class="sidebar-header">MAIN NAVIGATION</li>
-				<li><a href="index.jsp"> <i
+				<li><a href="views/admin/index.jsp"> <i
 						class="zmdi zmdi-view-dashboard"></i> <span>Dashboard</span>
 				</a></li>
 
-				<li><a href="forms.jsp"> <i
+				<li><a href="views/admin/forms.jsp"> <i
 						class="zmdi zmdi-format-list-bulleted"></i> <span>Add user</span>
 				</a></li>
 
-				<li><a href="tables.jsp"> <i class="zmdi zmdi-grid"></i> <span>User-Details</span>
+				<li><a href="${pageContext.request.contextPath}/getuser"> <i
+						class="zmdi zmdi-grid"></i> <span>User-Details</span>
+				</a></li>
+
+				<li><a href="${pageContext.request.contextPath}/getvideo"> <i
+						class="zmdi zmdi-grid"></i> <span>Video-Details</span>
 				</a></li>
 
 				<li><a href="profile.jsp"> <i class="zmdi zmdi-face"></i> <span>Profile</span>
@@ -183,11 +193,11 @@
 											<th scope="col">Action</th>
 										</tr>
 									</thead>
-											 
-	
+
+
 									<tbody>
 										<c:forEach var="usr" items="${userDetails}">
-									
+
 											<c:set var="id" value="${usr.id}" />
 											<c:set var="firstName" value="${usr.firstName}" />
 											<c:set var="lastName" value="${usr.lastName}" />
@@ -197,20 +207,21 @@
 											<c:set var="email" value="${usr.email}" />
 											<c:set var="mobile" value="${usr.mobile}" />
 											<c:set var="password" value="${usr.password}" />
-										<tr>
-											<th scope="row">${usr.id}</th>	
-											<td>${usr.firstName}</td>
-											<td>${usr.lastName}</td>
-											<td>${usr.date}</td>
-											<td>${usr.time}</td>
-											<td>${usr.email}</td>
-											<td>${usr.mobile}</td>
-											<td>${usr.username}</td>
-											<td><button type="button" class="btn btn-outline-danger">Delete</button></td>
-										</tr>
+											<tr>
+												<th scope="row">${usr.id}</th>
+												<td>${usr.firstName}</td>
+												<td>${usr.lastName}</td>
+												<td>${usr.date}</td>
+												<td>${usr.time}</td>
+												<td>${usr.email}</td>
+												<td>${usr.mobile}</td>
+												<td>${usr.username}</td>
+												<td><button type="button"
+														class="btn btn-outline-danger">Delete</button></td>
+											</tr>
 										</c:forEach>
 									</tbody>
-									
+
 								</table>
 							</div>
 						</div>
@@ -236,7 +247,7 @@
 	<!--End Back To Top Button-->
 
 	<!--Start footer-->
-	
+
 	<!--End footer-->
 
 	<!--start color switcher-->
