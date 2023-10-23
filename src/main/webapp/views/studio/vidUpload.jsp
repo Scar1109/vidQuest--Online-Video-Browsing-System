@@ -106,7 +106,7 @@
 										<option value="Nature">Nature</option>
 										<option value="Food">Food</option>
 										<option value="Technology">Technology</option>
-										<option value="Peoples">People</option>
+										<option value="People">People</option>
 										<option value="Animals">Animals</option>
 									</select>
 								</div>
@@ -134,8 +134,8 @@
 
 							<div class="visibility-section">
 								<select name="visibility">
-									<option value="Public">Public</option>
-									<option value="Private">Private</option>
+									<option value="public">Public</option>
+									<option value="private">Private</option>
 									<option selected value="unlisted">Unlisted</option>
 								</select>
 							</div>
