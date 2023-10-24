@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-    <h1>  <a href="<%=request.getContextPath()%>/viewCommentServlet"> Logout </a></h1>
+    <h1>  <a href="<%=request.getContextPath()%>/viewCommentServlet"> Comment</a></h1>
+    
+     <h1>  <a href="<%=request.getContextPath()%>/viewUserServelet"> User </a></h1>
 </body>
 </html>
