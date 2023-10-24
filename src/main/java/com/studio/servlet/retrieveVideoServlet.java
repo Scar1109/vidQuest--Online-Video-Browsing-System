@@ -20,6 +20,7 @@ public class retrieveVideoServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		List<video> videos = null;
+		
 		try {
 			videos = videoUtil.getAllVideos();
 		} catch (Exception e) {

@@ -24,11 +24,11 @@ public class viewUserServelet extends HttpServlet {
 		
 		 // Retrieve user data from the database using a DAO class
 		viewUserDButil userDao = new viewUserDButil();
-        List<User> users = userDao.getAllUsers();
+        List<User> users = userDao.getuser(1);
 
 	 // Pass the user data to the JSP view
     request.setAttribute("user", users);
-    request.getRequestDispatcher("userView.jsp").forward(request, response);
+    request.getRequestDispatcher("views/profile/profie.jsp").forward(request, response);
 }
 
 
