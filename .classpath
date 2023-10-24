@@ -13,10 +13,10 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="C:/Users/supuni samarathunga/Desktop/JAR Files-20231001T113805Z-001/JAR Files/mysql-connector-java-5.1.48.jar"/>
-	<classpathentry kind="lib" path="C:/Users/supuni samarathunga/Desktop/JAR Files-20231001T113805Z-001/JAR Files/javax.servlet-3.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/supuni samarathunga/Desktop/JAR Files-20231001T113805Z-001/JAR Files/servlet-api.jar"/>
-	<classpathentry kind="lib" path="C:/Users/supuni samarathunga/Desktop/JAR Files-20231001T113805Z-001/JAR Files/jstl-1.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/supuni samarathunga/Desktop/JAR Files-20231001T113805Z-001/JAR Files/jstl-api-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ASUS ROG STRIX/Documents/Projects/vidQuest/src/main/webapp/WEB-INF/lib/javax.servlet-3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ASUS ROG STRIX/Documents/Projects/vidQuest/src/main/webapp/WEB-INF/lib/jstl-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ASUS ROG STRIX/Documents/Projects/vidQuest/src/main/webapp/WEB-INF/lib/jstl-api-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ASUS ROG STRIX/Documents/Projects/vidQuest/src/main/webapp/WEB-INF/lib/mysql-connector-j-8.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ASUS ROG STRIX/Documents/Projects/vidQuest/src/main/webapp/WEB-INF/lib/servlet-api.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
