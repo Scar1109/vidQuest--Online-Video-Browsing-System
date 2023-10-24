@@ -1611,6 +1611,14 @@ a.text-white:focus {
   vertical-align: -17%;
 }
 
+.btn-submit-profile{
+	background-color: #11cdef;
+	padding: 10px 20px;
+	color: white;
+}
+
+
+
 img.logo {
 	width: 500px;
 	margin-left: -100px;
