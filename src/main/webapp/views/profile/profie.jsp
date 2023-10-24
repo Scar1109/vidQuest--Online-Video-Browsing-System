@@ -142,7 +142,7 @@
                   <h3 class="mb-0">My account</h3>
                 </div>
                 <div class="col-4 text-right">
-                  <a href="#!" class="btn btn-sm btn-primary">Edit Profile</a>
+                  <a href="#!" class="btn btn-sm btn-primary btn-edit-profile">Edit Profile</a>
                 </div>
               </div>
             </div>
@@ -192,6 +192,9 @@
                         <input type="password" id="input-last-name" class="form-control form-control-alternative" placeholder="Last name" value="<%=us.getPwd()%>" readonly>
                       </div>
                     </div>
+                    <div class="upload">
+                    <button type="submit" class="btn btn-sm btn-success btn-submit-profile" style="display: none;">Update</button>
+                    </div>
                   </div>
                 </div>
                 
@@ -206,6 +209,20 @@
       </div>
     </div>
   </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function() {
+    // Listen for a click on the "Edit Profile" button
+    $(".btn-edit-profile").on("click", function() {
+      // Remove the "readonly" attribute from the input fields
+      $("input[readonly]").removeAttr("readonly");
+
+      // Show the submit button
+      $(".btn-submit-profile").show();
+    });
+  });
+</script>
 
 
 </body>
