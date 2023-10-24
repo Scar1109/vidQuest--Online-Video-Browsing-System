@@ -86,9 +86,7 @@
 											</div>
 										</div>
 									</div>
-									
-									
-									
+																		
 									<!-- Comment section -->
 									<div class="commentsList--lpM12 scrolling--Ic5bb">
 									
@@ -129,7 +127,7 @@
 															<div class="dropdown" id="dropdown-menu">
 																<ul>
 																	<li><a href="#" id="edit-option">Edit</a></li>
-																	<li><a href="#" id="delete-option">Delete</a></li>
+																	<li><a href= "<%=request.getContextPath()%>/DeleteCommentServlet?commentId=<%= comm.getcommentID() %>">Delete</a></li>
 																</ul>
 															</div>
 															<!-- End of dropdown menu -->
@@ -277,7 +275,7 @@
 												<div class="text--Ja8D3">Thanks</div>
 											</div>
 										</div> 
-									</div> 
+									</div>  
 									<!--  End of comment section -->
 								</div>
 								<!-- Tags Section -->
@@ -411,9 +409,12 @@
 			</div>
 		</div>
 		<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-		<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+		<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"> </script>
+		
 		<script>
+		
 			document.addEventListener("DOMContentLoaded", function() {
+				
 			const dropdownButton = document.getElementById("dropdown-button");
 			const dropdownMenu = document.getElementById("dropdown-menu");
 			const editOption = document.getElementById("edit-option");

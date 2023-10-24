@@ -1,76 +1,89 @@
 package com.studio.model;
 
 public class video {
-    private String title;
-    private String subTitle;
-    private int userID;
-    private String description;
-    private String thumbnail;
-    private String video;
-    private String category;
-    private String visibility;
+	private int videoID;
+	private String title;
+	private String subTitle;
+	private int userID;
+	private String description;
+	private String thumbnail;
+	private String video;
+	private String category;
+	private String visibility;
+	private String status;
+	private String date;
 
-    public String getTitle() {
-        return title;
-    }
+	public video(String title, String subTitle, int userID, String description, String thumbnail, String video,
+			String category, String visibility) {
+		super();
+		this.title = title;
+		this.subTitle = subTitle;
+		this.userID = userID;
+		this.description = description;
+		this.thumbnail = thumbnail;
+		this.video = video;
+		this.category = category;
+		this.visibility = visibility;
+	}
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
+	public video(int videoID, String title, String subTitle, int userID, String description, String thumbnail,
+			String video, String category, String visibility, String status, String date) {
+		super();
+		this.videoID = videoID;
+		this.title = title;
+		this.subTitle = subTitle;
+		this.userID = userID;
+		this.description = description;
+		this.thumbnail = thumbnail;
+		this.video = video;
+		this.category = category;
+		this.visibility = visibility;
+		this.status = status;
+		this.date = date;
+	}
 
-    public String getSubTitle() {
-        return subTitle;
-    }
+	public int getVideoID() {
+		return videoID;
+	}
 
-    public void setSubTitle(String subTitle) {
-        this.subTitle = subTitle;
-    }
+	public String getTitle() {
+		return title;
+	}
 
-    public int getUserID() {
-        return userID;
-    }
+	public String getSubTitle() {
+		return subTitle;
+	}
 
-    public void setUserID(int userID) {
-        this.userID = userID;
-    }
+	public int getUserID() {
+		return userID;
+	}
 
-    public String getDescription() {
-        return description;
-    }
+	public String getDescription() {
+		return description;
+	}
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+	public String getThumbnail() {
+		return thumbnail;
+	}
 
-    public String getThumbnail() {
-        return thumbnail;
-    }
+	public String getVideo() {
+		return video;
+	}
 
-    public void setThumbnail(String thumbnail) {
-        this.thumbnail = thumbnail;
-    }
+	public String getCategory() {
+		return category;
+	}
 
-    public String getVideo() {
-        return video;
-    }
+	public String getVisibility() {
+		return visibility;
+	}
 
-    public void setVideo(String video) {
-        this.video = video;
-    }
+	public String getStatus() {
+		return status;
+	}
 
-    public String getCategory() {
-        return category;
-    }
+	public String getDate() {
+		return date;
+	}
 
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
-    public String getVisibility() {
-        return visibility;
-    }
-
-    public void setVisibility(String visibility) {
-        this.visibility = visibility;
-    }
 }

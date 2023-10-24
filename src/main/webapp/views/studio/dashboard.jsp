@@ -30,13 +30,13 @@
                     </a>
                 </li>
                 <li class="navList">
-                    <a href="#">
+                    <a href="${pageContext.request.contextPath}/views/studio/vidUpload.jsp">
                         <ion-icon name="cloud-upload-outline"></ion-icon>
                         <span class="links">Create New</span>
                     </a>
                 </li>
                 <li class="navList">
-                    <a href="#">
+                    <a href="<%=request.getContextPath()%>/retrieveVideoServlet"">
                         <ion-icon name="videocam-outline"></ion-icon>
                         <span class="links">Contents</span>
                     </a>
