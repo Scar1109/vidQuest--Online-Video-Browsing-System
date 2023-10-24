@@ -77,7 +77,6 @@
 														
 														</form>	
 														
-															
 																
 														</div>
 													</div>
@@ -86,7 +85,12 @@
 											</div>
 										</div>
 									</div>
+<<<<<<< Updated upstream
 																		
+=======
+			
+									
+>>>>>>> Stashed changes
 									<!-- Comment section -->
 									<div class="commentsList--lpM12 scrolling--Ic5bb">
 									
@@ -126,8 +130,10 @@
 															<!-- Add the dropdown menu here -->
 															<div class="dropdown" id="dropdown-menu">
 																<ul>
-																	<li><a href="#" id="edit-option">Edit</a></li>
-																	<li><a href= "<%=request.getContextPath()%>/DeleteCommentServlet?commentId=<%= comm.getcommentID() %>">Delete</a></li>
+																	<li><a href="javascript:void(0);" onclick="editComment(<%=comm.getcommentID()%>);" id="edit-option">Edit</a></li>
+							    
+																	<li><a href= "<%=request.getContextPath()%>/DeleteCommentServlet?commentId=<%= comm.getcommentID() %>"
+																	  id="delete-option">Delete</a></li>
 																</ul>
 															</div>
 															<!-- End of dropdown menu -->
@@ -138,8 +144,49 @@
 											</div>
 											
 										</div>
+												
+										
+										<div>
+										<div class="container--nL7QW">
+				
+											<div class="column--Hn2Ah">
+												<div class="inputSection--l-yAT">
+													<div class="textInputContainer--UKemN">
+														<div class="textInputField--xIcYM">
+														<form id= "comment" action = "${pageContext.request.contextPath}/commentservlet" method= "post"  >
+														     <textarea
+																class="textInput--yG-0W textArea---vB9y input--8uJYQ"
+																name ="coms"
+																placeholder="Add your comments..."
+																style="height: 19px !important;"></textarea>
+																
+																<input type = "submit" value = "Post">
+														
+														</form>	
+														
+																
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+										<form action="<%=request.getContextPath()%>/EditCommentServlet" method="post">
+																	
+																	<textarea
+																class="textInput--yG-0W textArea---vB9y input--8uJYQ"
+																name ="coms"
+																placeholder="Add your comments..." value="<%=comm.getComment()%>"
+																style="height: 19px !important;"></textarea>
+																<input name="commentID" value="<%=comm.getcommentID()%>" hidden = "">
+																<input type = "submit" value = "Post">
+														 </form>
+															
+										
+										
 										
 										<%
+										
                                  
                                         }
                                     	} else {
@@ -444,6 +491,6 @@
 
 			</script>
 			
-			
+	
 	</body>
 </html>
