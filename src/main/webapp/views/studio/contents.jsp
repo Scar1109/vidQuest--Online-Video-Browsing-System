@@ -16,6 +16,9 @@
 	href="${pageContext.request.contextPath}/views/studio/asserts//upload.css">
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/views/studio/asserts//contents.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/views/studio/asserts//popup.css">
+
 
 </head>
 
@@ -33,8 +36,9 @@
 
 		<div class="menu-items">
 			<ul class="navLinks">
-				<li class="navList"><a href="${pageContext.request.contextPath}/views/studio/dashboard.jsp"> <ion-icon
-							name="apps-outline"></ion-icon> <span class="links">Dashboard</span>
+				<li class="navList"><a
+					href="${pageContext.request.contextPath}/views/studio/dashboard.jsp">
+						<ion-icon name="apps-outline"></ion-icon> <span class="links">Dashboard</span>
 				</a></li>
 				<li class="navList"><a
 					href="${pageContext.request.contextPath}/views/studio/vidUpload.jsp">
@@ -74,7 +78,7 @@
 				<ion-icon name="search-outline"></ion-icon>
 				<input type="text" placeholder="Search">
 			</div>
-			<button class="button-39" role="button">
+			<button id="redirectButton" class="button-39" role="button">
 				<ion-icon name="videocam-outline"></ion-icon>
 				&nbsp; Create
 			</button>
@@ -123,12 +127,13 @@
 
 
 						<%
-						for (video vid : videos) {
+						for (int i = 0; i < videos.size(); i++) {
+						    video vid = videos.get(i);
 						%>
 
 						<tr>
 							<td class="thumbnail-s"><img
-src="${pageContext.request.contextPath}/uploads/thumbnails/<%=vid.getThumbnail()%>"
+								src="${pageContext.request.contextPath}/uploads/thumbnails/<%=vid.getThumbnail()%>"
 								alt="Thumbnail" class="thumbnail"></td>
 							<td class="details-td">
 								<div class="title"><%=vid.getTitle()%></div>
@@ -138,10 +143,46 @@ src="${pageContext.request.contextPath}/uploads/thumbnails/<%=vid.getThumbnail()
 							<td>10</td>
 							<td class="<%=vid.getStatus()%>"><%=vid.getStatus()%></td>
 							<td><%=vid.getDate()%><br>Published</td>
-							<td><a href=""><ion-icon name="create-outline"
-										"></ion-icon></a> <a href="${pageContext.request.contextPath}/deleteVideoServlet?videoId=<%=vid.getVideoID()%>" onclick="return confirm('Are you sure you want to delete this video?');"><ion-icon
+							<td><a id="update-button<%=i%>"><ion-icon
+										name="create-outline""></ion-icon></a> <a
+								href="${pageContext.request.contextPath}/deleteVideoServlet?videoId=<%=vid.getVideoID()%>"
+								onclick="return confirm('Are you sure you want to delete this video?');"><ion-icon
 										name="trash-outline"></ion-icon></a></td>
 						</tr>
+						<div id="editForm<%=i%>" class="editForm">
+							<form action="${pageContext.request.contextPath}/updateVideoServlet" method = "post" enctype="multipart/form-data">
+								<input placeholder="Title" name="title" type="text"
+									value="<%=vid.getTitle()%>" required /> <input
+									placeholder="Subtitle" name="subtitle" type="text" value="<%=vid.getSubTitle()%>"
+									required /> <input type="hidden" value="<%=vid.getVideoID()%>"
+									name="vid" /> <select class="selection-box" name="category">
+									<option value="Nature">Nature</option>
+									<option value="Food">Food</option>
+									<option value="Technology">Technology</option>
+									<option value="People">People</option>
+									<option value="Animals">Animals</option>
+								</select> <select class="selection-box" name="visibility">
+									<option value="public">Public</option>
+									<option value="private">Private</option>
+									<option selected value="unlisted">Unlisted</option>
+								</select>
+
+								<textarea name = "description" id="myTextarea<%=i%>" placeholder="Description" value="10"
+									required></textarea>
+									
+									<p class = "chnage-thumbnail"> Change Thumbnail </p>
+									<input class="thumbnail-input" type="file" name="thumbnail" value = "<%=vid.getThumbnail()%>"
+										accept=".jpg">
+								<script>
+  document.getElementById('myTextarea<%=i%>').value = '<%=vid.getDescription()%>';
+</script>
+
+
+
+								<input class="formBtn" type="submit" onclick="return confirm('Are you sure you want to edit this video?');" value="Update" />
+							</form>
+						</div>
+
 
 						<%
 						}
@@ -172,6 +213,48 @@ src="${pageContext.request.contextPath}/uploads/thumbnails/<%=vid.getThumbnail()
 		src="${pageContext.request.contextPath}/views/studio/asserts//creator.js"></script>
 	<script
 		src="${pageContext.request.contextPath}/views/studio/asserts//upload.js"></script>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+	<script>
+	$(function() {
+	    // Function to show the popup
+	    function showPopup(i) {
+	        $('#editForm' + i).fadeToggle();
+	        $('#background-overlay').fadeIn();
+	    }
+
+	    // Function to hide the popup
+	    function hidePopup(i) {
+	        $('#editForm' + i).fadeOut();
+	        $('#background-overlay').fadeOut();
+	    }
+
+	    // Add event listeners to each video's update button
+	    <% for (int i = 0; i < videos.size(); i++) { %>
+	    $('#update-button<%=i%>').click(function() {
+	        showPopup(<%=i%>);
+	    });
+	    <% } %>
+
+	    // Add event listeners to close buttons or other methods to hide the popup
+	    $('#close-button').click(function() {
+	        hidePopup();
+	    });
+
+	    $(document).mouseup(function(e) {
+	        // Loop through each video and check if the click is outside the corresponding form
+	        <% for (int i = 0; i < videos.size(); i++) { %>
+	        var container<%=i%> = $("#editForm<%=i%>");
+	        if (!container<%=i%>.is(e.target) && container<%=i%>.has(e.target).length === 0) {
+	            hidePopup(<%=i%>);
+	        }
+	        <% } %>
+	    });
+	});
+
+
+	</script>
 </body>
 
 </html>
