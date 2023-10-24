@@ -6,7 +6,7 @@ public class comment {
      private int UserID;
      private String comment;
      private int commentID;
-   //  private String username;
+    // private String username;
    
      //create constructors
 	public comment( int VideoID, int UserID, String comment , int commentID ) {
@@ -14,7 +14,8 @@ public class comment {
 		this.VideoID = VideoID;
 		this.UserID = UserID;
 		this.comment = comment;
-		this.commentID = commentID;		//this.username = username;
+		this.commentID = commentID;	
+	//	this.username = username;
 	}
 	
 	public comment( int VideoID, int UserID, String comment  ) {
@@ -22,10 +23,18 @@ public class comment {
 		this.VideoID = VideoID;
 		this.UserID = UserID;
 		this.comment = comment;
-		 	//this.username = username;
+	 
 	}
 	//create getters
 	 
+	 
+
+	public comment(int commentID, String comment) {
+		this.comment = comment;
+		this.commentID = commentID;
+		 
+	}
+
 	public int getVideoID() {
 		return VideoID;
 	}
@@ -44,10 +53,10 @@ public class comment {
 		return commentID;
 	}
 	
-	//public String getUsername() {
-	//	return username;
-	//}
- 
+// public String getUsername() {
+//	return username;
+//	}
+// 
 
 	 
  

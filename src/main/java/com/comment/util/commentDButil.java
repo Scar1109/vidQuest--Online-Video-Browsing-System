@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import com.comment.model.comment;
  
+ 
 
 //Add comments
  
@@ -99,7 +100,23 @@ import com.comment.model.comment;
 	     }
 
 	     
-	   
+//	  public static Username getusername(String username) {
+//		  
+//		  try {
+//			  
+//			    Class.forName("com.mysql.cj.jdbc.Driver");
+//	            Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
+//	            
+//	            String sql = "SELECT  FROM comment WHERE  = ?";
+//			  
+//			  
+//		  } catch (SQLException | ClassNotFoundException e) {
+//	            e.printStackTrace();
+//	            // If an exception occurs, return false to indicate failure
+//	            return false;
+//	        }
+//		  
+//	  } 
 	     
 	     
 	     
@@ -130,10 +147,58 @@ import com.comment.model.comment;
 		        }
 		}
 	     
-	     
+
+
+		
+		 public static void updateCustomer(comment comm) {
+			 
+		        Connection connection = null;
+		        PreparedStatement preparedStatement = null;
+
+		        try {
+		        	Class.forName("com.mysql.cj.jdbc.Driver");
+		            connection = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
+
+		            // Define the SQL update query
+		            String sql = "UPDATE comment comment = ?";
+
+		            // Create a PreparedStatement
+		            preparedStatement = connection.prepareStatement(sql);
+
+		            // Set the parameters for the query
+		            preparedStatement.setString(1, comm.getComment());
+		           
+		            // Execute the update query
+		            int rowsAffected = preparedStatement.executeUpdate();
+
+		            if (rowsAffected > 0) {
+		                // The update was successful
+		            } else {
+		                System.out.println("Error");
+		            }
+		        } catch (ClassNotFoundException | SQLException e) {
+		            e.printStackTrace();
+		            // Handle any SQL errors here
+		        } finally {
+		            // Close resources (connection and preparedStatement) in a finally block
+		            if (preparedStatement != null) {
+		                try {
+		                    preparedStatement.close();
+		                } catch (SQLException e) {
+		                    e.printStackTrace();
+		                }
+		            }
+		            if (connection != null) {
+		                try {
+		                    connection.close();
+		                } catch (SQLException e) {
+		                    e.printStackTrace();
+		                }
 	      
-	    
+		            }  
 	}
 
-
+		        }
+		 
+	}
 
