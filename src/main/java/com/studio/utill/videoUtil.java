@@ -75,4 +75,75 @@ public static boolean deleteVideo(int videoId) {
     }
 }
 
+public static boolean updateVideo(int vid, String title, String subtitle, String category, String visibility, String description, String thumb) {
+    Connection conn = null;
+    PreparedStatement preparedStatement = null;
+
+    try (Connection connection = DBConnectionUtil.getConnection()){
+    	
+        String sql = "UPDATE videos SET Title = ?, SubTitle=?, Category = ?, Visibility = ?, Description = ?, Thumbnail = ? WHERE VideoID = ?";
+        preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.setString(1, title);
+        preparedStatement.setString(2, subtitle);
+        preparedStatement.setString(3, category);
+        preparedStatement.setString(4, visibility);
+        preparedStatement.setString(5, description);
+        preparedStatement.setString(6, thumb);
+        preparedStatement.setInt(7, vid);
+
+        int rowsUpdated = preparedStatement.executeUpdate();
+
+        return rowsUpdated > 0;
+    } catch (Exception e) {
+        e.printStackTrace();
+        return false;
+    } finally {
+        try {
+            if (preparedStatement != null) {
+                preparedStatement.close();
+            }
+            if (conn != null) {
+                conn.close();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+public static boolean updateVideo(int vid, String title, String subtitle, String category, String visibility, String description) {
+    Connection conn = null;
+    PreparedStatement preparedStatement = null;
+
+    try (Connection connection = DBConnectionUtil.getConnection()){
+    	
+        String sql = "UPDATE videos SET Title = ?, SubTitle=?, Category = ?, Visibility = ?, Description = ? WHERE VideoID = ?";
+        preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.setString(1, title);
+        preparedStatement.setString(2, subtitle);
+        preparedStatement.setString(3, category);
+        preparedStatement.setString(4, visibility);
+        preparedStatement.setString(5, description);
+        preparedStatement.setInt(6, vid);
+
+        int rowsUpdated = preparedStatement.executeUpdate();
+
+        return rowsUpdated > 0;
+    } catch (Exception e) {
+        e.printStackTrace();
+        return false;
+    } finally {
+        try {
+            if (preparedStatement != null) {
+                preparedStatement.close();
+            }
+            if (conn != null) {
+                conn.close();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
 }

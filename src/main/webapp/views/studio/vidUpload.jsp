@@ -7,16 +7,20 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/views/studio/asserts/creator.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/views/studio/asserts/creator.css">
 <title>vidQuest</title>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/views/studio/asserts/upload.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/views/studio/asserts/upload.css">
 
 </head>
 
 <body>
 	<nav>
 		<div class="profileImg">
-			<img src="${pageContext.request.contextPath}/views/studio/asserts/MyLogo.png" alt="">
+			<img
+				src="${pageContext.request.contextPath}/views/studio/asserts/MyLogo.png"
+				alt="">
 		</div>
 
 		<div class="profName">
@@ -25,14 +29,16 @@
 
 		<div class="menu-items">
 			<ul class="navLinks">
-				<li class="navList"><a href="${pageContext.request.contextPath}/views/studio/dashboard.jsp"> <ion-icon
-							name="apps-outline"></ion-icon> <span class="links">Dashboard</span>
+				<li class="navList"><a
+					href="${pageContext.request.contextPath}/views/studio/dashboard.jsp">
+						<ion-icon name="apps-outline"></ion-icon> <span class="links">Dashboard</span>
 				</a></li>
 				<li class="navList active"><a href="#"> <ion-icon
 							name="cloud-upload-outline"></ion-icon> <span class="links">Create
 							New</span>
 				</a></li>
-				<li class="navList"><a href="<%=request.getContextPath()%>/retrieveVideoServlet"> <ion-icon
+				<li class="navList"><a
+					href="<%=request.getContextPath()%>/retrieveVideoServlet"> <ion-icon
 							name="videocam-outline"></ion-icon> <span class="links">Contents</span>
 				</a></li>
 				<li class="navList"><a href="#"> <ion-icon
@@ -71,13 +77,17 @@
 			</button>
 			<div class="logo dark-logo">
 				<a href="#"><div class="logo-image">
-						<img src="${pageContext.request.contextPath}/views/studio/asserts/logoWhite.png" alt="">
+						<img
+							src="${pageContext.request.contextPath}/views/studio/asserts/logoWhite.png"
+							alt="">
 					</div></a>
 			</div>
 			<div class="logo light-logo">
 				<a href="#"></a>
 				<div class="logo-image">
-					<img src="${pageContext.request.contextPath}/views/studio/asserts/logoBlack.png" alt="">
+					<img
+						src="${pageContext.request.contextPath}/views/studio/asserts/logoBlack.png"
+						alt="">
 				</div>
 				</a>
 			</div>
@@ -86,17 +96,19 @@
 		<!-- Dashboard -->
 		<div class="container">
 			<div class="overview">
-			
+
 				<div class="title">
 					<ion-icon name="videocam"></ion-icon>
 					<span class="text">Upload New</span>
 				</div>
 				<div class="uploadBox">
 					<div class="wrapper">
-					
-					
-					
-						<form action="${pageContext.request.contextPath}/createVideoServlet" method="post" enctype="multipart/form-data" class="upload-form">
+
+
+
+						<form
+							action="${pageContext.request.contextPath}/createVideoServlet"
+							method="post" enctype="multipart/form-data" class="upload-form">
 							<div class="title-section">
 								<input type="text" name="title" placeholder="Title" required>
 							</div>
@@ -112,7 +124,8 @@
 								</div>
 								<div class="thumbnail-section">
 									<p>Upload Thumbnail</p>
-									<input class="thumbnail-input" type="file" name="thumbnail" accept=".jpg" required>
+									<input class="thumbnail-input" type="file" name="thumbnail"
+										accept=".jpg" required>
 
 								</div>
 							</div>
@@ -120,10 +133,12 @@
 								<textarea name="description" placeholder="Description" required></textarea>
 							</div>
 							<div class="title-section">
-								<input type="text" name="sub-title" placeholder="Sub-title(optional)" >
+								<input type="text" name="sub-title"
+									placeholder="Sub-title(optional)">
 							</div>
 							<div class="box video-section">
-								<input class="file-input" type="file" name="videoUpload" accept=".mp4" required hidden>
+								<input class="file-input" type="file" name="videoUpload"
+									accept=".mp4" required hidden>
 								<ion-icon name="cloud-upload-outline" style="color:#6990F2;"></ion-icon>
 								<p>Browse Video to Upload</p>
 							</div>
@@ -156,8 +171,10 @@
 		src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule
 		src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-	<script src="${pageContext.request.contextPath}/views/studio/asserts/creator.js"></script>
-	<script src="${pageContext.request.contextPath}/views/studio/asserts/upload.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/views/studio/asserts/creator.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/views/studio/asserts/upload.js"></script>
 </body>
 
 </html>
