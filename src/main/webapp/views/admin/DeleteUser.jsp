@@ -175,7 +175,8 @@
 									String mobile = request.getParameter("mobile");
 									String password = request.getParameter("password");
 									%>
-									<form action="${pageContext.request.contextPath}/deleteUser" method="post">
+									
+									<form action="DeleteServlet" method="post">
 									<div class="form-group row">
 										<label class="col-lg-3 col-form-label form-control-label">User
 											ID </label>
@@ -235,7 +236,7 @@
 										<div class="col-lg-9">
 										<input type="submit" name="submit" value="submit">
 											 
-											</a>
+											
 										</div>
 									</div>
 									</form>

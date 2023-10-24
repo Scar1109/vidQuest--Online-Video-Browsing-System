@@ -172,7 +172,7 @@
 							String mobile = request.getParameter("mobile");
 							String password = request.getParameter("password");
 							%>
-						<form action="${pageContext.request.contextPath}/updateUser" method="post">
+						<form action="${pageContext.request.contextPath}/updateUserServlet" method="post">
 							<div class="tab-content p-3">
 								<div class="tab-pane active" id="edit">
 									<div class="form-group row">

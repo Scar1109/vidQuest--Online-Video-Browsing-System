@@ -172,7 +172,7 @@
 							<div class="card-body">
 								<div class="card-title">Round Vertical Form</div>
 								<hr>
-								<form action="${pageContext.request.contextPath}/addUser"
+								<form action="${pageContext.request.contextPath}/addUserServelet"
 									method="post">
 									<div class="form-group">
 										<label for="input-6">Firt Name</label> <input type="text"

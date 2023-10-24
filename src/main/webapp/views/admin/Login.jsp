@@ -7,7 +7,7 @@
 <title>Login</title>
 </head>
 <body>
-	<form action="${pageContext.request.contextPath}/login" method="post">
+	<form action="${pageContext.request.contextPath}/LoginServlet" method="post">
 		user name <input type="text" name="uid"> <br>
 		password <input type="password" name="pwd"> <br>
 		
