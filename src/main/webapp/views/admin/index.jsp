@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,28 +10,28 @@
   <meta name="author" content=""/>
   <title>VidQuest</title>
   <!-- loader-->
-  <link href="assets/css/pace.min.css" rel="stylesheet"/>
-  <script src="assets/js/pace.min.js"></script>
+  <link href="views/admin/assets/css/pace.min.css" rel="stylesheet"/>
+  <script src="views/admin/assets/js/pace.min.js"></script>
   <!--favicon-->
-  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="views/admin/assets/images/favicon.ico" type="image/x-icon">
   <!-- Vector CSS -->
-  <link href="assets/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet"/>
+  <link href="views/admin/assets/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet"/>
   <!-- simplebar CSS-->
-  <link href="assets/plugins/simplebar/css/simplebar.css" rel="stylesheet"/>
+  <link href="views/admin/assets/plugins/simplebar/css/simplebar.css" rel="stylesheet"/>
   <!-- Bootstrap core CSS-->
-  <link href="assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="views/admin/assets/css/bootstrap.min.css" rel="stylesheet"/>
   <!-- animate CSS-->
-  <link href="assets/css/animate.css" rel="stylesheet" type="text/css"/>
+  <link href="views/admin/assets/css/animate.css" rel="stylesheet" type="text/css"/>
   <!-- Icons CSS-->
-  <link href="assets/css/icons.css" rel="stylesheet" type="text/css"/>
+  <link href="views/admin/assets/css/icons.css" rel="stylesheet" type="text/css"/>
   <!-- Sidebar CSS-->
-  <link href="assets/css/sidebar-menu.css" rel="stylesheet"/>
+  <link href="views/admin/assets/css/sidebar-menu.css" rel="stylesheet"/>
   <!-- Custom Style-->
-  <link href="assets/css/app-style.css" rel="stylesheet"/>
+  <link href="views/admin/assets/css/app-style.css" rel="stylesheet"/>
   
 </head>
 
-<body class="bg-theme bg-theme1">
+<body class="bg-theme bg-theme2">
  
 <!-- Start wrapper-->
  <div id="wrapper">
@@ -38,32 +40,38 @@
    <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
      <div class="brand-logo">
       <a href="index.html">
-       <img src="assets/images/logo-icon.png" class="logo-icon" alt="logo icon">
+       <img src="views/admin/assets/images/logo-icon.png" class="logo-icon" alt="logo icon">
        <h5 class="logo-text">VidQuest</h5>
      </a>
    </div>
    <ul class="sidebar-menu do-nicescrol">
       <li class="sidebar-header">MAIN NAVIGATION</li>
       <li>
-        <a href="index.html">
+        <a href="views/admin/index.jsp">
           <i class="zmdi zmdi-view-dashboard"></i> <span>Dashboard</span>
         </a>
       </li>
-
+	
       <li>
-        <a href="forms.html">
+        <a href="views/admin/forms.jsp">
           <i class="zmdi zmdi-format-list-bulleted"></i> <span>Add user</span>
         </a>
       </li>
 
       <li>
-        <a href="tables.html">
+        <a href="${pageContext.request.contextPath}/getuser">
           <i class="zmdi zmdi-grid"></i> <span>User-Details</span>
+        </a>
+      </li>
+      <li>
+        <a href="${pageContext.request.contextPath}/getvideo">
+          <i class="zmdi zmdi-grid"></i> <span>Video-Details</span>
         </a>
       </li>
 
       <li>
-        <a href="profile.html">
+      
+        <a href="javascript:void(0);" onclick="callUserProfileServlet()">
           <i class="zmdi zmdi-face"></i> <span>Profile</span>
         </a>
       </li>
@@ -152,7 +160,7 @@
         <div class="row row-group m-0">
             <div class="col-12 col-lg-6 col-xl-3 border-light">
                 <div class="card-body">
-                  <h5 class="text-white mb-0">9526 <span class="float-right"><i class="fa fa-shopping-cart"></i></span></h5>
+                  <h5 class="text-white mb-0">9526 <span class="float-right"><i class="zmdi zmdi-youtube-play"></i></span></h5>
                     <div class="progress my-3" style="height:3px;">
                        <div class="progress-bar" style="width:55%"></div>
                     </div>
@@ -161,7 +169,7 @@
             </div>
             <div class="col-12 col-lg-6 col-xl-3 border-light">
                 <div class="card-body">
-                  <h5 class="text-white mb-0">8323 <span class="float-right"><i class="fa fa-usd"></i></span></h5>
+                  <h5 class="text-white mb-0">8323 <span class="float-right"><i class="zmdi zmdi-account"></i></span></h5>
                     <div class="progress my-3" style="height:3px;">
                        <div class="progress-bar" style="width:55%"></div>
                     </div>
@@ -179,7 +187,7 @@
             </div>
             <div class="col-12 col-lg-6 col-xl-3 border-light">
                 <div class="card-body">
-                  <h5 class="text-white mb-0">5630 <span class="float-right"><i class="fa fa-envira"></i></span></h5>
+                  <h5 class="text-white mb-0">5630 <span class="float-right"><i class="zmdi zmdi-attachment-alt"></i></span></h5>
                     <div class="progress my-3" style="height:3px;">
                        <div class="progress-bar" style="width:55%"></div>
                     </div>
@@ -324,61 +332,61 @@
                      <th>Video ID</th>
                      <th>Creator ID</th>
                      <th>Date</th>
-                     <th>Status</th>
+                     
                    </tr>
                    </thead>
                    <tbody><tr>
-                    <td>Iphone 5</td>
+                    <td>The Nature</td>
                     <td><img src="https://via.placeholder.com/110x110" class="product-img" alt="product img"></td>
                     <td>#9405822</td>
                     <td>#22</td>
-                    <td>03 Aug 2017</td>
-				          	<td><button type="button" class="btn btn-light">Accept</button></td>
+                    <td>03 Oct 2023</td>
+				       
                    </tr>
 
                    <tr>
-                    <td>Earphone GL</td>
+                    <td>Rose With Butterfly</td>
                     <td><img src="https://via.placeholder.com/110x110" class="product-img" alt="product img"></td>
                     <td>#9405820</td>
                     <td>#22</td>
-                    <td>03 Aug 2017</td>
-					          <td><button type="button" class="btn btn-light">Accept</button></td>
+                    <td>03 Oct 2023</td>
+					          
                    </tr>
 
                    <tr>
-                    <td>HD Hand Camera</td>
+                    <td>Red Apple</td>
                     <td><img src="https://via.placeholder.com/110x110" class="product-img" alt="product img"></td>
                     <td>#9405830</td>
                     <td>#23</td>
-                    <td>03 Aug 2017</td>
-					          <td><button type="button" class="btn btn-light">Accept</button></td>
+                    <td>03 Aug 2023</td>
+					         
                    </tr>
 
                    <tr>
-                    <td>Clasic Shoes</td>
+                    <td>The Sea</td>
                     <td><img src="https://via.placeholder.com/110x110" class="product-img" alt="product img"></td>
                     <td>#9405825</td>
                     <td>#56</td>
-                    <td>03 Aug 2017</td>
-					          <td><button type="button" class="btn btn-light">Accept</button></td>
+                    <td>02 Aug 2023</td>
+					         
                    </tr>
 
                    <tr>
-                    <td>Hand Watch</td>
+                    <td>Beauty Of Sunset</td>
                     <td><img src="https://via.placeholder.com/110x110" class="product-img" alt="product img"></td>
                     <td>#9405840</td>
                     <td>#45</td>
-                    <td>03 Aug 2017</td>
-					          <td><button type="button" class="btn btn-light">Accept</button></td>
+                    <td>02 Aug 2023</td>
+					         
                    </tr>
 				   
 				   <tr>
-                    <td>Clasic Shoes</td>
+                    <td>Nature Music</td>
                     <td><img src="https://via.placeholder.com/110x110" class="product-img" alt="product img"></td>
                     <td>#9405825</td>
                     <td>#13</td>
-                    <td>03 Aug 2017</td>
-					          <td><button type="button" class="btn btn-light">Accept</button></td>
+                    <td>01 Aug 2023</td>
+					          
                    </tr>
 
                  </tbody></table>
@@ -402,13 +410,7 @@
     <!--End Back To Top Button-->
 	
 	<!--Start footer-->
-	<footer class="footer">
-      <div class="container">
-        <div class="text-center">
-          Copyright © VidQuest
-        </div>
-      </div>
-    </footer>
+
 	<!--End footer-->
 	
   <!--start color switcher-->
@@ -450,26 +452,48 @@
   <!--end color switcher-->
    
   </div><!--End wrapper-->
+<script>
+    function callUserProfileServlet() {
+        // Make an AJAX GET request to the servlet URL
+        var servletURL = "${pageContext.request.contextPath}/login"; // Replace with your servlet URL
+        var xhr = new XMLHttpRequest();
 
+        xhr.open("POST", servletURL, true);
+
+        xhr.onload = function () {
+            if (xhr.status === 200) {
+                // Request was successful, handle the response here
+                var responseData = xhr.responseText;
+                // You can process responseData as needed
+                console.log(responseData);
+            } else {
+                // Request failed
+                console.error("AJAX request failed with status: " + xhr.status);
+            }
+        };
+
+        xhr.send(); // Send the AJAX request
+    }
+</script>
   <!-- Bootstrap core JavaScript-->
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/popper.min.js"></script>
-  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="views/admin/assets/js/jquery.min.js"></script>
+  <script src="views/admin/assets/js/popper.min.js"></script>
+  <script src="views/admin/assets/js/bootstrap.min.js"></script>
 	
  <!-- simplebar js -->
-  <script src="assets/plugins/simplebar/js/simplebar.js"></script>
+  <script src="views/admin/assets/plugins/simplebar/js/simplebar.js"></script>
   <!-- sidebar-menu js -->
-  <script src="assets/js/sidebar-menu.js"></script>
+  <script src="views/admin/assets/js/sidebar-menu.js"></script>
   <!-- loader scripts -->
-  <script src="assets/js/jquery.loading-indicator.js"></script>
+  <script src="views/admin/assets/js/jquery.loading-indicator.js"></script>
   <!-- Custom scripts -->
-  <script src="assets/js/app-script.js"></script>
+  <script src="views/admin/assets/js/app-script.js"></script>
   <!-- Chart js -->
   
-  <script src="assets/plugins/Chart.js/Chart.min.js"></script>
+  <script src="views/admin/assets/plugins/Chart.js/Chart.min.js"></script>
  
   <!-- Index js -->
-  <script src="assets/js/index.js"></script>
+  <script src="views/admin/assets/js/index.js"></script>
 
   
 </body>
