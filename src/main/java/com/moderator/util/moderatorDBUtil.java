@@ -224,8 +224,33 @@ public class moderatorDBUtil {
 	    return videos;
 	}
 	
-	
+	public static List<Comment> getComment() {
+	    ArrayList<Comment> comments = new ArrayList<>();  
 
+	    try {
+	        Connection con = DBconnect.getConnection();
+	        stmt = con.createStatement();
+	        String sql = "SELECT * FROM comment";
+
+	        ResultSet rs = stmt.executeQuery(sql);
+
+	        while (rs.next()) {
+	            int commentID = rs.getInt("commentID");
+	            int videoID = rs.getInt("videoID");
+	            int userID = rs.getInt("userID");
+	            String comment = rs.getString("comment");
+	            String date = rs.getString("Date");
+	            String time = rs.getString("Time");
+
+	            Comment com = new Comment(commentID, videoID, userID, comment, date, time);
+	            comments.add(com);  
+	        }
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+
+	    return comments; 
+	}
 
 }
 

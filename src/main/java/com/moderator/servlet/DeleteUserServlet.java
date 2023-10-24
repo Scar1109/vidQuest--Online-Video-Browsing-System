@@ -18,7 +18,8 @@ public class DeleteUserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		 String id = request.getParameter("id");
+		 
+		String id = request.getParameter("id");
 	        boolean isTrue;
 
 	        isTrue = moderatorDBUtil.deleteUser(id);

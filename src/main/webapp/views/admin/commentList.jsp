@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@page import="com.moderator.model.*"%>
 <%@page import="java.util.List"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -70,8 +70,8 @@
 				<li><a href="${pageContext.request.contextPath}/getuser"> <i
 						class="zmdi zmdi-grid"></i> <span>User-Details</span>
 				</a></li>
-				<li><a href="${pageContext.request.contextPath}/getvideo"> <i
-						class="zmdi zmdi-grid"></i> <span>Video-Details</span>
+				<li><a href="${pageContext.request.contextPath}/getvideo">
+						<i class="zmdi zmdi-grid"></i> <span>Video-Details</span>
 				</a></li>
 
 				<li><a href="views/admin/profile.jsp"> <i
@@ -198,60 +198,37 @@
 									<thead>
 										<tr>
 										<tr>
-											<th>Title</th>
-											<th>SubTitle</th>
+											<th>Comment ID</th>
 											<th>Video ID</th>
-											<th>Creator ID</th>
-											<th>Description</th>
-											<th>Thumbnail</th>
-											<th>Video</th>
-											<th>Category</th>
-											<th>Visibility</th>
-											<th>Status</th>
+											<th>User ID</th>
+											<th>Comment</th>
 											<th>Date</th>
 											<th>Time</th>
-											<th>Action</th>
+
 										</tr>
 									</thead>
 									<tbody>
 
-										<c:forEach var="vid" items="${videoDetails}">
+										<c:forEach var="com" items="${commentDetails}">
 
-											<c:set var="title" value="${vid.title}" />
-											<c:set var="subTitle" value="${vid.subTitle}" />
-											<c:set var="videoID" value="${vid.videoID}" />
-											<c:set var="userID" value="${vid.userID}" />
-											<c:set var="description" value="${vid.description}" />
-											<c:set var="thumbnail" value="${vid.thumbnail}" />
-											<c:set var="videoPath" value="${vid.videoPath}" />
-											<c:set var="category" value="${vid.category}" />
-											<c:set var="visibility" value="${vid.visibility}" />
-											<c:set var="status" value="${vid.status}" />
-											<c:set var="date" value="${vid.date}" />
-											<c:set var="time" value="${vid.time}" />
-
+											<c:set var="commentID" value="${com.commentID}" />
+											<c:set var="videoID" value="${com.videoID}" />
+											<c:set var="userID" value="${com.userID}" />
+											<c:set var="comment" value="${com.comment}" />
+											<c:set var="date" value="${com.date}" />
+											<c:set var="time" value="${com.time}" />
 
 											<tr>
-												<td id="video_${vid.videoID}">${vid.title}</td>
-												<td>${vid.subTitle}</td>
-												<td>${vid.videoID}</td>
-												<td>${vid.userID}</td>
-												<td>${vid.description}</td>
-												<td>${vid.thumbnail}</td>
-												<td>${vid.videoPath}</td>
-												<td>${vid.category}</td>
-												<td>${vid.visibility}</td>
-												<td id="status_${vid.videoID}">${vid.status}</td>
-												<td>${vid.date}</td>
-												<td>${vid.time}</td>
-												<td>
-													<button type="button" class="btn btn-light"
-														onclick="acceptVideo(${vid.videoID})">Accept</button>
-													<button type="button" class="btn btn-danger"
-														onclick="removeVideo(${vid.videoID})">Remove</button>
-												</td>
-
+												<td>${com.commentID}</td>
+												<td>${com.videoID}</td>
+												<td>${com.userID}</td>
+												<td>${com.comment}</td>
+												<td>${com.date}</td>
+												<td>${com.time}</td>
+												
 											</tr>
+
+											
 										</c:forEach>
 									</tbody>
 								</table>
@@ -321,75 +298,8 @@
 
 	</div>
 	<script>
-	
-	function acceptVideo(videoID) {
-	    // Send an AJAX request to the servlet to update the status.
-	    $.ajax({
-	        type: "POST",
-	        url: "${pageContext.request.contextPath}/UpdateVideoStatusServlet",
-	        data: { videoId: videoID },
-	        success: function(response) {
-	            if (response === "Status updated to Approved") {
-	                // Update the status in the table without reloading the page.
-	                $('#status_' + videoId).text("Approved");
-	            }
-	        }
-	    });
-	}
-	
-	function acceptVideo(videoID) {
-	    // Send an AJAX request to the servlet to update the status.
-	    $.ajax({
-	        type: "POST",
-	        url: "${pageContext.request.contextPath}/UpdateVideoStatusServlet",
-	        data: { videoId: videoID },
-	        success: function(response) {
-	            if (response === "Status updated to Approved") {
-	                // Update the status in the table without reloading the page.
-	                $('#status_' + videoID).text("Approved");
-	            }
-	        }
-	    });
-	}
-	
-	
-	function removeVideo(videoID) {
-	    if (confirm("Are you sure you want to remove this video?")) {
-	        // Send an AJAX request to the server to remove the video.
-	        $.ajax({
-	            type: "POST",
-	            url: "${pageContext.request.contextPath}/RemoveVideoServlet",
-	            data: { videoId: videoID },
-	            success: function(response) {
-	                if (response === "Video removed successfully") {
-	                    // Remove the row from the table.
-	                	$('#video_' + videoID).remove();
-	                }
-	            }
-	        });
-	    }
-	}
-	
-    function removeVideo(videoID) {
-        if (confirm("Are you sure you want to remove this video?")) {
-            // Send an AJAX request to the server to remove the video.
-            $.ajax({
-                type: "POST",
-                url: "${pageContext.request.contextPath}/RemoveVideoServlet",
-                data: { videoId: videoID },
-                success: function(response) {
-                    if (response === "Video removed successfully") {
-                        // Remove the row from the table.
-                        $('#video_' + videoID).remove();
-                        // Reload the page to reflect the changes
-                        location.reload();
-                    }
-                }
-            });
-        }
-    }
-    
-</script>
+		
+	</script>
 
 
 	<!--End wrapper-->

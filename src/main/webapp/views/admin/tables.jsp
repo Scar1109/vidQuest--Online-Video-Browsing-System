@@ -78,8 +78,8 @@
 						class="zmdi zmdi-grid"></i> <span>User-Details</span>
 				</a></li>
 
-				<li><a href="${pageContext.request.contextPath}/getvideo"> <i
-						class="zmdi zmdi-grid"></i> <span>Video-Details</span>
+				<li><a href="${pageContext.request.contextPath}/getvideo">
+						<i class="zmdi zmdi-grid"></i> <span>Video-Details</span>
 				</a></li>
 
 				<li><a href="profile.jsp"> <i class="zmdi zmdi-face"></i> <span>Profile</span>
@@ -207,7 +207,9 @@
 											<c:set var="email" value="${usr.email}" />
 											<c:set var="mobile" value="${usr.mobile}" />
 											<c:set var="password" value="${usr.password}" />
-											<tr>
+
+											<tr id="user_${usr.id}">
+
 												<th scope="row">${usr.id}</th>
 												<td>${usr.firstName}</td>
 												<td>${usr.lastName}</td>
@@ -216,8 +218,11 @@
 												<td>${usr.email}</td>
 												<td>${usr.mobile}</td>
 												<td>${usr.username}</td>
-												<td><button type="button"
-														class="btn btn-outline-danger">Delete</button></td>
+												<td>
+													<button type="button" class="btn btn-danger"
+														onclick="removeUser(${usr.id})">Remove</button>
+												</td>
+
 											</tr>
 										</c:forEach>
 									</tbody>
@@ -290,6 +295,26 @@
 
 	</div>
 	<!--End wrapper-->
+	<script>
+	
+	function removeUser(userId) {
+	    if (confirm("Are you sure you want to remove this user?")) {
+	        // Send an AJAX request to the server to remove the user.
+	        $.ajax({
+	            type: "POST",
+	            url: "${pageContext.request.contextPath}/deleteUser",
+	            data: { id: userId }, // Pass userId as a parameter
+	            success: function(response) {
+	                if (response === "User removed successfully") {
+	                    // Reload the page after a successful user removal
+	                    location.reload();
+	                }
+	            }
+	        });
+	    }
+	}
+	</script>
+
 
 
 	<!-- Bootstrap core JavaScript-->
