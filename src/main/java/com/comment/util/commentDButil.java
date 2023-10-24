@@ -42,7 +42,7 @@ import com.comment.model.comment;
 
 	            preparedStatement.executeUpdate();
 	            
-	            System.out.println("Insertion Sc");
+	            System.out.println("Insertion Successful");
 	            
 	        } catch (ClassNotFoundException | SQLException e) {
 	            e.printStackTrace();
