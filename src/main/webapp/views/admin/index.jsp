@@ -59,12 +59,12 @@
       </li>
 
       <li>
-        <a href="${pageContext.request.contextPath}/getuser">
+        <a href="${pageContext.request.contextPath}/UserServlet">
           <i class="zmdi zmdi-grid"></i> <span>User-Details</span>
         </a>
       </li>
       <li>
-        <a href="${pageContext.request.contextPath}/getvideo">
+        <a href="${pageContext.request.contextPath}/getVideoServlet">
           <i class="zmdi zmdi-grid"></i> <span>Video-Details</span>
         </a>
       </li>

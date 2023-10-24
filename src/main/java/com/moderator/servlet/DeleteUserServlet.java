@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.moderator.model.User;
 import com.moderator.util.moderatorDBUtil;
 
-@WebServlet("/DeleteUserServlet")
+@WebServlet("/DeleteServlet")
 public class DeleteUserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

@@ -326,7 +326,7 @@
 	    // Send an AJAX request to the servlet to update the status.
 	    $.ajax({
 	        type: "POST",
-	        url: "${pageContext.request.contextPath}/UpdateStatus",
+	        url: "${pageContext.request.contextPath}/UpdateVideoStatusServlet",
 	        data: { videoId: videoID },
 	        success: function(response) {
 	            if (response === "Status updated to Approved") {
@@ -341,7 +341,7 @@
 	    // Send an AJAX request to the servlet to update the status.
 	    $.ajax({
 	        type: "POST",
-	        url: "${pageContext.request.contextPath}/UpdateStatus",
+	        url: "${pageContext.request.contextPath}/UpdateVideoStatusServlet",
 	        data: { videoId: videoID },
 	        success: function(response) {
 	            if (response === "Status updated to Approved") {
@@ -358,7 +358,7 @@
 	        // Send an AJAX request to the server to remove the video.
 	        $.ajax({
 	            type: "POST",
-	            url: "${pageContext.request.contextPath}/removevideo",
+	            url: "${pageContext.request.contextPath}/RemoveVideoServlet",
 	            data: { videoId: videoID },
 	            success: function(response) {
 	                if (response === "Video removed successfully") {
@@ -375,7 +375,7 @@
             // Send an AJAX request to the server to remove the video.
             $.ajax({
                 type: "POST",
-                url: "${pageContext.request.contextPath}/removevideo",
+                url: "${pageContext.request.contextPath}/RemoveVideoServlet",
                 data: { videoId: videoID },
                 success: function(response) {
                     if (response === "Video removed successfully") {
