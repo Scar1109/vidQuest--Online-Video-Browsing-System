@@ -15,7 +15,7 @@
 	href="views/videoPlayer/asserts/client.58bcd74d963009b6d099.css"
 	media="all">
 	<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" href="videoPlayer/asserts/mystyles.css">
+	<link rel="stylesheet" href="views/videoPlayer/asserts/mystyles.css">
 
 	<style>
 		#vimeoIframe {
@@ -77,7 +77,6 @@
 														
 														</form>	
 														
-															
 																
 														</div>
 													</div>
@@ -86,7 +85,6 @@
 											</div>
 										</div>
 									</div>
-																		
 									<!-- Comment section -->
 									<div class="commentsList--lpM12 scrolling--Ic5bb">
 									
@@ -124,10 +122,12 @@
 																</button>
 															</div>
 															<!-- Add the dropdown menu here -->
+															
 															<div class="dropdown" id="dropdown-menu">
 																<ul>
-																	<li><a href="#" id="edit-option">Edit</a></li>
-																	<li><a href= "<%=request.getContextPath()%>/DeleteCommentServlet?commentId=<%= comm.getcommentID() %>">Delete</a></li>
+																	<li><a href="" onclick="" id="edit-option">Edit</a></li>
+							    
+																	<li><a href= "<%=request.getContextPath()%>/DeleteCommentServlet?commentId=<%= comm.getcommentID() %>" id="delete-option">Delete</a></li>
 																</ul>
 															</div>
 															<!-- End of dropdown menu -->
@@ -138,8 +138,16 @@
 											</div>
 											
 										</div>
+												
+										
+										<div>
+										<div class="container--nL7QW">
+				
+										</div>
+									</div>
 										
 										<%
+										
                                  
                                         }
                                     	} else {
@@ -155,126 +163,7 @@
 									                        }
 									
                                        %>
-										
-										
-										
-										
-										<div class="commentContainer--wcqd2">
-											<div>
-												<a class="container--RXy5A default--iYncq hoverState--vIDz9"
-													href="https://pixabay.com/users/u_oql2bnz4gy-39676539/"><img
-													src="views/videoPlayer/asserts/yellow.svg"
-													class="avatar--+DPkq"></a>
-											</div>
-											<div class="commentInner--ppayY">
-												<div class="commentTitles--d7obE">
-													<a href="https://pixabay.com/users/u_oql2bnz4gy-39676539/"
-														target="_blank" class="commentCommenterNameField--eu7bd">u_oql2bnz4gy</a>
-													<div class="commentTime--KEQg1">7 day ago</div>
-													<div class="contextMenu--fbIC-">
-														<div class="container--YKYLB">
-															<div class="triggerWrapper--NACCC">
-																<button
-																	class="contextMenuTrigger--1BjBf buttonBase--r4opq tertiaryButton--+4ehJ base--jzyee light--uBcBI iconOnly--QRahF"
-																	type="button">
-																	<ion-icon name="ellipsis-horizontal-outline"></ion-icon>
-																</button>
-															</div>
-															<div
-																class="dropdown--QzC2F light--boaNg dropdown----12s right--Yg1-e hidden--Q5vOS"></div>
-														</div>
-													</div>
-												</div>
-												<div class="text--Ja8D3">thanks a lot</div>
-											</div>
-										</div>
-										<div class="commentContainer--wcqd2">
-											<div>
-												<a class="container--RXy5A default--iYncq hoverState--vIDz9"
-													href="https://pixabay.com/users/u_q46lh2u7s7-39675521/"><img
-													src="views/videoPlayer/asserts/orange.svg"
-													class="avatar--+DPkq"></a>
-											</div>
-											<div class="commentInner--ppayY">
-												<div class="commentTitles--d7obE">
-													<a href="https://pixabay.com/users/u_q46lh2u7s7-39675521/"
-														target="_blank" class="commentCommenterNameField--eu7bd">u_q46lh2u7s7</a>
-													<div class="commentTime--KEQg1">8 day ago</div>
-													<div class="contextMenu--fbIC-">
-														<div class="container--YKYLB">
-															<div class="triggerWrapper--NACCC">
-																<button
-																	class="contextMenuTrigger--1BjBf buttonBase--r4opq tertiaryButton--+4ehJ base--jzyee light--uBcBI iconOnly--QRahF"
-																	type="button">
-																	<ion-icon name="ellipsis-horizontal-outline"></ion-icon>
-																</button>
-															</div>
-															<div
-																class="dropdown--QzC2F light--boaNg dropdown----12s right--Yg1-e hidden--Q5vOS"></div>
-														</div>
-													</div>
-												</div>
-												<div class="text--Ja8D3">thanks a lot</div>
-											</div>
-										</div>
-										<div class="commentContainer--wcqd2">
-											<div>
-												<a class="container--RXy5A default--iYncq hoverState--vIDz9"
-													href="https://pixabay.com/users/u_q46lh2u7s7-39675521/"><img
-													src="views/videoPlayer/asserts/orange.svg"
-													class="avatar--+DPkq"></a>
-											</div>
-											<div class="commentInner--ppayY">
-												<div class="commentTitles--d7obE">
-													<a href="https://pixabay.com/users/u_q46lh2u7s7-39675521/"
-														target="_blank" class="commentCommenterNameField--eu7bd">u_q46lh2u7s7</a>
-													<div class="commentTime--KEQg1">8 day ago</div>
-													<div class="contextMenu--fbIC-">
-														<div class="container--YKYLB">
-															<div class="triggerWrapper--NACCC">
-																<button
-																	class="contextMenuTrigger--1BjBf buttonBase--r4opq tertiaryButton--+4ehJ base--jzyee light--uBcBI iconOnly--QRahF"
-																	type="button">
-																	<ion-icon name="ellipsis-horizontal-outline"></ion-icon>
-																</button>
-															</div>
-															<div
-																class="dropdown--QzC2F light--boaNg dropdown----12s right--Yg1-e hidden--Q5vOS"></div>
-														</div>
-													</div>
-												</div>
-												<div class="text--Ja8D3">thanks</div>
-											</div>
-										</div>
-										<div class="commentContainer--wcqd2">
-											<div>
-												<a class="container--RXy5A default--iYncq hoverState--vIDz9"
-													href="https://pixabay.com/users/u_diaunvisfx-34809769/"><img
-													src="views/videoPlayer/asserts/yellow.svg"
-													class="avatar--+DPkq"></a>
-											</div>
-											<div class="commentInner--ppayY">
-												<div class="commentTitles--d7obE">
-													<a href="https://pixabay.com/users/u_diaunvisfx-34809769/"
-														target="_blank" class="commentCommenterNameField--eu7bd">u_diaunvisfx</a>
-													<div class="commentTime--KEQg1">9 day ago</div>
-													<div class="contextMenu--fbIC-">
-														<div class="container--YKYLB">
-															<div class="triggerWrapper--NACCC">
-																<button
-																	class="contextMenuTrigger--1BjBf buttonBase--r4opq tertiaryButton--+4ehJ base--jzyee light--uBcBI iconOnly--QRahF"
-																	type="button">
-																	<ion-icon name="ellipsis-horizontal-outline"></ion-icon>
-																</button>
-															</div>
-															<div
-																class="dropdown--QzC2F light--boaNg dropdown----12s right--Yg1-e hidden--Q5vOS"></div>
-														</div>
-													</div>
-												</div>
-												<div class="text--Ja8D3">Thanks</div>
-											</div>
-										</div> 
+								
 									</div>  
 									<!--  End of comment section -->
 								</div>
@@ -426,15 +315,6 @@
 				document.addEventListener("click", closeDropdown);
 			});
 
-			editOption.addEventListener("click", function(event) {
-				event.preventDefault();
-				// Add your edit action here
-			});
-
-			deleteOption.addEventListener("click", function(event) {
-				event.preventDefault();
-				// Add your delete action here
-			});
 
 			function closeDropdown() {
 				dropdownMenu.style.display = "none";
@@ -444,6 +324,6 @@
 
 			</script>
 			
-			
+	
 	</body>
 </html>
