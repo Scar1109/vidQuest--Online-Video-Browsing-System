@@ -10,7 +10,7 @@ import com.User.model.User;
  
 
 public class EditDButil {
-	 private static final String JDBC_URL = "jdbc:mysql://localhost:3306/customerdb";
+	 private static final String JDBC_URL = "jdbc:mysql://localhost:3306/vidquest";
 	    private static final String JDBC_USER = "root";
 	    private static final String JDBC_PASSWORD = "";
 	    
@@ -23,7 +23,7 @@ public class EditDButil {
 	            connection = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
 
 	            // Define the SQL update query
-	            String sql = "UPDATE customers SET first_name = ?, last_name = ?, email = ?, pNo = ? , pwd =?, username = ? WHERE id = ?";
+	            String sql = "UPDATE users SET firstName = ?, lastName = ?, email = ?, pNo = ? , pwd =?, username = ? WHERE UserID = ?";
 
 	            // Create a PreparedStatement
 	            preparedStatement = connection.prepareStatement(sql);
@@ -31,18 +31,18 @@ public class EditDButil {
 	            // Set the parameters for the query
 	            
 	            preparedStatement.setString(1, user.getFirstName());
-	            preparedStatement.setString(2, user.getFirstName());
 	            preparedStatement.setString(2, user.getLastName());
 	            preparedStatement.setString(3, user.getEmail());
-	            preparedStatement.setString(3, user.getpNo());
-	            preparedStatement.setString(3, user.getPwd());
-	            preparedStatement.setString(3, user.getUsername());
+	            preparedStatement.setString(4, user.getpNo());
+	            preparedStatement.setString(5, user.getPwd());
+	            preparedStatement.setString(6, user.getUsername());
+	            preparedStatement.setInt(7, user.getuid());
 
 	            // Execute the update query
 	            int rowsAffected = preparedStatement.executeUpdate();
 
 	            if (rowsAffected > 0) {
-	                // The update was successful
+	                System.out.println("Customer Update was successful");
 	            } else {
 	                System.out.println("Error");
 	            }

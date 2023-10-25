@@ -22,7 +22,7 @@ public class viewCommentServlet extends HttpServlet {
         // Retrieve customer data from the database using a DAO class
     	
     	commentDButil commentDao = new commentDButil();
-        List<comment> comments = commentDao.getAllComments(1);
+        List<comment> comments = commentDao.getAllComments(29);
 
         // Pass the customer data to the JSP view
         request.setAttribute("Comment", comments);

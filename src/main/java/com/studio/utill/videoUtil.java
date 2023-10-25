@@ -57,13 +57,20 @@ public class videoUtil {
 
 public static boolean deleteVideo(int videoId) {
 	try (Connection connection = DBConnectionUtil.getConnection()) {
-        String sql = "DELETE FROM videos WHERE VideoID = ?";
-        PreparedStatement statement = connection.prepareStatement(sql);
-        statement.setInt(1, videoId);
+		
+		String sql1 = "DELETE FROM comment WHERE VideoID = ?";
+		PreparedStatement statement1 = connection.prepareStatement(sql1);
+		statement1.setInt(1, videoId);
+		
+		
+        String sql2 = "DELETE FROM videos WHERE VideoID = ?";
+        PreparedStatement statement2 = connection.prepareStatement(sql2);
+        statement2.setInt(1, videoId);
         
-        int rowsAffected = statement.executeUpdate();
+        int rowsAffected = statement2.executeUpdate();
         
-        statement.close();
+        statement1.close();
+        statement2.close();
         connection.close();
         
         return rowsAffected > 0;

@@ -1,19 +1,23 @@
 #vimeoIframe {
-	overflow: hidden;
-	}
+    overflow: hidden;
+}
 
-	ion-icon { 
-		
-		font-weight: bold;
-	}
+ion-icon { 
+    font-weight: bold;
+}
+
+#text-area-container {
+    display: none;
+}
+
 
 /* CSS for the dropdown button */
-#dropdown-button {
+[id^='dropdown-button-'] {
     cursor: pointer;
-  }
-  
-  /* CSS for the dropdown menu */
-  #dropdown-menu {
+}
+
+/* CSS for the dropdown menu */
+.dropdown {
     display: none;
     position: absolute;
     background-color: white;
@@ -21,25 +25,24 @@
     min-width: 100px; /* Adjust the width as needed */
     right: 0;
     border-radius: 10px;
-  }
-  
-  #dropdown-menu ul {
+}
+
+.dropdown ul {
     list-style: none;
     padding: 0;
     margin: 0;
-  }
-  
-  #dropdown-menu li {
+}
+
+.dropdown li {
     padding: 10px;
     height: auto; /* Adjust the height as needed */
-  }
-  
-  #dropdown-menu a {
+}
+
+.dropdown a {
     text-decoration: none;
     color: black;
     display: block;
     white-space: nowrap; /* Prevent text from wrapping */
     overflow: hidden;
     text-overflow: ellipsis; /* Show ellipsis for overflowing text */
-  }
-
+}
