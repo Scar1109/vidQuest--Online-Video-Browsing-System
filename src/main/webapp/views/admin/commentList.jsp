@@ -211,7 +211,7 @@
 
 										<c:forEach var="com" items="${commentDetails}">
 
-											<c:set var="commentID" value="${com.commentID}" />
+											<c:set var="commentID" value="${com.commentId}" />
 											<c:set var="videoID" value="${com.videoID}" />
 											<c:set var="userID" value="${com.userID}" />
 											<c:set var="comment" value="${com.comment}" />

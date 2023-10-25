@@ -302,7 +302,7 @@
 	        // Send an AJAX request to the server to remove the user.
 	        $.ajax({
 	            type: "POST",
-	            url: "${pageContext.request.contextPath}/deleteUser",
+	            url: "${pageContext.request.contextPath}/DeleteServlet",
 	            data: { id: userId }, // Pass userId as a parameter
 	            success: function(response) {
 	                if (response === "User removed successfully") {

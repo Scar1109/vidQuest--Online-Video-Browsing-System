@@ -172,7 +172,8 @@
 							<div class="card-body">
 								<div class="card-title">Round Vertical Form</div>
 								<hr>
-								<form action="${pageContext.request.contextPath}/addUserServelet"
+								<form
+									action="${pageContext.request.contextPath}/addUserServelet"
 									method="post">
 									<div class="form-group">
 										<label for="input-6">Firt Name</label> <input type="text"
@@ -203,6 +204,14 @@
 										<label for="input-9">Password</label> <input type="text"
 											class="form-control form-control-rounded" id="input-9"
 											name="password" placeholder="Enter Password">
+									</div>
+									<div class="form-group">
+										<label for="user-type">Select your role:</label> <select
+											id="user-type" name="user-type">
+											<option value="user">User</option>
+											<option value="creator">Creator</option>
+											<option value="admin">Admin</option>
+										</select>
 									</div>
 									<div class="form-group py-2">
 										<div class="icheck-material-white">

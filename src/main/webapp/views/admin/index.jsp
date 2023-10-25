@@ -40,17 +40,6 @@
 
 <body class="bg-theme bg-theme2">
 
-      <li>
-        <a href="${pageContext.request.contextPath}/UserServlet">
-          <i class="zmdi zmdi-grid"></i> <span>User-Details</span>
-        </a>
-      </li>
-      <li>
-        <a href="${pageContext.request.contextPath}/getVideoServlet">
-          <i class="zmdi zmdi-grid"></i> <span>Video-Details</span>
-        </a>
-      </li>
-
 		<!--Start sidebar-wrapper-->
 		<div id="sidebar-wrapper" data-simplebar=""
 			data-simplebar-auto-hide="true">
@@ -63,7 +52,7 @@
 			</div>
 			<ul class="sidebar-menu do-nicescrol">
 				<li class="sidebar-header">MAIN NAVIGATION</li>
-				<li><a href="views/admin/index.jsp"> <i
+				<li><a href="#"> <i
 						class="zmdi zmdi-view-dashboard"></i> <span>Dashboard</span>
 				</a></li>
 
@@ -71,18 +60,17 @@
 						class="zmdi zmdi-format-list-bulleted"></i> <span>Add user</span>
 				</a></li>
 
-				<li><a href="${pageContext.request.contextPath}/getuser"> <i
+				<li><a href="${pageContext.request.contextPath}/UserServlet"> <i
 						class="zmdi zmdi-grid"></i> <span>User-Details</span>
 				</a></li>
-				<li><a href="${pageContext.request.contextPath}/getvideo">
+				<li><a href="${pageContext.request.contextPath}/getVideoServlet">
 						<i class="zmdi zmdi-grid"></i> <span>Video-Details</span>
 				</a></li>
-				<li><a href="${pageContext.request.contextPath}/comment">
+				<li><a href="${pageContext.request.contextPath}/commentServlet">
 						<i class="zmdi zmdi-grid"></i> <span>Comments</span>
 				</a></li>
 
-				<li><a href="javascript:void(0);"
-					onclick="callUserProfileServlet()"> <i class="zmdi zmdi-face"></i>
+				<li><a href="${pageContext.request.contextPath}/profileServlet"> <i class="zmdi zmdi-face"></i>
 						<span>Profile</span>
 				</a></li>
 
@@ -535,11 +523,11 @@
 	<script>
 		function callUserProfileServlet() {
 			// Make an AJAX POST request to the servlet URL
-			var servletURL = "${pageContext.request.contextPath}/login"; // Replace with your servlet URL
+			var servletURL = "${pageContext.request.contextPath}/profileServlet"; // Replace with your servlet URL
 
 			$.ajax({
-				type : "POST",
-				url : "${pageContext.request.contextPath}/login",
+				type : "post",
+				url : "${pageContext.request.contextPath}/profileServlet",
 				success : function(data) {
 					// Handle the response here
 					console.log(data);
