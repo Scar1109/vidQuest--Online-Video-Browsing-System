@@ -27,7 +27,7 @@ public class commentservlet extends HttpServlet {
 	        
 	        String comm = request.getParameter("coms");
 
-	        comment Comment = new comment(28,1,comm);
+	        comment Comment = new comment(29,1,comm);
 	        
 	        
 	        commentDButil.addComment(Comment);

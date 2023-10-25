@@ -20,12 +20,12 @@ public class EditCommentServlet extends HttpServlet {
 		
 		
 		    int commentID = Integer.parseInt( request.getParameter("commentId"));
-		    String comment = request.getParameter("commentId");
+		    String comment = request.getParameter("coms");
 	         
 	        
-		    comment comm = new comment(commentID,comment);
+		    comment comments1 = new comment(commentID,comment);
 
-	        commentDButil.updateCustomer(comm);
+	        commentDButil.updateCustomer(comments1);
 
 	        response.sendRedirect(request.getContextPath() + "/viewCommentServlet");
 		

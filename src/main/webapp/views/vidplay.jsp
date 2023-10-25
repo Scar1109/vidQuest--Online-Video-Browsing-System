@@ -23,11 +23,31 @@
 #vimeoIframe {
 	overflow: hidden;
 }
+
+/* styles.css */
+#iframe-container {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  padding : 0;
+  margin : 0;
+}
+
+.footerfrmae {
+  width: 100%;
+  height: 100%;
+  border: none;
+  padding : 0;
+  margin : 0;
+}
+
 </style>
 </head>
 <body class="hydration-complete">
 	<%
 	int arrSize;
+	List<comment> Comments = (List<comment>) request.getAttribute("Comment");
+	arrSize = Comments.size();//customers means comment
 	%>
 	<div id="app">
 		<div data-hid="root">
@@ -40,7 +60,7 @@
 								<div class="container--pycH7" data-w="3840" data-h="2160"
 									style="padding-bottom: min(56.25%, 64vh, 2160px); width: min(3840px, 113.778vh, 100vw, 100%); max-height: 2160px;">
 									<iframe id="vimeoIframe"
-										src="views/videoPlayer/web-video-player/player.html"
+										src="views/videoPlayer/web-video-player/player.jsp"
 										allowfullscreen="" data-ready="true"></iframe>
 								</div>
 							</div>
@@ -55,7 +75,7 @@
 							</div>
 							<!-- Comment count -->
 							<div class="commentsSection--volyd commentsSection--s+lVy">
-								<div class="commentCount--h7TIp">73 comments</div>
+								<div class="commentCount--h7TIp"><%= arrSize %> comments</div>
 								<div>
 									<div class="container--nL7QW">
 										<div>
@@ -97,8 +117,7 @@
 									<%
 									try {
 
-										List<comment> Comments = (List<comment>) request.getAttribute("Comment");
-										arrSize = Comments.size();//customers means comment
+										
 										if (Comments != null && !Comments.isEmpty()) {
 											int commentCount = 0;
 											for (comment comm : Comments) {
@@ -190,6 +209,8 @@
 
 														<form id="edit-comment"
 															action="${pageContext.request.contextPath}/EditCommentServlet" method="get">
+															
+															<input type = "hidden" name = "commentId" value = "<%=comm.getcommentID()%>">
 															
         <textarea id="text-area<%=commentCount%>" class="textInput--yG-0W textArea---vB9y input--8uJYQ" name="coms" placeholder="Add your comments..."
 																style="height: 19px !important;" onkeydown="checkEdit(event)"  required></textarea>
@@ -372,6 +393,7 @@ document.getElementById('edit-option<%=commentCount%>').addEventListener('click'
 			</div>
 		</div>
 	</div>
+	
 	<script type="module"
 		src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule
@@ -395,6 +417,11 @@ document.getElementById('edit-option<%=commentCount%>').addEventListener('click'
     }
 
 </script>
+
+<div id="iframe-container">
+		<iframe class="footerfrmae" src="${pageContext.request.contextPath}/views/footer.jsp"
+			data-ready="true"></iframe>
+	</div>
 
 </body>
 </html>

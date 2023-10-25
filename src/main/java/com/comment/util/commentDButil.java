@@ -160,13 +160,15 @@ import com.comment.model.comment;
 		            connection = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
 
 		            // Define the SQL update query
-		            String sql = "UPDATE comment comment = ?";
+		            String sql = "UPDATE comment SET comment = ? where commentID = ? ";
 
 		            // Create a PreparedStatement
 		            preparedStatement = connection.prepareStatement(sql);
 
 		            // Set the parameters for the query
 		            preparedStatement.setString(1, comm.getComment());
+		            preparedStatement.setInt(2, comm.getcommentID());
+		            
 		           
 		            // Execute the update query
 		            int rowsAffected = preparedStatement.executeUpdate();
