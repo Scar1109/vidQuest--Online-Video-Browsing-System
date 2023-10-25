@@ -1,0 +1,88 @@
+@charset "ISO-8859-1";
+
+@import "https://fonts.googleapis.com/css?family=Raleway";
+
+
+.editForm { 
+  display: none;
+  padding: 2em;
+  width: 60%;
+  text-align: center;
+  background: #fff;
+  position: fixed;
+  top:50%;
+  left:50%;
+  border-radius: 10px;
+  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%)
+  
+}
+
+input, textarea{ 
+  margin: .8em auto;
+  font-family: inherit; 
+  text-transform: inherit; 
+  font-size: inherit;
+  border: 1px solid #ccc;
+  display: block; 
+  width: 90%; 
+  padding: .6em;
+  border-radius: 4px;
+}
+
+input[type = "file"]{
+	border:none;
+}
+
+.chnage-thumbnail {
+	text-align: left;
+	margin-left: 70px;
+	margin-bottom: -10px;
+}
+
+
+textarea { height: 180px; resize: none; }
+
+.selection-box {
+  margin: 0.8em auto;
+  font-family: inherit;
+  text-transform: inherit;
+  font-size: inherit;
+  display: block;
+  width: 90%;
+  padding: 0.6em;
+  border: 1px solid #ccc; /* Add a border for consistency */
+  border-radius: 4px; /* Add rounded corners if desired */
+  background-color: #fff; /* Set background color */
+  color: #333; /* Set text color */
+}
+
+
+.formBtn { 
+  width: 140px;
+  display: inline-block;
+  border-radius: 5px;
+  background: #262629;
+  color: #fff;
+  font-weight: 100;
+  font-size: 1.2em;
+  border: none;
+  height: 50px;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+  backdrop-filter: blur(5px); /* Adjust the blur amount as needed */
+  z-index: 1;
+}
+
+
+#contentToBlur {
+    transition: filter 0.5s;
+}

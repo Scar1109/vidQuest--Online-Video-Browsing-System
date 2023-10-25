@@ -44,4 +44,10 @@ darkToggle.addEventListener('click', () => {
     body.classList.toggle('dark');
     toggleLogo(); // Call the function to toggle the logo
 });
+
+
+document.getElementById("redirectButton").addEventListener("click", function () {
+        // Replace 'YOUR_REDIRECT_URL' with the URL you want to redirect to
+        window.location.href = '${pageContext.request.contextPath}/views/studio/vidUpload.jsp';
+    });
     
