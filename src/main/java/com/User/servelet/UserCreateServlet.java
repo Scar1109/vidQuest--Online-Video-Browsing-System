@@ -35,9 +35,11 @@ public class UserCreateServlet extends HttpServlet {
 	        if (us == null) {
 	        	User user = new  User(firstName,lastName,email,pno,pwd,username);
 		        UserDbUtill.adduser(user);
+		        
 		        HttpSession session = request.getSession();
 	        	session.setAttribute("user", user);
-	            response.sendRedirect("views/login.jsp?error=usernotfound");
+	        	
+	            response.sendRedirect("index.jsp");
 	        } else {
 	            // User already exists, handle this case
 	            // You might want to display a different message or take other actions

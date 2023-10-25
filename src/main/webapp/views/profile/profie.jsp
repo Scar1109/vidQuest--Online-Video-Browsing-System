@@ -55,7 +55,7 @@
     <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
       <div class="container-fluid">
         <!-- Brand -->
-        <img class="logo" src ="${pageContext.request.contextPath}/assets/logoWhite.png" >
+        <a href = "index.jsp" ><img class="logo" src ="${pageContext.request.contextPath}/assets/logoWhite.png" ></a>
         <!-- Form -->
         <form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
           <div class="form-group mb-0">
@@ -151,9 +151,8 @@
                 <hr class="my-4">
       			 <p>Over 4.4 million+ high quality stock images, videos and music shared by our talented community.</p><br><br>
                
-               <p><a href="" onclick="return confirm('Are you sure you want to signout from your account?');">Log out</a></p>
-               
-                  <a href="${pageContext.request.contextPath}/DeleteUserServlet?userId=3" onclick="return confirm('Are you sure you want to delete your account?');" class="btn btn-info">Delete profile</a>
+               <p><a href="${pageContext.request.contextPath}/LogoutServlet" onclick="return confirm('Are you sure you want to signout from your account?');">Log out</a></p>
+                  <a href="${pageContext.request.contextPath}/DeleteUserServlet?userId=<%=us.getuid()%>" onclick="return confirm('Are you sure you want to delete your account?');" class="btn btn-info">Delete profile</a>
               </div>
             </div>
           </div>

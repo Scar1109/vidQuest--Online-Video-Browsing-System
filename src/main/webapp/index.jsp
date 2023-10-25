@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@page import="com.User.model.User"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,12 +42,27 @@
 					<li class="nav-item"><a class="nav-link" href="#about">About</a></li>
 					<li class="nav-item"><a class="nav-link" href="#projects">Videos</a></li>
 					<li class="nav-item"><a class="nav-link" href="#signup">Contact</a></li>
-					<li class="nav-item"><a class="nav-link" href="#signup"><button
+					<li class="nav-item"><a class="nav-link" href="views/studio/vidUpload.jsp"><button
 								type="button" class="btn btn-success">Create <i class="fa fa-cloud-upload"></i></button></a></li>
 					
-					<!-- <li class="nav-item"><a class="nav-link" href="#signup"><button
-								type="button" class="btn btn-warning" id=login>Login </i></button></a></li> -->
-					<li class="nav-item"><a class="nav-link" href="#signup">Sign in</a></li>			
+					
+									<%
+				    // Check if the session attribute 'user' is set
+				    User us = (User) session.getAttribute("user");
+				    
+				    if (us != null) {
+				    %>
+				        <!-- The session attribute 'user' is set -->
+				        <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/viewUserServelet"><%=us.getUsername()%></a></li>
+				    <%
+				    } else {
+				    %>
+				        <!-- The session attribute 'user' is not set -->
+				        <li class="nav-item"><a class="nav-link" href="views/login.jsp">Sign in</a></li>	
+				    <%
+				    }
+				    %>
+							
 				</ul>
 			</div>
 		</div>
@@ -93,7 +111,7 @@
         </section> -->
 	<!-- Projects-->
 	<section class="projects-section bg-light" id="projects">
-		<iframe id="homeIframe" src="assets/frame.html" allowfullscreen=""
+		<iframe id="homeIframe" src="assets/frame.jsp" allowfullscreen=""
 			data-ready="true">></iframe>
 
 	</section>
@@ -192,10 +210,7 @@
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 	<!-- Core theme JS-->
 	<script src="script/index.js"></script>
-	<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-	<!-- * *                               SB Forms JS                               * *-->
-	<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-	<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+
 	<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 </body>
 </html>
