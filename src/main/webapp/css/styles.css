@@ -13122,7 +13122,53 @@ input[type=text]::placeholder {
 	}
 }
 
+  #homeIframe {
+            width: 100%; /* Set the width to 100% of its container */
+            height: 700px; /* Set a fixed height */
+            border: none; /* Remove the iframe border */
+            background-color: #f0f0f0; /* Set a background color */
+        }
 
+.btn-success {
+  font-family: Times New Roman;
+  font-size: 13px;
+  color: rgb(0, 0, 0);
+  padding:12px;
+  letter-spacing: 1px;
+  line-height: 1px;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 40px;
+  background: transparent;
+  transition: all 0.3s ease 0s;
+  margin:-13px;
+}
+
+.btn-warning:hover {
+  color: #FFF;
+  background: #09925D;
+  border: 2px solid rgb(255, 255, 255);
+}
+
+
+#login {
+  
+  font-size: 13px;
+  color: rgb(0, 0, 0);
+  padding:17px;
+  letter-spacing: 1px;
+  line-height: 1px;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 40px;
+  background: transparent;
+  transition: all 0.3s ease 0s;
+  margin:-13px;
+}
+
+.btn-warning:hover {
+  color: #FFF;
+  background: #09925D;
+  border: 2px solid rgb(255, 255, 255);
+}
 /* styles.css */
 /* Add styles to create a transparent search bar */
 /* .search-bar {

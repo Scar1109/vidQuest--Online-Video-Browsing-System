@@ -12,13 +12,13 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/LoginServlet")
-public class LoginServlet extends HttpServlet {
+@WebServlet("/profileServlet")
+public class profileServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("uid");
-        String password = request.getParameter("pwd");
+        String password = request.getParameter("pwd"); 
 
         try {
             List<User> userDetails = moderatorDBUtil.validate(username, password);
@@ -34,7 +34,7 @@ public class LoginServlet extends HttpServlet {
             e.printStackTrace();
         }
 
-        RequestDispatcher dis = request.getRequestDispatcher("views/admin/index.jsp");
+        RequestDispatcher dis = request.getRequestDispatcher("views/admin/profile.jsp");
         dis.forward(request, response);
     }
 }

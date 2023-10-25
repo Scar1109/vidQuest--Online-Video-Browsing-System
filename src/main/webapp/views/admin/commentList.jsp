@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@page import="com.moderator.model.*"%>
+<%@page import="java.util.List"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,40 +13,37 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
 <meta name="author" content="" />
-<title>Dashtreme Admin - Free Dashboard for Bootstrap 4 by
-	Codervent</title>
+<title>VidQuest</title>
 <!-- loader-->
-<link href="Aassets/css/pace.min.css" rel="stylesheet" />
-<script src="assets/js/pace.min.js"></script>
-<!--favicon-->
-<link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
-<!-- simplebar CSS-->
-<link href="assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
-<!-- Bootstrap core CSS-->
-<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
-<!-- animate CSS-->
-<link href="assets/css/animate.css" rel="stylesheet" type="text/css" />
-<!-- Icons CSS-->
-<link href="assets/css/icons.css" rel="stylesheet" type="text/css" />
-<!-- Sidebar CSS-->
-<link href="assets/css/sidebar-menu.css" rel="stylesheet" />
-<!-- Custom Style-->
-<link href="assets/css/app-style.css" rel="stylesheet" />
 
+<link href="views/admin/assets/css/pace.min.css" rel="stylesheet" />
+<script src="views/admin/assets/js/pace.min.js"></script>
+<!--favicon-->
+<link rel="icon" href="views/admin/assets/images/favicon.ico"
+	type="image/x-icon">
+<!-- Vector CSS -->
+<link
+	href="views/admin/assets/plugins/vectormap/jquery-jvectormap-2.0.2.css"
+	rel="stylesheet" />
+<!-- simplebar CSS-->
+<link href="views/admin/assets/plugins/simplebar/css/simplebar.css"
+	rel="stylesheet" />
+<!-- Bootstrap core CSS-->
+<link href="views/admin/assets/css/bootstrap.min.css" rel="stylesheet" />
+<!-- animate CSS-->
+<link href="views/admin/assets/css/animate.css" rel="stylesheet"
+	type="text/css" />
+<!-- Icons CSS-->
+<link href="views/admin/assets/css/icons.css" rel="stylesheet"
+	type="text/css" />
+<!-- Sidebar CSS-->
+<link href="views/admin/assets/css/sidebar-menu.css" rel="stylesheet" />
+<!-- Custom Style-->
+<link href="views/admin/assets/css/app-style.css" rel="stylesheet" />
 
 </head>
 
 <body class="bg-theme bg-theme2">
-
-	<!-- start loader -->
-	<div id="pageloader-overlay" class="visible incoming">
-		<div class="loader-wrapper-outer">
-			<div class="loader-wrapper-inner">
-				<div class="loader"></div>
-			</div>
-		</div>
-	</div>
-	<!-- end loader -->
 
 	<!-- Start wrapper-->
 	<div id="wrapper">
@@ -52,15 +52,15 @@
 		<div id="sidebar-wrapper" data-simplebar=""
 			data-simplebar-auto-hide="true">
 			<div class="brand-logo">
-				<a href="index.html"> <img src="assets/images/logo-icon.png"
-					class="logo-icon" alt="logo icon">
+				<a href="index.html"> <img
+					src="views/admin/assets/images/logo-icon.png" class="logo-icon"
+					alt="logo icon">
 					<h5 class="logo-text">VidQuest</h5>
 				</a>
 			</div>
 			<ul class="sidebar-menu do-nicescrol">
 				<li class="sidebar-header">MAIN NAVIGATION</li>
-				<li><a href="views/admin/index.jsp"> <i
-						class="zmdi zmdi-view-dashboard"></i> <span>Dashboard</span>
+				<li><a href="#"> <i class="zmdi zmdi-view-dashboard"></i> <span>Dashboard</span>
 				</a></li>
 
 				<li><a href="views/admin/forms.jsp"> <i
@@ -74,7 +74,8 @@
 						<i class="zmdi zmdi-grid"></i> <span>Video-Details</span>
 				</a></li>
 
-				<li><a href="profile.jsp"> <i class="zmdi zmdi-face"></i> <span>Profile</span>
+				<li><a href="views/admin/profile.jsp"> <i
+						class="zmdi zmdi-face"></i> <span>Profile</span>
 				</a></li>
 
 
@@ -165,72 +166,79 @@
 		<div class="content-wrapper">
 			<div class="container-fluid">
 
-				<div class="row mt-3">
+				<!--Start Dashboard Content-->
 
-					<div class="col-lg-12">
+
+				<div class="row">
+					<div class="col-12 col-lg-12">
 						<div class="card">
-							<div class="card-body">
-								<div class="card-title">Round Vertical Form</div>
-								<hr>
-								<form
-									action="${pageContext.request.contextPath}/addUserServelet"
-									method="post">
-									<div class="form-group">
-										<label for="input-6">Firt Name</label> <input type="text"
-											class="form-control form-control-rounded" id="input-6"
-											name="firstname" placeholder="Enter Your Name">
-									</div>
-									<div class="form-group">
-										<label for="input-6">Last Name</label> <input type="text"
-											class="form-control form-control-rounded" id="input-6"
-											name="lastname" placeholder="Enter Your Name">
-									</div>
-									<div class="form-group">
-										<label for="input-6">UserName</label> <input type="text"
-											class="form-control form-control-rounded" id="input-6"
-											name="username" placeholder="Enter Your Name">
-									</div>
-									<div class="form-group">
-										<label for="input-7">Email</label> <input type="text"
-											class="form-control form-control-rounded" id="input-7"
-											name="email" placeholder="Enter Your Email Address">
-									</div>
-									<div class="form-group">
-										<label for="input-8">Mobile</label> <input type="text"
-											class="form-control form-control-rounded" id="input-8"
-											name="number" placeholder="Enter Your Mobile Number">
-									</div>
-									<div class="form-group">
-										<label for="input-9">Password</label> <input type="text"
-											class="form-control form-control-rounded" id="input-9"
-											name="password" placeholder="Enter Password">
-									</div>
-									<div class="form-group">
-										<label for="user-type">Select your role:</label> <select
-											id="user-type" name="user-type">
-											<option value="user">User</option>
-											<option value="creator">Creator</option>
-											<option value="admin">Admin</option>
-										</select>
-									</div>
-									<div class="form-group py-2">
-										<div class="icheck-material-white">
-											<input type="checkbox" id="user-checkbox2" checked="agree" />
-											<label for="user-checkbox2">I Agree Terms &
-												Conditions</label>
+							<div class="card-header">
+								Pending Videos
+								<div class="card-action">
+									<div class="dropdown">
+										<a href="javascript:void();"
+											class="dropdown-toggle dropdown-toggle-nocaret"
+											data-toggle="dropdown"> <i class="icon-options"></i>
+										</a>
+										<div class="dropdown-menu dropdown-menu-right">
+											<a class="dropdown-item" href="javascript:void();">Action</a>
+											<a class="dropdown-item" href="javascript:void();">Another
+												action</a> <a class="dropdown-item" href="javascript:void();">Something
+												else here</a>
+											<div class="dropdown-divider"></div>
+											<a class="dropdown-item" href="javascript:void();">Separated
+												link</a>
 										</div>
 									</div>
-									<div class="form-group">
-										<button type="submit" class="btn btn-light btn-round px-5">
-											<i class="icon-lock"></i> Register
-										</button>
-									</div>
-								</form>
+								</div>
+							</div>
+							<div class="table-responsive">
+								<table
+									class="table align-items-center table-flush table-borderless">
+									<thead>
+										<tr>
+										<tr>
+											<th>Comment ID</th>
+											<th>Video ID</th>
+											<th>User ID</th>
+											<th>Comment</th>
+											<th>Date</th>
+											<th>Time</th>
+
+										</tr>
+									</thead>
+									<tbody>
+
+										<c:forEach var="com" items="${commentDetails}">
+
+											<c:set var="commentID" value="${com.commentId}" />
+											<c:set var="videoID" value="${com.videoID}" />
+											<c:set var="userID" value="${com.userID}" />
+											<c:set var="comment" value="${com.comment}" />
+											<c:set var="date" value="${com.date}" />
+											<c:set var="time" value="${com.time}" />
+
+											<tr>
+												<td>${com.commentID}</td>
+												<td>${com.videoID}</td>
+												<td>${com.userID}</td>
+												<td>${com.comment}</td>
+												<td>${com.date}</td>
+												<td>${com.time}</td>
+												
+											</tr>
+
+											
+										</c:forEach>
+									</tbody>
+								</table>
 							</div>
 						</div>
 					</div>
 				</div>
 				<!--End Row-->
+
+				<!--End Dashboard Content-->
 
 				<!--start overlay-->
 				<div class="overlay toggle-menu"></div>
@@ -289,21 +297,34 @@
 		<!--end color switcher-->
 
 	</div>
+	<script>
+		
+	</script>
+
+
 	<!--End wrapper-->
 
-
 	<!-- Bootstrap core JavaScript-->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/popper.min.js"></script>
-	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="views/admin/assets/js/jquery.min.js"></script>
+	<script src="views/admin/assets/js/popper.min.js"></script>
+	<script src="views/admin/assets/js/bootstrap.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 	<!-- simplebar js -->
-	<script src="assets/plugins/simplebar/js/simplebar.js"></script>
+	<script src="views/admin/assets/plugins/simplebar/js/simplebar.js"></script>
 	<!-- sidebar-menu js -->
-	<script src="assets/js/sidebar-menu.js"></script>
-
+	<script src="views/admin/assets/js/sidebar-menu.js"></script>
+	<!-- loader scripts -->
+	<script src="views/admin/assets/js/jquery.loading-indicator.js"></script>
 	<!-- Custom scripts -->
-	<script src="assets/js/app-script.js"></script>
+	<script src="views/admin/assets/js/app-script.js"></script>
+	<!-- Chart js -->
+
+	<script src="views/admin/assets/plugins/Chart.js/Chart.min.js"></script>
+
+	<!-- Index js -->
+	<script src="views/admin/assets/js/index.js"></script>
+
 
 </body>
 </html>

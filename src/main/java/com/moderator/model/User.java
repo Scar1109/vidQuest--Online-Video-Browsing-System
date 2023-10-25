@@ -58,4 +58,14 @@ public class User {
 	    public String getUsername() {
 	        return username;
 	    }
+
+		public String getusername() {
+			// TODO Auto-generated method stub
+			return username;
+		}
+
+		public int getUserID() {
+			// TODO Auto-generated method stub
+			return UserID;
+		}
 }
