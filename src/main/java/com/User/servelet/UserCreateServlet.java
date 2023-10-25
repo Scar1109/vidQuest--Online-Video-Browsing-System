@@ -10,7 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 import com.User.model.User;
 import com.User.util.UserDbUtill;
 
-@WebServlet( urlPatterns ="/UserCreateServlet")
+@SuppressWarnings("serial")
+@WebServlet("/UserCreateServlet")
 
 
 public class UserCreateServlet extends HttpServlet {

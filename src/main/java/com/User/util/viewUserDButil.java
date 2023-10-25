@@ -31,13 +31,12 @@ public class viewUserDButil {
 
 	            preparedStatement = connection.prepareStatement(sql);
 
-	            // Set the value for the first parameter (uid)
 	            preparedStatement.setInt(1, uid);
 
 	            ResultSet resultSet = preparedStatement.executeQuery();
 
 	            while (resultSet.next()) {
-	                User us = new User(resultSet.getString("firstName"), resultSet.getString("lastName"), resultSet.getString("email"), resultSet.getString("pNo"), resultSet.getString("pwd"), resultSet.getString("username"));
+	                User us = new User(resultSet.getInt("UserID"),resultSet.getString("firstName"), resultSet.getString("lastName"), resultSet.getString("email"), resultSet.getString("pNo"), resultSet.getString("pwd"), resultSet.getString("username"));
 	                user.add(us);
 	            }
 
