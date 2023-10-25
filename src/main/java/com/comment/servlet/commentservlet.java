@@ -27,12 +27,12 @@ public class commentservlet extends HttpServlet {
 	        
 	        String comm = request.getParameter("coms");
 
-	        comment Comment = new comment(1,1,comm);
+	        comment Comment = new comment(28,1,comm);
 	        
 	        
 	        commentDButil.addComment(Comment);
 
 	        // Redirect to a success page or show a success message
-	        response.sendRedirect("success.jsp");
+	        response.sendRedirect(request.getContextPath() + "/viewCommentServlet");
 	    }
 }
