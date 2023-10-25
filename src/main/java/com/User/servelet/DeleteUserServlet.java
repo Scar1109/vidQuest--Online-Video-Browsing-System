@@ -25,7 +25,7 @@ public class DeleteUserServlet extends HttpServlet {
 
         if (success) {
             // user deleted successfully
-            response.sendRedirect(request.getContextPath() + "/viewCustomerServlet"); // Redirect to the user list page
+            response.sendRedirect(request.getContextPath() + "/index.jsp"); // Redirect to the user list page
         } else {
             // Handle the case where the user couldn't be deleted
             // You can set an error message or perform other actions here
