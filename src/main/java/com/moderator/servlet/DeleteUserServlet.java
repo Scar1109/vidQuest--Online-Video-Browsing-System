@@ -24,8 +24,7 @@ public class DeleteUserServlet extends HttpServlet {
 
         if (isTrue) {
             
-            RequestDispatcher dis = request.getRequestDispatcher("/UserServlet");
-            dis.forward(request, response);
+        	response.sendRedirect(request.getContextPath() + "/UserServlet");;
         } else {
             List<User> userDetails = moderatorDBUtil.getUserDetails(id);
             request.setAttribute("userDetails", userDetails);

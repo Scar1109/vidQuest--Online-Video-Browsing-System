@@ -13,8 +13,7 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
 <meta name="author" content="" />
-<title>Dashtreme Admin - Free Dashboard for Bootstrap 4 by
-	Codervent</title>
+<title>VidQuest My Admin</title>
 <!-- loader-->
 <link href="views/admin/assets/css/pace.min.css" rel="stylesheet" />
 <script src="views/admin/assets/js/pace.min.js"></script>
@@ -58,7 +57,7 @@
 		<div id="sidebar-wrapper" data-simplebar=""
 			data-simplebar-auto-hide="true">
 			<div class="brand-logo">
-				<a href="index.html"> <img
+				<a href="${pageContext.request.contextPath}/getActivityServlet"><img
 					src="views/admin/assets/images/logo-icon.png" class="logo-icon"
 					alt="logo icon">
 					<h5 class="logo-text">VidQuest</h5>
@@ -66,7 +65,8 @@
 			</div>
 			<ul class="sidebar-menu do-nicescrol">
 				<li class="sidebar-header">MAIN NAVIGATION</li>
-				<li><a href="views/admin/index.jsp"> <i
+				<li><a
+					href="${pageContext.request.contextPath}/getActivityServlet"> <i
 						class="zmdi zmdi-view-dashboard"></i> <span>Dashboard</span>
 				</a></li>
 
@@ -74,20 +74,19 @@
 						class="zmdi zmdi-format-list-bulleted"></i> <span>Add user</span>
 				</a></li>
 
-				<li><a href="${pageContext.request.contextPath}/getuser"> <i
-						class="zmdi zmdi-grid"></i> <span>User-Details</span>
+				<li><a href="${pageContext.request.contextPath}/UserServlet">
+						<i class="zmdi zmdi-grid"></i> <span>User-Details</span>
+				</a></li>
+				<li><a
+					href="${pageContext.request.contextPath}/getVideoServlet"> <i
+						class="zmdi zmdi-grid"></i> <span>Video-Details</span>
 				</a></li>
 
-				<li><a href="${pageContext.request.contextPath}/getvideo">
-						<i class="zmdi zmdi-grid"></i> <span>Video-Details</span>
+				<li><a href="${pageContext.request.contextPath}/profileServlet">
+						<i class="zmdi zmdi-face"></i> <span>Profile</span>
 				</a></li>
-
-				<li><a href="profile.jsp"> <i class="zmdi zmdi-face"></i> <span>Profile</span>
-				</a></li>
-
 
 			</ul>
-
 		</div>
 		<!--End sidebar-wrapper-->
 
