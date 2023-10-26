@@ -6,7 +6,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import com.User.model.User;
 import com.comment.util.commentDButil;
  
 
@@ -21,16 +23,18 @@ public class DeleteCommentServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		int commentID = Integer.parseInt( request.getParameter("commentId"));
+		int vid = Integer.parseInt( request.getParameter("vid"));
 		
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
 		
 		   // Call the service to delete the comment
         boolean success = commentDButil.deleteComment(commentID);
 
         if (success) {
             // Customer deleted successfully
-            response.sendRedirect(request.getContextPath() + "/viewCommentServlet"); // Redirect to the customer list page
+            response.sendRedirect(request.getContextPath() + "/viewCommentServlet?vid=" + vid ); // Redirect to the customer list page
         } else {
             // Handle the case where the customer couldn't be deleted
             // You can set an error message or perform other actions here

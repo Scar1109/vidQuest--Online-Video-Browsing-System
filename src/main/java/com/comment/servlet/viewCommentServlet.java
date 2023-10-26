@@ -20,9 +20,10 @@ public class viewCommentServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Retrieve customer data from the database using a DAO class
+    	int vid = Integer.parseInt(request.getParameter("vid"));
     	
     	commentDButil commentDao = new commentDButil();
-        List<comment> comments = commentDao.getAllComments(29);
+        List<comment> comments = commentDao.getAllComments(vid);
 
         // Pass the customer data to the JSP view
         request.setAttribute("Comment", comments);

@@ -1,4 +1,6 @@
-
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@page import="com.studio.model.video"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,12 +15,16 @@
     />
     <link rel="stylesheet" href="playerstyle.css" />
   </head>
-  <body> 
+  
+  <body>
+  <%
+  video vdo = (video) session.getAttribute("video");
+  %>
     <div class="custom-video-player">
       <div class="playerConatiner">
         <div class="player">
           <video
-            src="../asserts/video/production_id4492700 (2160p).mp4"
+            src="<%=request.getContextPath()%>/uploads/videos/11310f56-6b53-40bc-95b7-b69f53fbb0fe.mp4"
             class="video"
             playsinline
           ></video>

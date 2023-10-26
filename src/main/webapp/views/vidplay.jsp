@@ -8,7 +8,7 @@
 <html lang="en" style="--vh: 7.07px;">
 <head>
 
-<title>vidPlay</title>
+<title>vidQuest</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -89,7 +89,6 @@
 												<div class="textInputContainer--UKemN">
 													<div class="textInputField--xIcYM">
 
-
 														<form id="comment"
 															action="${pageContext.request.contextPath}/commentservlet"
 															method="post">
@@ -98,11 +97,9 @@
 																name="coms" placeholder="Add your comments..."
 																style="height: 19px !important;"
 																onkeydown="checkSubmit(event)" required></textarea>
-
+																<input type = "hidden" name = "vid" value = "<%=request.getParameter("vid")%>">
 															<input type="submit" value="Post" id="submitBtn" style = "display : none">
 														</form>
-
-
 													</div>
 												</div>
 											</div>
@@ -135,7 +132,7 @@
 										<div class="commentInner--ppayY">
 											<div class="commentTitles--d7obE">
 												<a href="https://pixabay.com/users/u_q46lh2u7s7-39675521/"
-													target="_blank" class="commentCommenterNameField--eu7bd">u_q46lh2u7s7</a>
+													target="_blank" class="commentCommenterNameField--eu7bd">anonymous user</a>
 												<div class="commentTime--KEQg1">8 days ago</div>
 												<div class="contextMenu--fbIC-">
 													<div class="container--YKYLB">
@@ -154,7 +151,7 @@
 																<li><a href="" id="edit-option<%=commentCount%>">Edit</a></li>
 
 																<li><a
-																	href="<%=request.getContextPath()%>/DeleteCommentServlet?commentId=<%=comm.getcommentID()%>"
+																	href="<%=request.getContextPath()%>/DeleteCommentServlet?commentId=<%=comm.getcommentID()%>&vid=<%=request.getParameter("vid")%>"
 																	id="delete-option" onclick="return confirm('Are you sure you want to delete this comment?');">Delete</a></li>
 															</ul>
 														</div>
@@ -208,7 +205,7 @@
 													<div class="textInputField--xIcYM">
 
 														<form id="edit-comment"
-															action="${pageContext.request.contextPath}/EditCommentServlet" method="get">
+															action="${pageContext.request.contextPath}/EditCommentServlet" method="post">
 															
 															<input type = "hidden" name = "commentId" value = "<%=comm.getcommentID()%>">
 															
@@ -217,6 +214,8 @@
 																<script>
 																	document.getElementById('text-area<%=commentCount%>').value = '<%=comm.getComment()%>';
 																</script>
+																<input type = "hidden" name = "vid" value = "<%=request.getParameter("vid")%>" >
+																
 															<input type="submit" value="Post" id="editBtn" style = "display : none">
 														</form>
 
