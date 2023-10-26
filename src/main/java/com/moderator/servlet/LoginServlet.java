@@ -34,7 +34,6 @@ public class LoginServlet extends HttpServlet {
             e.printStackTrace();
         }
 
-        RequestDispatcher dis = request.getRequestDispatcher("views/admin/index.jsp");
-        dis.forward(request, response);
+        response.sendRedirect(request.getContextPath() + "/getActivityServlet");
     }
 }
