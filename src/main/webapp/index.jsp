@@ -39,9 +39,9 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ms-auto">
-					<li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+					<li class="nav-item"><a class="nav-link" href="views/other/about.jsp">About</a></li>
 					<li class="nav-item"><a class="nav-link" href="#projects">Videos</a></li>
-					<li class="nav-item"><a class="nav-link" href="#signup">Contact</a></li>
+					<li class="nav-item"><a class="nav-link" href="views/other/contact.jsp">Contact</a></li>
 					<li class="nav-item"><a class="nav-link" href="views/studio/vidUpload.jsp"><button
 								type="button" class="btn btn-success">Create <i class="fa fa-cloud-upload"></i></button></a></li>
 					

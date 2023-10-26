@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<%@page import="com.User.model.User"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,12 +20,18 @@
 	<nav>
 		<div class="profileImg">
 			<img
-				src="${pageContext.request.contextPath}/views/studio/asserts/MyLogo.png"
+				src="${pageContext.request.contextPath}/views/studio/asserts/cool-profile-picture-87h46gcobjl5e4xu.jpg"
 				alt="">
 		</div>
+		
+		<%
+				    // Check if the session attribute 'user' is set
+				    User us = (User) session.getAttribute("user");
+		
+		%>
 
 		<div class="profName">
-			<span class="profileName">Kaveen Dinethma</span>
+			<span class="profileName"><%=us.getUsername()%></span>
 		</div>
 
 		<div class="menu-items">
@@ -76,14 +83,14 @@
 				&nbsp; Create
 			</button>
 			<div class="logo dark-logo">
-				<a href="#"><div class="logo-image">
+				<a href="index.jsp"><div class="logo-image">
 						<img
 							src="${pageContext.request.contextPath}/views/studio/asserts/logoWhite.png"
 							alt="">
 					</div></a>
 			</div>
 			<div class="logo light-logo">
-				<a href="#"></a>
+				<a href="index.jsp"></a>
 				<div class="logo-image">
 					<img
 						src="${pageContext.request.contextPath}/views/studio/asserts/logoBlack.png"
@@ -124,8 +131,8 @@
 								</div>
 								<div class="thumbnail-section">
 									<p>Upload Thumbnail</p>
-									<input class="thumbnail-input" type="file" name="thumbnail"
-										accept=".jpg" required>
+									<input class="thumbnail-input" type="file" name="thumbnail" accept=".png, .jpg" required>
+
 
 								</div>
 							</div>
@@ -166,7 +173,20 @@
 		</div>
 	</section>
 
+	<script>
+	document.querySelector('.thumbnail-input').addEventListener('change', function(event) {
+	    const fileInput = event.target;
+	    const fileName = fileInput.value;
+	    const allowedExtensions = /(\.png|\.jpg)$/i;
 
+	    if (!allowedExtensions.exec(fileName)) {
+	        alert('Please select a PNG or JPG file.');
+	        fileInput.value = '';
+	});
+	
+	
+
+	</script>
 	<script type="module"
 		src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule
