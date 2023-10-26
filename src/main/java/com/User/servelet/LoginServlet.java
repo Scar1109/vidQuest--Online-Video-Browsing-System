@@ -1,5 +1,8 @@
 package com.User.servelet;
 
+import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,8 +12,8 @@ import javax.servlet.http.HttpSession;
 
 import com.User.model.User;
 import com.User.util.UserValidationUtil;
-
-import java.io.IOException;
+import com.moderator.model.modUser;
+import com.moderator.util.moderatorDBUtil;
 
 @SuppressWarnings("serial")
 @WebServlet("/LoginServlet")
@@ -30,7 +33,16 @@ public class LoginServlet extends HttpServlet {
         	HttpSession session = request.getSession();
         	session.setAttribute("user", user);
         	
+        	List<modUser> userDetails = moderatorDBUtil.validate(username, password);
+        	
+        	if(user.getType().equals("admin")) {
+        		moderatorDBUtil.logActivity(username,user.getuid(),"User " + username + " logged in successfully");
+                request.setAttribute("userDetails", userDetails);
+                response.sendRedirect(request.getContextPath() + "/getActivityServlet");
+        	}else {
             response.sendRedirect("index.jsp");
+        	}
+        	
         } else {
             response.sendRedirect("views/login.jsp?error=usernotfound");
         }

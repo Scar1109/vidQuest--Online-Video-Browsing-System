@@ -1,6 +1,6 @@
 package com.moderator.model;
 
-public class User {
+public class modUser {
 	
 	 	private int UserID;
 	    private String firstName;
@@ -13,7 +13,7 @@ public class User {
 	    private String username;
 	    
 
-	    public User(int UserID, String firstName,String lastName,String date, String time, String email, String mobile, String password, String username) {
+	    public modUser(int UserID, String firstName,String lastName,String date, String time, String email, String mobile, String password, String username) {
 	        this.UserID = UserID;
 	        this.firstName = firstName;
 	        this.lastName=lastName;

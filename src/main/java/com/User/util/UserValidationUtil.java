@@ -29,7 +29,7 @@ public class UserValidationUtil {
             ResultSet resultSet = preparedStatement.executeQuery();
 
             resultSet.next();
-            	User us = new User(resultSet.getInt("UserID"),resultSet.getString("firstName"), resultSet.getString("lastName"), resultSet.getString("email"), resultSet.getString("pNo"), resultSet.getString("pwd"), resultSet.getString("username"));
+            	User us = new User(resultSet.getInt("UserID"),resultSet.getString("firstName"), resultSet.getString("lastName"), resultSet.getString("email"), resultSet.getString("pNo"), resultSet.getString("pwd"), resultSet.getString("username"),resultSet.getString("type"));
 
             
             return us;

@@ -20,9 +20,9 @@ public class moderatorDBUtil {
 	private static boolean isSuccess;
 	private static ResultSet rs = null;
 
-	public static List<User> validate(String username, String password) {
+	public static List<modUser> validate(String username, String password) {
 
-		ArrayList<User> usr = new ArrayList<>();
+		ArrayList<modUser> usr = new ArrayList<>();
 
 		try {
 
@@ -43,7 +43,7 @@ public class moderatorDBUtil {
 				String passwdu = rs.getString(8);
 				String usernameu = rs.getString(9);
 
-				User u = new User(UserID, firstName, lastName, date, time, email, mobile, passwdu, usernameu);
+				modUser u = new modUser(UserID, firstName, lastName, date, time, email, mobile, passwdu, usernameu);
 				usr.add(u);
 			}
 		} catch (Exception e) {
@@ -106,11 +106,11 @@ public class moderatorDBUtil {
 		return isSuccess;
 	}
 
-	public static List<User> getUserDetails(String id) {
+	public static List<modUser> getUserDetails(String id) {
 
 		int covertedID = Integer.parseInt(id);
 
-		ArrayList<User> usr = new ArrayList<>();
+		ArrayList<modUser> usr = new ArrayList<>();
 
 		try {
 			con = DBconnect.getConnection();
@@ -129,7 +129,7 @@ public class moderatorDBUtil {
 				String date = rs.getString(7);
 				String time = rs.getString(8);
 
-				User u = new User(UserID, firstname, lastname, date, time, email, mobile, passwdu, usernameu);
+				modUser u = new modUser(UserID, firstname, lastname, date, time, email, mobile, passwdu, usernameu);
 				usr.add(u);
 			}
 
@@ -163,8 +163,8 @@ public class moderatorDBUtil {
 		return isSuccess;
 	}
 
-	public static List<User> getAllUsers() {
-		ArrayList<User> users = new ArrayList<>();
+	public static List<modUser> getAllUsers() {
+		ArrayList<modUser> users = new ArrayList<>();
 
 		try {
 			Connection con = DBconnect.getConnection();
@@ -184,7 +184,7 @@ public class moderatorDBUtil {
 				String password = rs.getString("pwd");
 				String username = rs.getString("username");
 
-				User user = new User(UserID, firstName, lastName, date, time, email, mobile, password, username);
+				modUser user = new modUser(UserID, firstName, lastName, date, time, email, mobile, password, username);
 				users.add(user);
 			}
 		} catch (Exception e) {

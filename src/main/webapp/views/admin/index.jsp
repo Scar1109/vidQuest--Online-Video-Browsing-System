@@ -69,7 +69,7 @@
 					<i class="zmdi zmdi-grid"></i> <span>Video-Details</span>
 			</a></li>
 
-			<li><a href="${pageContext.request.contextPath}/profileServlet">
+			<li><a href="${pageContext.request.contextPath}/viewUserServelet">
 					<i class="zmdi zmdi-face"></i> <span>Profile</span>
 			</a></li>
 

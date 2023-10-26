@@ -230,7 +230,7 @@
 									</div>
 									<div class="form-group">
 										<button type="submit" class="btn btn-light btn-round px-5"
-											id="register-button" disabled>
+											id="register-button">
 											<i class="icon-lock"></i> Register
 										</button>
 									</div>

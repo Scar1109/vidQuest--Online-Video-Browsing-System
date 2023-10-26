@@ -1,6 +1,6 @@
 package com.moderator.servlet;
 
-import com.moderator.model.User;
+import com.moderator.model.modUser;
 import com.moderator.util.moderatorDBUtil;
 
 import javax.servlet.RequestDispatcher;
@@ -21,7 +21,7 @@ public class profileServlet extends HttpServlet {
         String password = request.getParameter("pwd"); 
 
         try {
-            List<User> userDetails = moderatorDBUtil.validate(username, password);
+            List<modUser> userDetails = moderatorDBUtil.validate(username, password);
 
             if (!userDetails.isEmpty()) {
                 // Log the successful login activity

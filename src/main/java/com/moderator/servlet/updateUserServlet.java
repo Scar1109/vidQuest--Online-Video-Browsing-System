@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.moderator.model.User;
+import com.moderator.model.modUser;
 import com.moderator.util.moderatorDBUtil;
 
 @WebServlet("/updateUserServlet")
@@ -32,13 +32,13 @@ public class updateUserServlet extends HttpServlet {
 
 	    if(isTrue==true) {
 	    	
-	    	List<User> userDetails = moderatorDBUtil.getUserDetails(id);
+	    	List<modUser> userDetails = moderatorDBUtil.getUserDetails(id);
 	    	request.setAttribute("userDetails", userDetails);
 	    	
 	    	RequestDispatcher dis = request.getRequestDispatcher("/views/admin/profile.jsp");
 	    	dis.forward(request, response);
 	    }else {
-	    	List<User> userDetails = moderatorDBUtil.getUserDetails(id);
+	    	List<modUser> userDetails = moderatorDBUtil.getUserDetails(id);
 	    	request.setAttribute("userDetails", userDetails);
 	    	
 	    	RequestDispatcher dis = request.getRequestDispatcher("/views/admin/profile.jsp");

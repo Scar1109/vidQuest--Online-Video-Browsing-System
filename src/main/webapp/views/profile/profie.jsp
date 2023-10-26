@@ -94,7 +94,26 @@
           <div class="col-lg-7 col-md-10">
             <h1 class="display-2 text-white">Hello!</h1>
             <p class="text-white mt-0 mb-5">This is your profile page. You can see the progress you've made with your work and manage your projects or assigned tasks</p>
-            <a href="#!" class="btn btn-info">Upload New</a>
+          
+          <%
+            
+            User usr = (User) session.getAttribute("user");
+				    
+				    if (usr.equals("admin")) {
+				    
+				    %>
+				        <!-- The session attribute 'user' is set -->
+				        <a href="<%=request.getContextPath()%>/getActivityServlet" class="btn btn-info">Go to Dashboard</a>
+				    <%
+				    } else {
+				    %>
+				        <!-- The session attribute 'user' is not set -->
+				        <a href="<%=request.getContextPath()%>/views/studio/vidUpload.jsp" class="btn btn-info">Upload New</a>	
+				    <%
+				    }
+				    %>
+            
+            
           </div>
         </div>
       </div>
@@ -226,7 +245,8 @@
                   
               </form>
               
-             	<%} %>
+             	<%
+                } %>
              	                    
             </div>
           </div>
