@@ -8,7 +8,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import com.User.model.User;
 import com.studio.model.video;
 import com.studio.utill.videoUtil;
 
@@ -21,8 +23,12 @@ public class retrieveVideoServlet extends HttpServlet {
 
 		List<video> videos = null;
 		
+		HttpSession session = request.getSession();
+		User us = (User) session.getAttribute("user");
+		
 		try {
-			videos = videoUtil.getAllVideos();
+			int uid = us.getuid();
+			videos = videoUtil.getUserVideos(uid);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

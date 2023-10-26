@@ -13,7 +13,31 @@
 <meta charset="ISO-8859-1">
   <link rel="stylesheet" href="${pageContext.request.contextPath}/views/profile//profile.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet"> 
-<title>vidquestprofile</title>
+<title>vidQuest</title>
+<style>
+#vimeoIframe {
+	overflow: hidden;
+}
+
+/* styles.css */
+#iframe-container {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  padding : 0;
+  margin : 0;
+  margin-top : 50px;
+}
+
+.footerfrmae {
+  width: 100%;
+  height: 100%;
+  border: none;
+  padding : 0;
+  margin : 0;
+}
+
+</style>
 
 </head>
 <body>
@@ -31,7 +55,7 @@
     <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
       <div class="container-fluid">
         <!-- Brand -->
-        <img class="logo" src ="${pageContext.request.contextPath}/assets/logoWhite.png" >
+        <a href = "index.jsp" ><img class="logo" src ="${pageContext.request.contextPath}/assets/logoWhite.png" ></a>
         <!-- Form -->
         <form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
           <div class="form-group mb-0">
@@ -70,7 +94,26 @@
           <div class="col-lg-7 col-md-10">
             <h1 class="display-2 text-white">Hello!</h1>
             <p class="text-white mt-0 mb-5">This is your profile page. You can see the progress you've made with your work and manage your projects or assigned tasks</p>
-            <a href="#!" class="btn btn-info">Upload New</a>
+          
+          <%
+            
+            User usr = (User) session.getAttribute("user");
+				    
+				    if (usr.equals("admin")) {
+				    
+				    %>
+				        <!-- The session attribute 'user' is set -->
+				        <a href="<%=request.getContextPath()%>/getActivityServlet" class="btn btn-info">Go to Dashboard</a>
+				    <%
+				    } else {
+				    %>
+				        <!-- The session attribute 'user' is not set -->
+				        <a href="<%=request.getContextPath()%>/views/studio/vidUpload.jsp" class="btn btn-info">Upload New</a>	
+				    <%
+				    }
+				    %>
+            
+            
           </div>
         </div>
       </div>
@@ -125,11 +168,10 @@
                   <i class="ni education_hat mr-2"></i>University of Computer Science
                 </div>
                 <hr class="my-4">
-      			 <p>Ryan  the name taken by Melbourne-raised, Brooklyn-based Nick Murphy  writes, performs and records all of his own music.</p><br><br>
+      			 <p>Over 4.4 million+ high quality stock images, videos and music shared by our talented community.</p><br><br>
                
-               <p><a href="">Log out</a></p>
-               
-                  <a href="#!" class="btn btn-info">Delete profile</a>
+               <p><a href="${pageContext.request.contextPath}/LogoutServlet" onclick="return confirm('Are you sure you want to signout from your account?');">Log out</a></p>
+                  <a href="${pageContext.request.contextPath}/DeleteUserServlet?userId=<%=us.getuid()%>" onclick="return confirm('Are you sure you want to delete your account?');" class="btn btn-info">Delete profile</a>
               </div>
             </div>
           </div>
@@ -150,20 +192,20 @@
             
              
                 
-              <form>
+              <form method = "post" action = "${pageContext.request.contextPath}/EditUserServlet">
                 <h6 class="heading-small text-muted mb-4">User information</h6>
                 <div class="pl-lg-4">
                   <div class="row">
                     <div class="col-lg-6">
                       <div class="form-group focused">
                         <label class="form-control-label" for="input-username">Username</label>
-                        <input type="text" id="input-username" class="form-control form-control-alternative" placeholder=" " value="<%=us.getUsername()%>" readonly>
+                        <input type="text" id="input-username" class="form-control form-control-alternative" name = "username" placeholder=" " value="<%=us.getUsername()%>" readonly>
                       </div>
                     </div>
                     <div class="col-lg-6">
                       <div class="form-group">
                         <label class="form-control-label" for="input-email">Email address</label>
-                        <input type="email" id="input-email" class="form-control form-control-alternative" placeholder="jesse@example.com" value ="<%=us.getEmail()%>" readonly>
+                        <input type="email" name = "email" id="input-email" class="form-control form-control-alternative" placeholder="jesse@example.com" value ="<%=us.getEmail()%>" readonly>
                       </div>
                     </div>
                   </div>
@@ -171,27 +213,29 @@
                     <div class="col-lg-6">
                       <div class="form-group focused">
                         <label class="form-control-label" for="input-first-name">First name</label>
-                        <input type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="First name" value="<%=us.getFirstName()%> " readonly>
+                        <input type="text" name = "firstName" id="input-first-name" class="form-control form-control-alternative" placeholder="First name" value="<%=us.getFirstName()%> " readonly>
                       </div>
                     </div>
                     <div class="col-lg-6">
                       <div class="form-group focused">
                         <label class="form-control-label" for="input-last-name">Last name</label>
-                        <input type="text" id="input-last-name" class="form-control form-control-alternative" placeholder="Last name" value="<%=us.getLastName()%>" readonly>
+                        <input type="text" name = "lastName" id="input-last-name" class="form-control form-control-alternative" placeholder="Last name" value="<%=us.getLastName()%>" readonly>
                       </div>
                     </div>
                       <div class="col-lg-6">
                       <div class="form-group focused">
                         <label class="form-control-label" for="input-last-name">Phone No</label>
-                        <input type="text" id="input-last-name" class="form-control form-control-alternative" placeholder="Last name" value="<%=us.getpNo()%>" readonly>
+                        <input type="text" name = "phoneNo" id="input-last-name" class="form-control form-control-alternative" placeholder="Last name" value="<%=us.getpNo()%>" readonly>
                       </div>
                     </div>
                       <div class="col-lg-6">
                       <div class="form-group focused">
                         <label class="form-control-label" for="input-last-name">Password</label>
-                        <input type="password" id="input-last-name" class="form-control form-control-alternative" placeholder="Last name" value="<%=us.getPwd()%>" readonly>
+                        <input type="password" name = "pwd" id="input-last-name" class="form-control form-control-alternative" placeholder="Last name" value="<%=us.getPwd()%>" readonly>
                       </div>
                     </div>
+                    <input type = "hidden" name = "userId" value = "<%=us.getuid()%>" readonly>
+                    
                     <div class="upload">
                     <button type="submit" class="btn btn-sm btn-success btn-submit-profile" style="display: none;">Update</button>
                     </div>
@@ -201,7 +245,8 @@
                   
               </form>
               
-             	<%} %>
+             	<%
+                } %>
              	                    
             </div>
           </div>
@@ -209,6 +254,11 @@
       </div>
     </div>
   </div>
+  
+ <div id="iframe-container">
+		<iframe class="footerfrmae" src="${pageContext.request.contextPath}/views/footer.jsp"
+			data-ready="true"></iframe>
+	</div> 
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
@@ -223,6 +273,8 @@
     });
   });
 </script>
+
+
 
 
 </body>

@@ -10,12 +10,18 @@
     font-family: 'Poppins', sans-serif;
 }
 body{
-    background: url("images/1.jpg");
+    background: url("../assets/forest-3394066.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     overflow: hidden;
 }
+
+.logo {
+    	margin-top : 20px;
+    		width : 300px;
+    	}
+
 .wrapper{
     display: flex;
     justify-content: center;

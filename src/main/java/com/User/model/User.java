@@ -8,8 +8,10 @@ public class User {
 	private String pNo;
 	private String pwd;
 	private String username;
+	private int uid;
+	private String type;
 	
-	public User( String firstName, String lastName, String email, String pNo, String pwd,String username) {
+	public User(int uid, String firstName, String lastName, String email, String pNo, String pwd,String username) {
 		
 		
 		this.firstName = firstName;
@@ -18,10 +20,35 @@ public class User {
 		this.pNo = pNo;
 		this.pwd = pwd;
 		this.username = username;
+		this.uid = uid;
+		
+	}
+	
+public User(int uid, String firstName, String lastName, String email, String pNo, String pwd,String username, String type) {
+		
+		
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.pNo = pNo;
+		this.pwd = pwd;
+		this.username = username;
+		this.uid = uid;
+		this.type = type;
 		
 	}
 	
 	// Getters and setters
+
+	public User(String firstName, String lastName, String email, String pNo, String pwd, String username) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.pNo = pNo;
+		this.pwd = pwd;
+		this.username = username;
+		
+	}
 
 	public String getFirstName() {
 		return firstName;
@@ -45,6 +72,14 @@ public class User {
 
 	public String getUsername() {
 		return username;
+	}
+	
+	public int getuid() {
+		return uid;
+	}
+	
+	public String getType() {
+		return type;
 	}
 
 	

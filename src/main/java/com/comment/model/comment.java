@@ -46,10 +46,10 @@ public class comment {
 
 	public String getComment() {
 		return comment;
+		
 	}
 	
 	public int getcommentID() {
-		
 		return commentID;
 	}
 	

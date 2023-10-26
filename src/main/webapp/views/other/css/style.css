@@ -116,7 +116,7 @@ ol {
 	bottom: 0;
 	height: 5px;
 	width: 70px;
-	background: #00bfe7;
+	background: #09925d;
 	content: "";
 }
 
@@ -174,8 +174,8 @@ ol {
 	top: 0;
 	height: 30px;
 	width: 30px;
-	border-left: 2px solid #00bfe7;
-	border-top: 2px solid #00bfe7;
+	border-left: 2px solid #09925d;
+	border-top: 2px solid #09925d;
 	content: "";
 	z-index: -1;
 	-webkit-transition: all, 0.7s;
@@ -189,8 +189,8 @@ ol {
 	bottom: 0;
 	height: 30px;
 	width: 30px;
-	border-right: 2px solid #00bfe7;
-	border-bottom: 2px solid #00bfe7;
+	border-right: 2px solid #09925d;
+	border-bottom: 2px solid #09925d;
 	content: "";
 	z-index: -1;
 	-webkit-transition: all, 0.7s;
@@ -201,7 +201,7 @@ ol {
 .site-btn {
 	font-size: 15px;
 	color: #ffffff;
-	background: #00bfe7;
+	background: #09925d;
 	font-family: "Play", sans-serif;
 	font-weight: 700;
 	border: none;
@@ -387,7 +387,7 @@ ol {
 	bottom: 0;
 	width: 100%;
 	height: 2px;
-	background: #00bfe7;
+	background: #09925d;
 	content: "";
 	-webkit-transform: scale(0);
 	-ms-transform: scale(0);
@@ -853,7 +853,7 @@ ol {
 }
 
 .latest__slider.owl-carousel .owl-dots button.active {
-	background: #00bfe7;
+	background: #09925d;
 }
 
 .latest__slider.owl-carousel .owl-dots button:last-child {
@@ -890,7 +890,7 @@ ol {
 
 .callto__text a {
 	color: #ffffff;
-	background: #00bfe7;
+	background: #09925d;
 	font-size: 15px;
 	font-weight: 700;
 	font-family: "Play", sans-serif;
@@ -1152,7 +1152,7 @@ ol {
 }
 
 .testimonial__slider.owl-carousel .owl-dots button.active {
-	background: #00bfe7;
+	background: #09925d;
 }
 
 .testimonial__slider.owl-carousel .owl-dots button:last-child {
@@ -1257,7 +1257,7 @@ ol {
 	top: 0;
 	width: 100%;
 	height: 100%;
-	border: 2px solid #00bfe7;
+	border: 2px solid #09925d;
 	content: "";
 	-webkit-transition: all, 0.5s;
 	-o-transition: all, 0.5s;
@@ -1705,7 +1705,7 @@ ol {
 		position: absolute;
 		right: 10px;
 		top: 26px;
-		background: #00bfe7;
+		background: #09925d;
 	}
 
 	.header .container {
@@ -1828,7 +1828,7 @@ ol {
 		position: absolute;
 		right: 10px;
 		top: 26px;
-		background: #00bfe7;
+		background: #09925d;
 	}
 
 	.header .container {

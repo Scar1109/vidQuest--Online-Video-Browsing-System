@@ -20,7 +20,7 @@ public class UpdateVideoStatusServlet extends HttpServlet {
             // Update the status to "Approved" in the database.
             String updateQuery = "UPDATE videos SET Status = ? WHERE VideoID = ?";
             PreparedStatement pstmt = con.prepareStatement(updateQuery);
-            pstmt.setString(1, "Approved");
+            pstmt.setString(1, "approved");
             pstmt.setString(2, videoId);
 
             int rowsUpdated = pstmt.executeUpdate();

@@ -6,11 +6,14 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.User.model.User;
 import com.User.util.UserDbUtill;
+import com.User.util.UserValidationUtil;
 
-@WebServlet( urlPatterns ="/UserCreateServlet")
+@SuppressWarnings("serial")
+@WebServlet("/UserCreateServlet")
 
 
 public class UserCreateServlet extends HttpServlet {
@@ -26,12 +29,23 @@ public class UserCreateServlet extends HttpServlet {
 	        String pwd = request.getParameter("pwd");
 	        String username = request.getParameter("username");
 	        
-	        User user = new  User(firstName,lastName,email,pno,pwd,username);
 	        
-	        UserDbUtill.adduser(user);
-			
-	     // Redirect to a success page or show a success message
-	        response.sendRedirect("index.jsp");
+	        User us = UserValidationUtil.SignupValidateUser(username, email);
+
+	        if (us == null) {
+	        	User user = new  User(firstName,lastName,email,pno,pwd,username);
+		        UserDbUtill.adduser(user);
+		        
+		        HttpSession session = request.getSession();
+	        	session.setAttribute("user", user);
+	        	
+	            response.sendRedirect("index.jsp");
+	        } else {
+	            // User already exists, handle this case
+	            // You might want to display a different message or take other actions
+	            response.sendRedirect("views/login.jsp?error=userexists");
+	        }
+
 	}
 
 	

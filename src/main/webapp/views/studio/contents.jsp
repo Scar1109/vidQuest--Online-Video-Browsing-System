@@ -2,6 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@page import="com.studio.model.video"%>
 <%@page import="java.util.List"%>
+<%@page import="com.User.model.User"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,12 +27,16 @@
 	<nav>
 		<div class="profileImg">
 			<img
-				src="${pageContext.request.contextPath}/views/studio/asserts//MyLogo.png"
+				src="${pageContext.request.contextPath}/views/studio/asserts//cool-profile-picture-87h46gcobjl5e4xu.jpg"
 				alt="">
 		</div>
-
+<%
+				    // Check if the session attribute 'user' is set
+				    User us = (User) session.getAttribute("user");
+		
+		%>
 		<div class="profName">
-			<span class="profileName">Kaveen Dinethma</span>
+			<span class="profileName"><%=us.getUsername()%></span>
 		</div>
 
 		<div class="menu-items">
@@ -57,7 +62,7 @@
 				</a></li>
 			</ul>
 			<ul class="bottom-link">
-				<li><a href="#"> <ion-icon name="log-out-outline"></ion-icon>
+				<li><a href="<%=request.getContextPath()%>/LogoutServlet"> <ion-icon name="log-out-outline"></ion-icon>
 						<span class="links">Logout</span>
 				</a></li>
 				<li class="mode"><a href="#"> <ion-icon name="moon-outline"></ion-icon>
@@ -83,14 +88,14 @@
 				&nbsp; Create
 			</button>
 			<div class="logo dark-logo">
-				<a href="#"><div class="logo-image">
+				<a href="index.jsp"><div class="logo-image">
 						<img
 							src="${pageContext.request.contextPath}/views/studio/asserts//logoWhite.png"
 							alt="">
 					</div></a>
 			</div>
 			<div class="logo light-logo">
-				<a href="#"></a>
+				<a href="index.jsp"></a>
 				<div class="logo-image">
 					<img
 						src="${pageContext.request.contextPath}/views/studio/asserts//logoBlack.png"

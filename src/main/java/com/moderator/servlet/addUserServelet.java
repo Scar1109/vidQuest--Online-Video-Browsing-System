@@ -1,7 +1,6 @@
 package com.moderator.servlet;
 
 import java.io.IOException;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,17 +16,20 @@ public class addUserServelet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		
 		String firstName = request.getParameter("firstname");
 		String lastName = request.getParameter("lastname");
 		String username = request.getParameter("username");
         String email = request.getParameter("email");
-        String mobile = request.getParameter("number");
+        String number = request.getParameter("number");
         String password = request.getParameter("password");
+        String type = request.getParameter("type");
+        
         
 
         boolean isSuccess;
 
-        isSuccess = moderatorDBUtil.insertCustomer(firstName,lastName,username,email, mobile, password);
+        isSuccess = moderatorDBUtil.insertCustomer(firstName,lastName,email, number, password,username,type);
 
         if (isSuccess) {
             // Redirect to login.jsp
@@ -36,7 +38,7 @@ public class addUserServelet extends HttpServlet {
 
         } else {
             // Redirect to profile.jsp
-        	RequestDispatcher dis = request.getRequestDispatcher("index.jsp");
+        	RequestDispatcher dis = request.getRequestDispatcher("/views/admin/index.jsp?error=unsuc");
 	    	dis.forward(request, response);
         }
 
