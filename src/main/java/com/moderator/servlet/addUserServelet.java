@@ -38,7 +38,7 @@ public class addUserServelet extends HttpServlet {
 
         } else {
             // Redirect to profile.jsp
-        	RequestDispatcher dis = request.getRequestDispatcher("index.jsp");
+        	RequestDispatcher dis = request.getRequestDispatcher("/views/admin/index.jsp?error=unsuc");
 	    	dis.forward(request, response);
         }
 

@@ -1,3 +1,8 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@page import="com.studio.model.video"%>
+<%@page import="java.util.List"%>
+
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -18,14 +23,14 @@
 	rel="stylesheet">
 
 <!-- Css Styles -->
-<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-<link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-<link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
-<link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-<link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
-<link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-<link rel="stylesheet" href="css/style.css" type="text/css">
-<link rel="stylesheet" href="css/major.css" type="text/css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/views/other/css/bootstrap.min.css" type="text/css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/views/other/css/font-awesome.min.css" type="text/css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/views/other/css/elegant-icons.css" type="text/css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/views/other/css/owl.carousel.min.css" type="text/css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/views/other/css/magnific-popup.css" type="text/css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/views/other/css/slicknav.min.css" type="text/css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/views/other/css/style.css" type="text/css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/views/other/css/major.css" type="text/css">
 <link rel="stylesheet"
 	href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
 	integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
@@ -62,7 +67,7 @@
 
 	<!-- Breadcrumb Begin -->
 	<div class="breadcrumb-option spad set-bg"
-		data-setbg="img/mountain-sunset-3840x1080.jpg">
+		data-setbg="${pageContext.request.contextPath}/views/other/img/mountain-sunset-3840x1080.jpg">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 text-center">
@@ -93,34 +98,55 @@
 				<div class="col-lg-12">
 					<ul class="portfolio__filter">
 						<li class="active" data-filter="*">All</li>
-						<li data-filter=".nature">Nature</li>
-						<li data-filter=".digital-marketing">Food</li>
-						<li data-filter=".web">Technology</li>
-						<li data-filter=".photography">Peoples</li>
-						<li data-filter=" .ecommerce">Animals</li>
+						<li data-filter=".Nature">Nature</li>
+						<li data-filter=".Food">Food</li>
+						<li data-filter=".Technology">Technology</li>
+						<li data-filter=".People">Peoples</li>
+						<li data-filter=".Animals">Animals</li>
 					</ul>
 				</div>
 			</div>
+			
+			
 			<div class="row portfolio__gallery">
-				<div class="col-lg-4 col-md-6 col-sm-6 mix nature">
+			<% 
+			List<video> videos = (List<video>) request.getAttribute("videos");
+					if (videos != null && !videos.isEmpty()) {
+			
+						for (int i = 0; i < videos.size(); i++) {
+						    video vid = videos.get(i);				    	
+						    	
+						%>
+			
+			
+				<div class="col-lg-4 col-md-6 col-sm-6 mix <%=vid.getCategory()%>">
 					<div class="portfolio__item">
 						<div class="portfolio__item__video set-bg"
-							data-setbg="img/thumbnails/785276256-98ae4fdad94d053acd6beedff25c28b92cdfdc7abc1a5b2c73f5fd21c699f871-d_640x360.jpg">
-							<a href="https://www.youtube.com/watch?v=LXb3EKWsInQ"
-								class="play-btn video-popup"><i class="fa fa-play"></i></a>
+							data-setbg="uploads/thumbnails/<%=vid.getThumbnail()%>">
+							
 						</div>
 						<div class="portfolio__item__text">
-							<h4>Fall autumn season</h4>
+							<a href="<%=request.getContextPath()%>/viewCommentServlet?vid=<%=vid.getVideoID()%>"><h4><%=vid.getTitle()%></h4></a>
 							<ul>
-								<li>Nature</li>
+								<li><%=vid.getCategory()%></li>
 							</ul>
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-4 col-md-6 col-sm-6 mix digital-marketing">
+				
+				<%
+				}
+								}
+					else{ %>
+						<h4>No Videos Found</h4>
+					<%}
+				%>
+				
+				
+				<%-- <div class="col-lg-4 col-md-6 col-sm-6 mix digital-marketing">
 					<div class="portfolio__item">
 						<div class="portfolio__item__video set-bg"
-							data-setbg="img/portfolio/portfolio-2.jpg">
+							data-setbg="${pageContext.request.contextPath}/viwes/other/img/portfolio/portfolio-2.jpg">
 							<a href="https://www.youtube.com/watch?v=LXb3EKWsInQ"
 								class="play-btn video-popup"><i class="fa fa-play"></i></a>
 						</div>
@@ -129,111 +155,8 @@
 							<span>category</span>
 						</div>
 					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 col-sm-6 mix web">
-					<div class="portfolio__item">
-						<div class="portfolio__item__video set-bg"
-							data-setbg="img/portfolio/portfolio-3.jpg">
-							<a href="https://www.youtube.com/watch?v=LXb3EKWsInQ"
-								class="play-btn video-popup"><i class="fa fa-play"></i></a>
-						</div>
-						<div class="portfolio__item__text">
-							<h4>Title</h4>
-							<span>category</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 col-sm-6 mix photography">
-					<div class="portfolio__item">
-						<div class="portfolio__item__video set-bg"
-							data-setbg="img/portfolio/portfolio-4.jpg">
-							<a href="https://www.youtube.com/watch?v=LXb3EKWsInQ"
-								class="play-btn video-popup"><i class="fa fa-play"></i></a>
-						</div>
-						<div class="portfolio__item__text">
-							<h4>Title</h4>
-							<span>category</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 col-sm-6 mix ecommerce">
-					<div class="portfolio__item">
-						<div class="portfolio__item__video set-bg"
-							data-setbg="img/portfolio/portfolio-5.jpg">
-							<a href="https://www.youtube.com/watch?v=LXb3EKWsInQ"
-								class="play-btn video-popup"><i class="fa fa-play"></i></a>
-						</div>
-						<div class="portfolio__item__text">
-							<h4>Title</h4>
-							<span>category</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 col-sm-6 mix nature">
-					<div class="portfolio__item">
-						<div class="portfolio__item__video set-bg"
-							data-setbg="img/thumbnails/763232574-ee9696aadd18a68f117db0c5c793ad4c0b31f1990d46f47b685854103467d80c-d_640x360.jpg">
-							<a href="https://www.youtube.com/watch?v=LXb3EKWsInQ"
-								class="play-btn video-popup"><i class="fa fa-play"></i></a>
-						</div>
-						<div class="portfolio__item__text">
-							<h4>Title</h4>
-							<span>category</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 col-sm-6 mix web">
-					<div class="portfolio__item">
-						<div class="portfolio__item__video set-bg"
-							data-setbg="img/portfolio/portfolio-7.jpg">
-							<a href="https://www.youtube.com/watch?v=LXb3EKWsInQ"
-								class="play-btn video-popup"><i class="fa fa-play"></i></a>
-						</div>
-						<div class="portfolio__item__text">
-							<h4>Title</h4>
-							<span>category</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 col-sm-6 mix photography">
-					<div class="portfolio__item">
-						<div class="portfolio__item__video set-bg"
-							data-setbg="img/portfolio/portfolio-8.jpg">
-							<a href="https://www.youtube.com/watch?v=LXb3EKWsInQ"
-								class="play-btn video-popup"><i class="fa fa-play"></i></a>
-						</div>
-						<div class="portfolio__item__text">
-							<h4>Title</h4>
-							<span>category</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 col-sm-6 mix ecommerce">
-					<div class="portfolio__item">
-						<div class="portfolio__item__video set-bg"
-							data-setbg="img/portfolio/portfolio-9.jpg">
-							<a href="https://www.youtube.com/watch?v=LXb3EKWsInQ"
-								class="play-btn video-popup"><i class="fa fa-play"></i></a>
-						</div>
-						<div class="portfolio__item__text">
-							<h4>Title</h4>
-							<span>category</span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="pagination__option">
-						<a href="#" class="arrow__pagination left__arrow"><span
-							class="arrow_left"></span> Prev</a> <a href="#"
-							class="number__pagination">1</a> <a href="#"
-							class="number__pagination">2</a> <a href="#"
-							class="arrow__pagination right__arrow">Next <span
-							class="arrow_right"></span></a>
-					</div>
-				</div>
-			</div>
+				</div> --%>
+				
 		</div>
 	</section>
 	<!-- Portfolio Section End -->
@@ -328,15 +251,15 @@
 	<!-- Footer Section End -->
 
 	<!-- Js Plugins -->
-	<script src="js/jquery-3.3.1.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/mixitup.min.js"></script>
-	<script src="js/masonry.pkgd.min.js"></script>
-	<script src="js/jquery.slicknav.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/main.js"></script>
-	<script src="js/major.js"></script>
+	<script src="${pageContext.request.contextPath}/views/other/js/jquery-3.3.1.min.js"></script>
+	<script src="${pageContext.request.contextPath}/views/other/js/bootstrap.min.js"></script>
+	<script src="${pageContext.request.contextPath}/views/other/js/jquery.magnific-popup.min.js"></script>
+	<script src="${pageContext.request.contextPath}/views/other/js/mixitup.min.js"></script>
+	<script src="${pageContext.request.contextPath}/views/other/js/masonry.pkgd.min.js"></script>
+	<script src="${pageContext.request.contextPath}/views/other/js/jquery.slicknav.js"></script>
+	<script src="${pageContext.request.contextPath}/views/other/js/owl.carousel.min.js"></script>
+	<script src="${pageContext.request.contextPath}/views/other/js/main.js"></script>
+	<script src="${pageContext.request.contextPath}/views/other/js/major.js"></script>
 	<script type="module"
 		src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule

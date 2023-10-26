@@ -16,9 +16,9 @@ public class EditCommentServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
    
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		
+			int vid = Integer.parseInt( request.getParameter("vid"));
 		    int commentID = Integer.parseInt( request.getParameter("commentId"));
 		    String comment = request.getParameter("coms");
 	         
@@ -27,7 +27,7 @@ public class EditCommentServlet extends HttpServlet {
 
 	        commentDButil.updateCustomer(comments1);
 
-	        response.sendRedirect(request.getContextPath() + "/viewCommentServlet");
+	        response.sendRedirect(request.getContextPath() + "/viewCommentServlet?vid=" + vid );
 		
 	}
 

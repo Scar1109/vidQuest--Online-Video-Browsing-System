@@ -32,11 +32,58 @@ public class videoUtil {
 		return false;
 	}
 
+	public static List<video> getUserVideos(int uid) {
+		List<video> videos = new ArrayList<>();
+		try (Connection connection = DBConnectionUtil.getConnection()) {
+
+			String sql = "SELECT * FROM videos where UserID =" + uid;
+			PreparedStatement statement = connection.prepareStatement(sql);
+			ResultSet resultSet = statement.executeQuery();
+			while (resultSet.next()) {
+				video vid = new video(resultSet.getInt("VideoID"), resultSet.getString("Title"),
+						resultSet.getString("SubTitle"), resultSet.getInt("UserID"), resultSet.getString("Description"),
+						resultSet.getString("Thumbnail"), resultSet.getString("Video"), resultSet.getString("Category"),
+						resultSet.getString("Visibility"), resultSet.getString("Status"), resultSet.getString("Date"));
+				videos.add(vid);
+			}
+			resultSet.close();
+			statement.close();
+			connection.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return videos;
+	}
+	
+	public static video getVideo(int vid) {
+		video videos = null;
+		try (Connection connection = DBConnectionUtil.getConnection()) {
+
+			String sql = "SELECT * FROM videos where VideoID =" + vid;
+			PreparedStatement statement = connection.prepareStatement(sql);
+			ResultSet resultSet = statement.executeQuery();
+			while (resultSet.next()) {
+				video vdo = new video(resultSet.getInt("VideoID"), resultSet.getString("Title"),
+						resultSet.getString("SubTitle"), resultSet.getInt("UserID"), resultSet.getString("Description"),
+						resultSet.getString("Thumbnail"), resultSet.getString("Video"), resultSet.getString("Category"),
+						resultSet.getString("Visibility"), resultSet.getString("Status"), resultSet.getString("Date"));
+				videos = vdo;
+			}
+			resultSet.close();
+			statement.close();
+			connection.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return videos;
+	}
+	
+	
 	public static List<video> getAllVideos() {
 		List<video> videos = new ArrayList<>();
 		try (Connection connection = DBConnectionUtil.getConnection()) {
 
-			String sql = "SELECT * FROM videos where UserID = 1 ";
+			String sql = "SELECT * FROM videos";
 			PreparedStatement statement = connection.prepareStatement(sql);
 			ResultSet resultSet = statement.executeQuery();
 			while (resultSet.next()) {

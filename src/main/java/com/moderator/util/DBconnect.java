@@ -8,7 +8,7 @@ public class DBconnect {
 
 	private static String url = "jdbc:mysql://localhost:3306/vidquest";
     private static String user = "root";
-    private static String password = "1234";
+    private static String password = "";
     
     public static Connection getConnection() {
         Connection con = null;

@@ -10,21 +10,28 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../css/login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>vidQuest</title>
 </head>
 <body>
 	<div class="wrapper">
     <nav class="nav">
         <div class="nav-logo">
-            <p>LOGO .</p>
+            <img class = "logo" src = "../assets/logoWhite.png" >
         </div>
         <div class="nav-menu" id="navMenu">
             <ul>
-                <li><a href="#" class="link active">Home</a></li>
-                <li><a href="#" class="link">Blog</a></li>
+                <li><a href="#" class="link">Home</a></li>
+                <li><a href="#" class="link">Explore</a></li>
                 <li><a href="#" class="link">Services</a></li>
                 <li><a href="#" class="link">About</a></li>
             </ul>
         </div>
+        <%
+        
+        
+        %>
+        
+        
         <div class="nav-button">
             <button class="btn white-btn" id="loginBtn" onclick="login()">Sign In</button>
             <button class="btn" id="registerBtn" onclick="register()">Sign Up</button>
@@ -44,18 +51,19 @@
                 <span>Don't have an account? <a href="#" onclick="register()">Sign Up</a></span>
                 <header>Login</header>
             </div>
-           
+           <form action="${pageContext.request.contextPath}/LoginServlet" method="post" >
             <div class="input-box">
-                <input type="text" class="input-field" placeholder="Username or Email">
+                <input name = "username" type="text" class="input-field" placeholder="Username or Email" required>
                 <i class="bx bx-user"></i>
             </div>
             <div class="input-box">
-                <input type="password" class="input-field" placeholder="Password">
+                <input name = "password" type="password" class="input-field" placeholder="Password" required>
                 <i class="bx bx-lock-alt"></i>
             </div>
             <div class="input-box">
                 <input type="submit" class="submit" value="Sign In">
             </div>
+            </form>
             <div class="two-col">
                 <div class="one">
                     <input type="checkbox" id="login-check">
@@ -77,30 +85,30 @@
             <form action="${pageContext.request.contextPath}/UserCreateServlet" method="post">
             <div class="two-forms">
                 <div class="input-box">
-                    <input type="text" name="first-name"  class="input-field" placeholder="Firstname">
+                    <input type="text" name="first-name"  class="input-field" placeholder="Firstname" required>
                     <i class="bx bx-user"></i>
                 </div>
                 <div class="input-box">
-                    <input type="text" name="last-name" class="input-field" placeholder="Lastname">
+                    <input type="text" name="last-name" class="input-field" placeholder="Lastname" required>
                     <i class="bx bx-user"></i>
                 </div>
             </div>
             <div class="input-box">
-                <input type="text" name="email" class="input-field" placeholder="Email">
+                <input type="text" name="email" class="input-field" placeholder="Email" required>
                 <i class="bx bx-envelope"></i>
             </div>
             <div class="two-forms">
                 <div class="input-box">
-                    <input type="text" name="pno" class="input-field" placeholder="Phone Number">
+                    <input type="text" name="pno" class="input-field" placeholder="Phone Number" required>
                     <i class="fa fa-phone"></i>
                 </div>
                 <div class="input-box">
-                    <input type="text" name="username" class="input-field" placeholder="Username">
+                    <input type="text" name="username" class="input-field" placeholder="Username" required>
                     <i class="bx bx-user"></i>
                 </div>
             </div>
             <div class="input-box">
-                <input type="password" name = "pwd" class="input-field" placeholder="Password">
+                <input type="password" name = "pwd" class="input-field" placeholder="Password" required>
                 <i class="bx bx-lock-alt"></i>
             </div>
             <div class="input-box">

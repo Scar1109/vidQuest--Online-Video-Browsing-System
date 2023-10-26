@@ -10,9 +10,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import com.User.model.User;
 import com.comment.model.comment;
 import com.comment.util.commentDButil;
+import com.studio.model.video;
+import com.studio.utill.videoUtil;
  
 
  
@@ -24,15 +28,24 @@ public class commentservlet extends HttpServlet {
 	 protected void doPost(HttpServletRequest request, HttpServletResponse response)
 	            throws ServletException, IOException {
 		 
-	        
+		 
+		 
+		 	HttpSession session = request.getSession();
+			User us = (User) session.getAttribute("user");
+			int uid = us.getuid();
+		 
+		 	int vid = Integer.parseInt(request.getParameter("vid"));
 	        String comm = request.getParameter("coms");
 
-	        comment Comment = new comment(29,1,comm);
+	        comment Comment = new comment(vid,uid,comm);
 	        
 	        
 	        commentDButil.addComment(Comment);
+	        video vdo = videoUtil.getVideo(vid);
+	        
+        	session.setAttribute("video", vdo);
 
 	        // Redirect to a success page or show a success message
-	        response.sendRedirect(request.getContextPath() + "/viewCommentServlet");
+	        response.sendRedirect(request.getContextPath() + "/viewCommentServlet?vid=" + vid);
 	    }
 }

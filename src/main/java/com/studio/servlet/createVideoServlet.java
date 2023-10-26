@@ -4,10 +4,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.Part;
 
+import com.User.model.User;
 import com.studio.model.video;
 import com.studio.utill.videoUtil;
 
@@ -35,10 +37,14 @@ public class createVideoServlet extends HttpServlet {
         // Handle thumbnail upload
         Part thumbnailPart = request.getPart("thumbnail");
         thumbnailPart.write(thumbnailploadPath + File.separator + uniqueThumbnailName);
+        
+        HttpSession session = request.getSession();
+		User us = (User) session.getAttribute("user");
+		int uid = us.getuid();
 
         video videol = new video(request.getParameter("title"),
         		request.getParameter("sub-title"),
-        		1,
+        		uid,
         		request.getParameter("description"),
         		uniqueThumbnailName,
         		uniqueVideoName,

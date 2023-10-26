@@ -19,7 +19,7 @@ public class UserServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            List<User> userDetails = moderatorDBUtil.getAllUsers();
+            List<modUser> userDetails = moderatorDBUtil.getAllUsers();
             request.setAttribute("userDetails", userDetails);
         } catch (Exception e) {
             e.printStackTrace();

@@ -9,6 +9,7 @@ public class User {
 	private String pwd;
 	private String username;
 	private int uid;
+	private String type;
 	
 	public User(int uid, String firstName, String lastName, String email, String pNo, String pwd,String username) {
 		
@@ -20,6 +21,20 @@ public class User {
 		this.pwd = pwd;
 		this.username = username;
 		this.uid = uid;
+		
+	}
+	
+public User(int uid, String firstName, String lastName, String email, String pNo, String pwd,String username, String type) {
+		
+		
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.pNo = pNo;
+		this.pwd = pwd;
+		this.username = username;
+		this.uid = uid;
+		this.type = type;
 		
 	}
 	
@@ -61,6 +76,10 @@ public class User {
 	
 	public int getuid() {
 		return uid;
+	}
+	
+	public String getType() {
+		return type;
 	}
 
 	

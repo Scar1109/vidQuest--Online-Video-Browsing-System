@@ -50,7 +50,7 @@
 				</a></li>
 			</ul>
 			<ul class="bottom-link">
-				<li><a href="#"> <ion-icon name="log-out-outline"></ion-icon>
+				<li><a href="<%=request.getContextPath()%>/LogoutServlet"> <ion-icon name="log-out-outline"></ion-icon>
 						<span class="links">Logout</span>
 				</a></li>
 				<li class="mode"><a href="#"> <ion-icon name="moon-outline"></ion-icon>

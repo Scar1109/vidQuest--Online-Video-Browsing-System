@@ -55,7 +55,7 @@
     <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
       <div class="container-fluid">
         <!-- Brand -->
-        <img class="logo" src ="${pageContext.request.contextPath}/assets/logoWhite.png" >
+        <a href = "index.jsp" ><img class="logo" src ="${pageContext.request.contextPath}/assets/logoWhite.png" ></a>
         <!-- Form -->
         <form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
           <div class="form-group mb-0">
@@ -94,7 +94,26 @@
           <div class="col-lg-7 col-md-10">
             <h1 class="display-2 text-white">Hello!</h1>
             <p class="text-white mt-0 mb-5">This is your profile page. You can see the progress you've made with your work and manage your projects or assigned tasks</p>
-            <a href="#!" class="btn btn-info">Upload New</a>
+          
+          <%
+            
+            User usr = (User) session.getAttribute("user");
+				    
+				    if (usr.equals("admin")) {
+				    
+				    %>
+				        <!-- The session attribute 'user' is set -->
+				        <a href="<%=request.getContextPath()%>/getActivityServlet" class="btn btn-info">Go to Dashboard</a>
+				    <%
+				    } else {
+				    %>
+				        <!-- The session attribute 'user' is not set -->
+				        <a href="<%=request.getContextPath()%>/views/studio/vidUpload.jsp" class="btn btn-info">Upload New</a>	
+				    <%
+				    }
+				    %>
+            
+            
           </div>
         </div>
       </div>
@@ -151,9 +170,8 @@
                 <hr class="my-4">
       			 <p>Over 4.4 million+ high quality stock images, videos and music shared by our talented community.</p><br><br>
                
-               <p><a href="" onclick="return confirm('Are you sure you want to signout from your account?');">Log out</a></p>
-               
-                  <a href="${pageContext.request.contextPath}/DeleteUserServlet?userId=3" onclick="return confirm('Are you sure you want to delete your account?');" class="btn btn-info">Delete profile</a>
+               <p><a href="${pageContext.request.contextPath}/LogoutServlet" onclick="return confirm('Are you sure you want to signout from your account?');">Log out</a></p>
+                  <a href="${pageContext.request.contextPath}/DeleteUserServlet?userId=<%=us.getuid()%>" onclick="return confirm('Are you sure you want to delete your account?');" class="btn btn-info">Delete profile</a>
               </div>
             </div>
           </div>
@@ -227,7 +245,8 @@
                   
               </form>
               
-             	<%} %>
+             	<%
+                } %>
              	                    
             </div>
           </div>
