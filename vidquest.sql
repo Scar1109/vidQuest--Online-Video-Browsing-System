@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Oct 22, 2023 at 10:53 AM
+-- Generation Time: Oct 25, 2023 at 10:46 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -66,8 +66,21 @@ CREATE TABLE `users` (
   `email` varchar(255) DEFAULT NULL,
   `pNo` varchar(20) DEFAULT NULL,
   `pwd` varchar(255) DEFAULT NULL,
-  `username` varchar(255) DEFAULT NULL
+  `username` varchar(255) DEFAULT NULL,
+  `type` varchar(10) NOT NULL DEFAULT 'user',
+  `pPhoto` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`UserID`, `firstName`, `lastName`, `Date`, `Time`, `email`, `pNo`, `pwd`, `username`, `type`, `pPhoto`) VALUES
+(1, 'John', 'Doe', '2023-10-23', '06:37:07', 'johndoe@example.com', '123-456-7890', 'password123', 'johndoe', 'user', ''),
+(2, 'Alice', 'Smith', '2023-10-23', '06:37:07', 'alice@example.com', '987-654-3210', 'alicepass', 'alicesmith', 'user', ''),
+(3, 'Bob', 'Johnson', '2023-10-23', '06:37:07', 'bob@example.com', '555-123-4567', 'bobpassword', 'bobjohnson', 'user', ''),
+(4, 'Eve', 'Davis', '2023-10-23', '06:37:07', 'eve@example.com', '111-222-3333', 'evepass', 'evedavis', 'user', ''),
+(5, 'Charlie', 'Brown', '2023-10-23', '06:37:07', 'charlie@example.com', '777-888-9999', 'charliepass', 'charliebrown', 'user', '');
 
 -- --------------------------------------------------------
 
@@ -85,7 +98,7 @@ CREATE TABLE `videos` (
   `Video` varchar(255) DEFAULT NULL,
   `Category` varchar(50) DEFAULT NULL,
   `Visibility` varchar(20) DEFAULT 'Unlisted',
-  `Status` varchar(20) DEFAULT 'Not Approved',
+  `Status` varchar(20) DEFAULT 'pending',
   `Date` date NOT NULL DEFAULT current_timestamp(),
   `Time` time NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -136,19 +149,19 @@ ALTER TABLE `activitylogs`
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `commentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `commentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `UserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `UserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `videos`
 --
 ALTER TABLE `videos`
-  MODIFY `VideoID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `VideoID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- Constraints for dumped tables
@@ -158,13 +171,20 @@ ALTER TABLE `videos`
 -- Constraints for table `activitylogs`
 --
 ALTER TABLE `activitylogs`
-  ADD CONSTRAINT `fsfsss` FOREIGN KEY (`userID`) REFERENCES `users` (`UserID`);
+  ADD CONSTRAINT `Fk_activitylogs_user` FOREIGN KEY (`userID`) REFERENCES `users` (`UserID`) ON DELETE NO ACTION;
+
+--
+-- Constraints for table `comment`
+--
+ALTER TABLE `comment`
+  ADD CONSTRAINT `Fk_comment_user` FOREIGN KEY (`UserID`) REFERENCES `users` (`UserID`) ON DELETE CASCADE,
+  ADD CONSTRAINT `Fk_video` FOREIGN KEY (`VideoID`) REFERENCES `videos` (`VideoID`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `videos`
 --
 ALTER TABLE `videos`
-  ADD CONSTRAINT `Fk_user` FOREIGN KEY (`UserID`) REFERENCES `users` (`UserID`);
+  ADD CONSTRAINT `Fk_user` FOREIGN KEY (`UserID`) REFERENCES `users` (`UserID`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
