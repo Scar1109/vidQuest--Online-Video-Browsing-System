@@ -6,12 +6,11 @@
 <head>
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport"
+<meta name="viewpt"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
 <meta name="author" content="" />
-<title>Dashtreme Admin - Free Dashboard for Bootstrap 4 by
-	Codervent</title>
+<title>VidQuest My Admin</title>
 <!-- loader-->
 <link href="Aassets/css/pace.min.css" rel="stylesheet" />
 <script src="assets/js/pace.min.js"></script>
@@ -29,6 +28,8 @@
 <link href="assets/css/sidebar-menu.css" rel="stylesheet" />
 <!-- Custom Style-->
 <link href="assets/css/app-style.css" rel="stylesheet" />
+
+
 
 
 </head>
@@ -58,23 +59,26 @@
 				</a>
 			</div>
 			<ul class="sidebar-menu do-nicescrol">
+
 				<li class="sidebar-header">MAIN NAVIGATION</li>
-				<li><a href="views/admin/index.jsp"> <i
+				<li><a
+					href="${pageContext.request.contextPath}/getActivityServlet"> <i
 						class="zmdi zmdi-view-dashboard"></i> <span>Dashboard</span>
 				</a></li>
-
-				<li><a href="views/admin/forms.jsp"> <i
+				<li><a href="forms.jsp"> <i
 						class="zmdi zmdi-format-list-bulleted"></i> <span>Add user</span>
 				</a></li>
 
-				<li><a href="${pageContext.request.contextPath}/getuser"> <i
-						class="zmdi zmdi-grid"></i> <span>User-Details</span>
+				<li><a href="${pageContext.request.contextPath}/UserServlet">
+						<i class="zmdi zmdi-grid"></i> <span>User-Details</span>
 				</a></li>
-				<li><a href="${pageContext.request.contextPath}/getvideo">
-						<i class="zmdi zmdi-grid"></i> <span>Video-Details</span>
+				<li><a
+					href="${pageContext.request.contextPath}/getVideoServlet"> <i
+						class="zmdi zmdi-grid"></i> <span>Video-Details</span>
 				</a></li>
 
-				<li><a href="profile.jsp"> <i class="zmdi zmdi-face"></i> <span>Profile</span>
+				<li><a href="${pageContext.request.contextPath}/profileServlet">
+						<i class="zmdi zmdi-face"></i> <span>Profile</span>
 				</a></li>
 
 
@@ -172,56 +176,61 @@
 							<div class="card-body">
 								<div class="card-title">Round Vertical Form</div>
 								<hr>
-								<form
+								<form name="register"
 									action="${pageContext.request.contextPath}/addUserServelet"
-									method="post">
+									method="post" onsubmit="return validateForm()">
 									<div class="form-group">
-										<label for="input-6">Firt Name</label> <input type="text"
+										<label for="input-6">First Name</label> <input type="text"
 											class="form-control form-control-rounded" id="input-6"
-											name="firstname" placeholder="Enter Your Name">
+											name="firstname" placeholder="Enter Your Name"> <span
+											class="error-message" id="firstname-error-message"></span>
 									</div>
 									<div class="form-group">
 										<label for="input-6">Last Name</label> <input type="text"
 											class="form-control form-control-rounded" id="input-6"
-											name="lastname" placeholder="Enter Your Name">
+											name="lastname" placeholder="Enter Your Name"> <span
+											class="error-message" id="lastname-error-message"></span>
 									</div>
 									<div class="form-group">
-										<label for="input-6">UserName</label> <input type="text"
+										<label for="input-6">Username</label> <input type="text"
 											class="form-control form-control-rounded" id="input-6"
-											name="username" placeholder="Enter Your Name">
+											name="username" placeholder="Enter Your Username"> <span
+											class="error-message" id="username-error-message"></span>
 									</div>
 									<div class="form-group">
-										<label for="input-7">Email</label> <input type="text"
+										<label for="input-7">Email</label> <input type="email"
 											class="form-control form-control-rounded" id="input-7"
 											name="email" placeholder="Enter Your Email Address">
+										<span class="error-message" id="email-error-message"></span>
 									</div>
 									<div class="form-group">
 										<label for="input-8">Mobile</label> <input type="text"
 											class="form-control form-control-rounded" id="input-8"
 											name="number" placeholder="Enter Your Mobile Number">
+										<span class="error-message" id="phone-error-message"></span>
 									</div>
 									<div class="form-group">
-										<label for="input-9">Password</label> <input type="text"
+										<label for="input-9">Password</label> <input type="password"
 											class="form-control form-control-rounded" id="input-9"
-											name="password" placeholder="Enter Password">
+											name="password" placeholder="Enter Password"> <span
+											class="error-message" id="password-error-message"></span>
 									</div>
 									<div class="form-group">
-										<label for="user-type">Select your role:</label> <select
-											id="user-type" name="user-type">
-											<option value="user">User</option>
-											<option value="creator">Creator</option>
-											<option value="admin">Admin</option>
-										</select>
+										<label for="input-10">Add Role Type</label> <input type="text"
+											class="form-control form-control-rounded" id="input-10"
+											name="type" placeholder="Enter Type"> <span
+											class="error-message" id="type-error-message"></span>
 									</div>
 									<div class="form-group py-2">
 										<div class="icheck-material-white">
-											<input type="checkbox" id="user-checkbox2" checked="agree" />
-											<label for="user-checkbox2">I Agree Terms &
-												Conditions</label>
+											<input type="checkbox" id="user-checkbox2" checked="checked"
+												required> <label for="user-checkbox2">I
+												Agree to Terms & Conditions</label>
 										</div>
 									</div>
 									<div class="form-group">
-										<button type="submit" class="btn btn-light btn-round px-5">
+										<button type="submit" class="btn btn-light btn-round px-5"
+											id="register-button" disabled>
 											<i class="icon-lock"></i> Register
 										</button>
 									</div>
@@ -231,6 +240,72 @@
 					</div>
 				</div>
 				<!--End Row-->
+			<script>
+    function validateForm() {
+        let firstName = document.forms["register"]["firstname"].value;
+        let lastName = document.forms["register"]["lastname"].value;
+        let username = document.forms["register"]["username"].value;
+        let email = document.forms["register"]["email"].value;
+        let number = document.forms["register"]["number"].value;
+        let password = document.forms["register"]["password"].value;
+        let type = document.forms["register"]["type"].value;
+
+        // Check if First Name is empty
+        if (firstName === "") {
+            document.getElementById("firstname-error-message").innerHTML = "First Name must be filled out";
+            return false;
+        }
+
+        // Check if Last Name is empty
+        if (lastName === "") {
+            document.getElementById("lastname-error-message").innerHTML = "Last Name must be filled out";
+            return false;
+        }
+
+        // Check if Username is empty
+        if (username === "") {
+            document.getElementById("username-error-message").innerHTML = "Username must be filled out";
+            return false;
+        }
+
+        // Check if Email is empty or not a valid email address
+        if (email === "") {
+            document.getElementById("email-error-message").innerHTML = "Email must be filled out";
+            return false;
+        } else if (!validateEmail(email)) {
+            document.getElementById("email-error-message").innerHTML = "Invalid email format";
+            return false;
+        }
+
+        // Check if Mobile is empty
+        if (number === "") {
+            document.getElementById("phone-error-message").innerHTML = "Mobile Number must be filled out";
+            return false;
+        }
+
+        // Check if Password is empty
+        if (password === "") {
+            document.getElementById("password-error-message").innerHTML = "Password must be filled out";
+            return false;
+        }
+
+        // Check if Role Type is empty
+        if (type === "") {
+            document.getElementById("type-error-message").innerHTML = "Role Type must be filled out";
+            return false;
+        }
+
+        return true;
+    }
+
+    // Email validation function
+    function validateEmail(email) {
+        let emailPattern = /\S+@\S+\.\S+/;
+        return emailPattern.test(email);
+    }
+</script>
+			
+
 
 				<!--start overlay-->
 				<div class="overlay toggle-menu"></div>
@@ -289,9 +364,62 @@
 		<!--end color switcher-->
 
 	</div>
+
+
 	<!--End wrapper-->
+	<script>
+		document
+				.addEventListener(
+						"DOMContentLoaded",
+						function() {
+							// Select the email input field and error message element
+							var emailInput = document
+									.getElementById("email-input");
+							var emailErrorMessage = document
+									.getElementById("email-error-message");
+
+							// Function to validate the email format
+							function validateEmail() {
+								var email = emailInput.value;
+								var emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+
+								if (!emailRegex.test(email)) {
+									emailErrorMessage.textContent = "Please enter a valid email address.";
+									emailErrorMessage.style.color = "red";
+									return false;
+								} else {
+									emailErrorMessage.textContent = "";
+									return true;
+								}
+							}
+
+							// Add an event listener to check email validation on form submission
+							var form = document.querySelector("form");
+							form
+									.addEventListener(
+											"submit",
+											function(event) {
+												if (!validateEmail()) {
+													emailErrorMessage.textContent = "Please enter a valid email address.";
+													emailErrorMessage.style.color = "red";
+													event.preventDefault(); // Prevent form submission if email is invalid
+												}
+											});
+						});
+	</script>
 
 
+	<script>
+		const checkbox = document.getElementById("user-checkbox2");
+
+		checkbox.addEventListener("change", function(event) {
+			if (!checkbox.checked) {
+				// Checkbox is not checked, prevent navigation
+				event.preventDefault();
+				alert("Please agree to the Terms & Conditions to proceed.");
+			}
+		});
+	</script>
 	<!-- Bootstrap core JavaScript-->
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/popper.min.js"></script>

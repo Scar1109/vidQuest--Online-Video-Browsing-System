@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Time;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -52,23 +53,25 @@ public class moderatorDBUtil {
 		return usr;
 	}
 
-	public static boolean insertCustomer(String firstName, String lastName, String username, String email,
-			String number, String password) {
+	public static boolean insertCustomer(String firstName, String lastName, String email,
+			String number, String password,String username,String type) {
 		try (Connection con = DBconnect.getConnection()) {
 			java.util.Date utilDate = new java.util.Date(); // Current date and time
 			java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
 			java.sql.Time sqlTime = new java.sql.Time(utilDate.getTime());
 
-			String sql = "INSERT INTO Users (firstName, lastName, username, email, pNo, Date, Time, pwd) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+			String sql = "INSERT INTO Users (firstName, lastName,Date, Time, email, pNo,pwd, username,type,pPhoto) VALUES (?, ?, ?, ?, ?, ?, ?,?,?,?)";
 			java.sql.PreparedStatement pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, firstName);
 			pstmt.setString(2, lastName);
-			pstmt.setString(3, username);
-			pstmt.setString(4, email);
-			pstmt.setString(5, number);
-			pstmt.setDate(6, sqlDate);
-			pstmt.setTime(7, sqlTime);
-			pstmt.setString(8, password);
+			pstmt.setDate(3, sqlDate);
+			pstmt.setTime(4, sqlTime);
+			pstmt.setString(5, email);
+			pstmt.setString(6, number);
+			pstmt.setString(7, password);
+			pstmt.setString(8, username);
+			pstmt.setString(9, type);
+			pstmt.setString(10, "null");
 
 			int rowsInserted = pstmt.executeUpdate();
 			isSuccess = rowsInserted > 0;
@@ -284,5 +287,34 @@ public class moderatorDBUtil {
 	}
 	
 	
-	 
+	public static List<UserActivityLog> getActivityLogs() {
+	    ArrayList<UserActivityLog> logs = new ArrayList<>();
+
+	    try {
+	        Connection con = DBconnect.getConnection();
+	        Statement stmt = con.createStatement();
+	        String sql = "SELECT * FROM activitylogs ORDER BY logID DESC;";
+	        System.out.println("getActivity");
+	        ResultSet rs = stmt.executeQuery(sql);
+
+	        while (rs.next()) {
+	            int logID = rs.getInt("logID");
+	            String userName = rs.getString("userName");
+	            int userID = rs.getInt("userID");
+	            String log = rs.getString("log");
+	            String date = rs.getString("date");
+	            String time = rs.getString("time");
+
+	            UserActivityLog logEntry = new UserActivityLog(logID, userName, userID, date, time, log);
+	            logs.add(logEntry);
+	        }
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	    }
+
+	    return logs;
+	}
+
 }
+	 
+

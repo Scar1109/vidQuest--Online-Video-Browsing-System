@@ -24,7 +24,7 @@ public class LogUserActivityServlet extends HttpServlet {
         String date = request.getParameter("date");
         String time = request.getParameter("time");
         String log = request.getParameter("log");
-
+        System.out.println("writeActivity");
         // Timestamp for the current time
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
