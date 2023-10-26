@@ -38,7 +38,7 @@ public class commentservlet extends HttpServlet {
 	        String comm = request.getParameter("coms");
 
 	        comment Comment = new comment(vid,uid,comm);
-	        System.out.println("11212112");
+	        
 	        
 	        commentDButil.addComment(Comment);
 	        video vdo = videoUtil.getVideo(vid);

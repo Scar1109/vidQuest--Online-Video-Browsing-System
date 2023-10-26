@@ -24,7 +24,7 @@
       <div class="playerConatiner">
         <div class="player">
           <video
-            src="<%=request.getContextPath()%>/uploads/videos/11310f56-6b53-40bc-95b7-b69f53fbb0fe.mp4"
+            src="<%=request.getContextPath()%>/uploads/videos/<%=vdo.getVideo()%>"
             class="video"
             playsinline
           ></video>
