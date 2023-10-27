@@ -13,38 +13,45 @@ public class video {
     private String status;
     private String date;
 
-    // Private constructor to enforce the use of factory methods
+    // Private constructor to prevent direct instantiation
     private video() {}
 
+    // Singleton instance
+    private static video instance;
+
+    // Factory method to get the Singleton instance
+    public static video getInstance() {
+        if (instance == null) {
+            instance = new video();
+        }
+        return instance;
+    }
+
     // Factory method to create a video with minimal attributes
-    public static video createVideo(String title, String subTitle, int userID, String description, String thumbnail, String video, String category, String visibility) {
-        video video1 = new video();
-        video1.title = title;
-        video1.subTitle = subTitle;
-        video1.userID = userID;
-        video1.description = description;
-        video1.thumbnail = thumbnail;
-        video1.video = video;
-        video1.category = category;
-        video1.visibility = visibility;
-        return video1;
+    public void createVideo(String title, String subTitle, int userID, String description, String thumbnail, String video, String category, String visibility) {
+        this.title = title;
+        this.subTitle = subTitle;
+        this.userID = userID;
+        this.description = description;
+        this.thumbnail = thumbnail;
+        this.video = video;
+        this.category = category;
+        this.visibility = visibility;
     }
 
     // Factory method to create a video with all attributes
-    public static video createVideoWithAllAttributes(int videoID, String title, String subTitle, int userID, String description, String thumbnail, String video, String category, String visibility, String status, String date) {
-        video video1 = new video();
-        video1.videoID = videoID;
-        video1.title = title;
-        video1.subTitle = subTitle;
-        video1.userID = userID;
-        video1.description = description;
-        video1.thumbnail = thumbnail;
-        video1.video = video;
-        video1.category = category;
-        video1.visibility = visibility;
-        video1.status = status;
-        video1.date = date;
-        return video1;
+    public void createVideoWithAllAttributes(int videoID, String title, String subTitle, int userID, String description, String thumbnail, String video, String category, String visibility, String status, String date) {
+        this.videoID = videoID;
+        this.title = title;
+        this.subTitle = subTitle;
+        this.userID = userID;
+        this.description = description;
+        this.thumbnail = thumbnail;
+        this.video = video;
+        this.category = category;
+        this.visibility = visibility;
+        this.status = status;
+        this.date = date;
     }
 
     public int getVideoID() {
