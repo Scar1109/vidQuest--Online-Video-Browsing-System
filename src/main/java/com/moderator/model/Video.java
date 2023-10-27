@@ -1,7 +1,6 @@
 package com.moderator.model;
 
 public class Video {
-
     private int videoID;
     private String title;
     private String subTitle;
@@ -15,20 +14,38 @@ public class Video {
     private String date;
     private String time;
 
-    public Video(int videoID, String title, String subTitle, int userID, String description, String thumbnail,
-                 String videoPath, String category, String visibility, String status, String date, String time) {
-        this.videoID = videoID;
-        this.title = title;
-        this.subTitle = subTitle;
-        this.userID = userID;
-        this.description = description;
-        this.thumbnail = thumbnail;
-        this.videoPath = videoPath;
-        this.category = category;
-        this.visibility = visibility;
-        this.status = status;
-        this.date = date;
-        this.time = time;
+    // Private constructor to prevent direct instantiation
+    private Video() {}
+
+    // Singleton instance
+    private static Video instance;
+
+    // Factory method to get the Singleton instance
+    public static Video getInstance() {
+        if (instance == null) {
+            instance = new Video();
+        }
+        return instance;
+    }
+
+    // Factory method to create a Video with all attributes
+    public static Video createVideo(int videoID, String title, String subTitle, int userID, String description,
+                                    String thumbnail, String videoPath, String category, String visibility,
+                                    String status, String date, String time) {
+        Video videoInstance = getInstance();
+        videoInstance.videoID = videoID;
+        videoInstance.title = title;
+        videoInstance.subTitle = subTitle;
+        videoInstance.userID = userID;
+        videoInstance.description = description;
+        videoInstance.thumbnail = thumbnail;
+        videoInstance.videoPath = videoPath;
+        videoInstance.category = category;
+        videoInstance.visibility = visibility;
+        videoInstance.status = status;
+        videoInstance.date = date;
+        videoInstance.time = time;
+        return videoInstance;
     }
 
     public int getVideoID() {
