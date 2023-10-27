@@ -20,10 +20,10 @@ public class EditCommentServlet extends HttpServlet {
 		
 			int vid = Integer.parseInt( request.getParameter("vid"));
 		    int commentID = Integer.parseInt( request.getParameter("commentId"));
-		    String comment = request.getParameter("coms");
+		    String comm = request.getParameter("coms");
 	         
 	        
-		    comment comments1 = new comment(commentID,comment);
+		    comment comments1 = comment.createComment(comm,commentID);
 
 	        commentDButil.updateCustomer(comments1);
 
