@@ -46,35 +46,35 @@
                     <div class="cs-pic set-bg" data-setbg="img/categories/cat-1.jpg"></div>
                     <div class="cs-text">
                         <h4>Animal</h4>
-                        <span>120 pictures</span>
+                        <span>120 Videos</span>
                     </div>
                 </div>
                 <div class="cs-item">
                     <div class="cs-pic set-bg" data-setbg="img/categories/cat-2.jpg"></div>
                     <div class="cs-text">
                         <h4>Natural</h4>
-                        <span>325 pictures</span>
+                        <span>325 Videos</span>
                     </div>
                 </div>
                 <div class="cs-item">
                     <div class="cs-pic set-bg" data-setbg="img/categories/cat-3.jpg"></div>
                     <div class="cs-text">
                         <h4>Potrait</h4>
-                        <span>540 pictures</span>
+                        <span>540 Videos</span>
                     </div>
                 </div>
                 <div class="cs-item">
                     <div class="cs-pic set-bg" data-setbg="img/categories/cat-4.jpg"></div>
                     <div class="cs-text">
                         <h4>Animal</h4>
-                        <span>120 pictures</span>
+                        <span>120 Videos</span>
                     </div>
                 </div>
                 <div class="cs-item">
                     <div class="cs-pic set-bg" data-setbg="img/categories/cat-5.jpg"></div>
                     <div class="cs-text">
                         <h4>Animal</h4>
-                        <span>120 pictures</span>
+                        <span>120 Videos</span>
                     </div>
                 </div>
             </div>

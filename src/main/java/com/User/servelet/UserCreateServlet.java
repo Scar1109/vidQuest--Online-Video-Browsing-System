@@ -36,8 +36,10 @@ public class UserCreateServlet extends HttpServlet {
 	        	User user = new  User(firstName,lastName,email,pno,pwd,username);
 		        UserDbUtill.adduser(user);
 		        
+		        User us1 = UserValidationUtil.validateUser(username, pwd);
+		        
 		        HttpSession session = request.getSession();
-	        	session.setAttribute("user", user);
+	        	session.setAttribute("user", us1);
 	        	
 	            response.sendRedirect("index.jsp");
 	        } else {

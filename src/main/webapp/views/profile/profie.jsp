@@ -98,8 +98,9 @@
           <%
             
             User usr = (User) session.getAttribute("user");
-				    
-				    if (usr.equals("admin")) {
+				     
+          
+				    if (usr.getType().equals("admin")) {
 				    
 				    %>
 				        <!-- The session attribute 'user' is set -->
