@@ -8,52 +8,43 @@ public class UserActivityLog {
     private String time;
     private String log;
 
-    // Private constructor to prevent direct instantiation
-    private UserActivityLog() {}
-
-    // Singleton instance
-    private static UserActivityLog instance;
-
-    // Factory method to get the Singleton instance
-    public static UserActivityLog getInstance() {
-        if (instance == null) {
-            instance = new UserActivityLog();
-        }
-        return instance;
+    public UserActivityLog(int logID, String userName, int userID, String date, String time, String log) {
+        this.logID = logID;
+        this.userName = userName;
+        this.userID = userID;
+        this.date = date;
+        this.time = time;
+        this.log = log;
     }
 
-    // Factory method to create a UserActivityLog with all attributes
-    public static UserActivityLog createUserActivityLog(int logID, String userName, int userID, String date, String time, String log) {
-        UserActivityLog logInstance = getInstance();
-        logInstance.logID = logID;
-        logInstance.userName = userName;
-        logInstance.userID = userID;
-        logInstance.date = date;
-        logInstance.time = time;
-        logInstance.log = log;
-        return logInstance;
-    }
+    // Add getters as you've previously defined
 
+    // Getter for logID
     public int getLogID() {
         return logID;
     }
 
+    // Getter for userName
     public String getUserName() {
         return userName;
     }
 
+    // Getter for userID
     public int getUserID() {
         return userID;
     }
 
+    // Getter for date
     public String getDate() {
         return date;
     }
 
+    // Getter for time
     public String getTime() {
         return time;
     }
 
+    // Getter for log
     public String getLog() {
         return log;
     }
