@@ -1,16 +1,30 @@
- package com.User.model;
+package com.User.model;
 
 public class User {
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String pNo;
+    private String pwd;
+    private String username;
+    private int uid;
+    private String type;
 
-	private String firstName;
-	private String lastName;
-	private String email;
-	private String pNo;
-	private String pwd;
-	private String username;
-	private int uid;
-	private String type;
-	
+    // Private constructor to prevent direct instantiation
+    private User() {}
+
+    // Singleton instance
+    private static User instance;
+
+    // Factory method to get the Singleton instance
+    public static User getInstance() {
+        if (instance == null) {
+            instance = new User();
+        }
+        return instance;
+    }
+
+    // Factory method to create a user with essential attributes
 	public User(int uid, String firstName, String lastName, String email, String pNo, String pwd,String username) {
 		
 		
@@ -24,7 +38,8 @@ public class User {
 		
 	}
 	
-public User(int uid, String firstName, String lastName, String email, String pNo, String pwd,String username, String type) {
+    // Factory method to create a user with all attributes
+	public User(int uid, String firstName, String lastName, String email, String pNo, String pwd,String username, String type) {
 		
 		
 		this.firstName = firstName;
@@ -50,42 +65,37 @@ public User(int uid, String firstName, String lastName, String email, String pNo
 		
 	}
 
-	public String getFirstName() {
-		return firstName;
-	}
+    // Getters
 
-	public String getLastName() {
-		return lastName;
-	}
+    public String getFirstName() {
+        return firstName;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public String getLastName() {
+        return lastName;
+    }
 
-	public String getpNo() {
-		return pNo;
-	}
+    public String getEmail() {
+        return email;
+    }
 
-	public String getPwd() {
-		return pwd;
-	}
+    public String getpNo() {
+        return pNo;
+    }
 
-	public String getUsername() {
-		return username;
-	}
-	
-	public int getuid() {
-		return uid;
-	}
-	
-	public String getType() {
-		return type;
-	}
+    public String getPwd() {
+        return pwd;
+    }
 
-	
+    public String getUsername() {
+        return username;
+    }
 
-	
+    public int getUid() {
+        return uid;
+    }
 
-
-	
+    public String getType() {
+        return type;
+    }
 }
