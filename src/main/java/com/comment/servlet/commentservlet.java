@@ -32,7 +32,7 @@ public class commentservlet extends HttpServlet {
 		 
 		 	HttpSession session = request.getSession();
 			User us = (User) session.getAttribute("user");
-			int uid = us.getuid();
+			int uid = us.getUid();
 		 
 		 	int vid = Integer.parseInt(request.getParameter("vid"));
 	        String comm = request.getParameter("coms");
