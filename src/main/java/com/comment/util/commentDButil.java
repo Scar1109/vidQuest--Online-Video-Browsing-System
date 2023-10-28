@@ -85,7 +85,7 @@ import com.comment.model.comment;
 	             while (resultSet.next()) {
 	            	 
 	             	//create objects
-	                 comment comm = new comment( resultSet.getInt("VideoID"), resultSet.getInt("UserID"), resultSet.getString("comment"),resultSet.getInt("commentID"));
+	                 comment comm = comment.createComment( resultSet.getInt("VideoID"), resultSet.getInt("UserID"), resultSet.getString("comment"),resultSet.getInt("commentID"));
 	                 
 	                 com.add(comm);
 	             }
@@ -97,30 +97,7 @@ import com.comment.model.comment;
 	             e.printStackTrace();
 	         }
 	         return com;
-	     }
-
-	     
-//	  public static Username getusername(String username) {
-//		  
-//		  try {
-//			  
-//			    Class.forName("com.mysql.cj.jdbc.Driver");
-//	            Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
-//	            
-//	            String sql = "SELECT  FROM comment WHERE  = ?";
-//			  
-//			  
-//		  } catch (SQLException | ClassNotFoundException e) {
-//	            e.printStackTrace();
-//	            // If an exception occurs, return false to indicate failure
-//	            return false;
-//	        }
-//		  
-//	  } 
-	     
-	     
-	     
-	     
+	     }   
 	     
 
 		public static boolean deleteComment(int commentID) {
@@ -167,7 +144,7 @@ import com.comment.model.comment;
 
 		            // Set the parameters for the query
 		            preparedStatement.setString(1, comm.getComment());
-		            preparedStatement.setInt(2, comm.getcommentID());
+		            preparedStatement.setInt(2, comm.getCommentID());
 		            
 		           
 		            // Execute the update query

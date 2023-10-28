@@ -1,66 +1,58 @@
 package com.comment.model;
 
 public class comment {
-      
-     private int VideoID ;
-     private int UserID;
-     private String comment;
-     private int commentID;
-    // private String username;
-   
-     //create constructors
-	public comment( int VideoID, int UserID, String comment , int commentID ) {
-		 
-		this.VideoID = VideoID;
-		this.UserID = UserID;
-		this.comment = comment;
-		this.commentID = commentID;	
-	//	this.username = username;
-	}
-	
-	public comment( int VideoID, int UserID, String comment  ) {
-		 
-		this.VideoID = VideoID;
-		this.UserID = UserID;
-		this.comment = comment;
-	 
-	}
-	//create getters
-	 
-	 
+    private int videoID;
+    private int userID;
+    private String comment;
+    private int commentID;
 
-	public comment(int commentID, String comment) {
-		this.comment = comment;
-		this.commentID = commentID;
-		 
-	}
+    // Private constructor to prevent direct instantiation
+    private comment() {}
 
-	public int getVideoID() {
-		return VideoID;
-	}
+    // Singleton instance
+    private static comment instance;
 
-	
-	public int getUserID() {
-		return UserID;
-	}
+    // Factory method to get the Singleton instance
+    public static comment getInstance() {
+        if (instance == null) {
+            instance = new comment();
+        }
+        return instance;
+    }
 
-	public String getComment() {
-		return comment;
-		
-	}
-	
-	public int getcommentID() {
-		return commentID;
-	}
-	
-// public String getUsername() {
-//	return username;
-//	}
-// 
+    // Factory method to create a comment with all attributes
+    public static comment createComment(int videoID, int userID, String comment, int commentID) {
+        comment commentInstance = getInstance();
+        commentInstance.videoID = videoID;
+        commentInstance.userID = userID;
+        commentInstance.comment = comment;
+        commentInstance.commentID = commentID;
+        return commentInstance;
+    }
 
-	 
- 
-    
-     
-     
+    // Factory method to create a comment without a commentID
+    public static comment createComment(int videoID, int userID, String comment) {
+        return createComment(videoID, userID, comment, -1);
+    }
+
+    // Factory method to create a comment with only a comment and commentID
+    public static comment createComment(String comment, int commentID) {
+        return createComment(-1, -1, comment, commentID);
+    }
+
+    public int getVideoID() {
+        return videoID;
+    }
+
+    public int getUserID() {
+        return userID;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public int getCommentID() {
+        return commentID;
+    }
 }

@@ -41,6 +41,24 @@
   margin : 0;
 }
 
+.headerframe {
+ width: 100%;
+  height:150px;
+  overflow: hidden;
+  padding : 0;
+  margin : 0;
+}
+
+.head-container{
+width: 100%;
+  height: 0;
+  border: none;
+  padding : 0;
+  margin : 0;
+  overflow: hidden;
+}
+
+
 </style>
 </head>
 <body class="hydration-complete">
@@ -53,9 +71,10 @@
 	arrSize = Comments.size();//customers means comment
 	%>
 	
-	<iframe id="vimeoIframe"
-										src="views/header.jsp"
-										allowfullscreen="" data-ready="true"></iframe>
+	<div id="head-container">
+		<iframe class="headerframe" src="${pageContext.request.contextPath}/views/header.jsp"
+			data-ready="true"></iframe>
+	</div>
 	
 	<div id="app">
 		<div data-hid="root">
