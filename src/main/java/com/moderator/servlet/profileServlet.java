@@ -25,7 +25,7 @@ public class profileServlet extends HttpServlet {
 
             if (!userDetails.isEmpty()) {
                 // Log the successful login activity
-                moderatorDBUtil.logActivity(username, userDetails.get(0).getUserID(),"User " + username + " logged in successfully");
+                moderatorDBUtil.logActivity(username, userDetails.get(0).getId(),"User " + username + " logged in successfully");
                 request.setAttribute("userDetails", userDetails);
             } else {
                 request.setAttribute("loginError", "Invalid username or password");
