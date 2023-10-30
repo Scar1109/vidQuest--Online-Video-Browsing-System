@@ -67,7 +67,7 @@
 
 	<!-- Breadcrumb Begin -->
 	<div class="breadcrumb-option spad set-bg"
-		data-setbg="${pageContext.request.contextPath}/views/other/img/mountain-sunset-3840x1080.jpg">
+		data-setbg="https://i.ibb.co/1qMC3rQ/mountain-sunset-3840x1080.jpg">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 text-center">
