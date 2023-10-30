@@ -36,7 +36,7 @@ public class LoginServlet extends HttpServlet {
         	List<modUser> userDetails = moderatorDBUtil.validate(username, password);
         	
         	if(user.getType().equals("admin")) {
-        		moderatorDBUtil.logActivity(username,user.getuid(),"User " + username + " logged in successfully");
+        		moderatorDBUtil.logActivity(username,user.getUid(),"User " + username + " logged in successfully");
                 request.setAttribute("userDetails", userDetails);
                 response.sendRedirect(request.getContextPath() + "/getActivityServlet");
         	}else {

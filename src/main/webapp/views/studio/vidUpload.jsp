@@ -20,7 +20,7 @@
 	<nav>
 		<div class="profileImg">
 			<img
-				src="${pageContext.request.contextPath}/views/studio/asserts/cool-profile-picture-87h46gcobjl5e4xu.jpg"
+				src="https://i.ibb.co/dMvJn2D/cool-profile-picture-87h46gcobjl5e4xu.jpg"
 				alt="">
 		</div>
 		

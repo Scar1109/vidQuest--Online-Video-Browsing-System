@@ -25,7 +25,7 @@ public class viewUserServelet extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		User us = (User) session.getAttribute("user");
-		int uid = us.getuid();
+		int uid = us.getUid();
 		
 		 // Retrieve user data from the database using a DAO class
 		viewUserDButil userDao = new viewUserDButil();
