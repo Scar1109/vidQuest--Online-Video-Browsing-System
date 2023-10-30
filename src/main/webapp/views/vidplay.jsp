@@ -178,7 +178,7 @@ width: 100%;
 																<li><a href="" id="edit-option<%=commentCount%>">Edit</a></li>
 
 																<li><a
-																	href="<%=request.getContextPath()%>/DeleteCommentServlet?commentId=<%=comm.getcommentID()%>&vid=<%=request.getParameter("vid")%>"
+																	href="<%=request.getContextPath()%>/DeleteCommentServlet?commentId=<%=comm.getCommentID()%>&vid=<%=request.getParameter("vid")%>"
 																	id="delete-option" onclick="return confirm('Are you sure you want to delete this comment?');">Delete</a></li>
 															</ul>
 														</div>
@@ -234,7 +234,7 @@ width: 100%;
 														<form id="edit-comment"
 															action="${pageContext.request.contextPath}/EditCommentServlet" method="post">
 															
-															<input type = "hidden" name = "commentId" value = "<%=comm.getcommentID()%>">
+															<input type = "hidden" name = "commentId" value = "<%=comm.getCommentID()%>">
 															
         <textarea id="text-area<%=commentCount%>" class="textInput--yG-0W textArea---vB9y input--8uJYQ" name="coms" placeholder="Add your comments..."
 																style="height: 19px !important;" onkeydown="checkEdit(event)"  required></textarea>
