@@ -172,7 +172,7 @@
       			 <p>Over 4.4 million+ high quality stock images, videos and music shared by our talented community.</p><br><br>
                
                <p><a href="${pageContext.request.contextPath}/LogoutServlet" onclick="return confirm('Are you sure you want to signout from your account?');">Log out</a></p>
-                  <a href="${pageContext.request.contextPath}/DeleteUserServlet?userId=<%=us.getuid()%>" onclick="return confirm('Are you sure you want to delete your account?');" class="btn btn-info">Delete profile</a>
+                  <a href="${pageContext.request.contextPath}/DeleteUserServlet?userId=<%=us.getUid()%>" onclick="return confirm('Are you sure you want to delete your account?');" class="btn btn-info">Delete profile</a>
               </div>
             </div>
           </div>
@@ -235,7 +235,7 @@
                         <input type="password" name = "pwd" id="input-last-name" class="form-control form-control-alternative" placeholder="Last name" value="<%=us.getPwd()%>" readonly>
                       </div>
                     </div>
-                    <input type = "hidden" name = "userId" value = "<%=us.getuid()%>" readonly>
+                    <input type = "hidden" name = "userId" value = "<%=us.getUid()%>" readonly>
                     
                     <div class="upload">
                     <button type="submit" class="btn btn-sm btn-success btn-submit-profile" style="display: none;">Update</button>

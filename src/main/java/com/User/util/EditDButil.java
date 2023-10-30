@@ -36,7 +36,7 @@ public class EditDButil {
 	            preparedStatement.setString(4, user.getpNo());
 	            preparedStatement.setString(5, user.getPwd());
 	            preparedStatement.setString(6, user.getUsername());
-	            preparedStatement.setInt(7, user.getuid());
+	            preparedStatement.setInt(7, user.getUid());
 
 	            // Execute the update query
 	            int rowsAffected = preparedStatement.executeUpdate();

@@ -27,7 +27,7 @@ public class retrieveVideoServlet extends HttpServlet {
 		User us = (User) session.getAttribute("user");
 		
 		try {
-			int uid = us.getuid();
+			int uid = us.getUid();
 			videos = videoUtil.getUserVideos(uid);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

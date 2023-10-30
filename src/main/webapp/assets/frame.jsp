@@ -43,37 +43,37 @@
             </div>
             <div class="categories-slider owl-carousel">
                 <div class="cs-item">
-                    <div class="cs-pic set-bg" data-setbg="img/categories/cat-1.jpg"></div>
+                    <div class="cs-pic set-bg" data-setbg="https://i.ibb.co/GWkMwny/cat-1.jpg"></div>
                     <div class="cs-text">
                         <h4>Animal</h4>
                         <span>120 Videos</span>
                     </div>
                 </div>
                 <div class="cs-item">
-                    <div class="cs-pic set-bg" data-setbg="img/categories/cat-2.jpg"></div>
+                    <div class="cs-pic set-bg" data-setbg="https://i.ibb.co/GWc3stQ/cat-2.jpg"></div>
                     <div class="cs-text">
                         <h4>Natural</h4>
                         <span>325 Videos</span>
                     </div>
                 </div>
                 <div class="cs-item">
-                    <div class="cs-pic set-bg" data-setbg="img/categories/cat-3.jpg"></div>
+                    <div class="cs-pic set-bg" data-setbg="https://i.ibb.co/w76fnm8/cat-3.jpg"></div>
                     <div class="cs-text">
                         <h4>Potrait</h4>
                         <span>540 Videos</span>
                     </div>
                 </div>
                 <div class="cs-item">
-                    <div class="cs-pic set-bg" data-setbg="img/categories/cat-4.jpg"></div>
+                    <div class="cs-pic set-bg" data-setbg="https://i.ibb.co/Zf06GGY/cat-4.jpg"></div>
                     <div class="cs-text">
-                        <h4>Animal</h4>
+                        <h4>Abstract</h4>
                         <span>120 Videos</span>
                     </div>
                 </div>
                 <div class="cs-item">
-                    <div class="cs-pic set-bg" data-setbg="img/categories/cat-5.jpg"></div>
+                    <div class="cs-pic set-bg" data-setbg="https://i.ibb.co/86M88hk/cat-5.jpg"></div>
                     <div class="cs-text">
-                        <h4>Animal</h4>
+                        <h4>Technology</h4>
                         <span>120 Videos</span>
                     </div>
                 </div>

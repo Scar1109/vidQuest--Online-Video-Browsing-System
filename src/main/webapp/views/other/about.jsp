@@ -102,17 +102,17 @@
 						<div class="row">
 							<div class="col-lg-6 col-md-6 col-sm-6">
 								<div class="about__pic__item about__pic__item--large set-bg"
-									data-setbg="img/about/about-1.jpg"></div>
+									data-setbg="https://i.ibb.co/KKbtvkg/about-1.jpg"></div>
 							</div>
 							<div class="col-lg-6 col-md-6 col-sm-6">
 								<div class="row">
 									<div class="col-lg-12">
 										<div class="about__pic__item set-bg"
-											data-setbg="img/about/about-2.jpg"></div>
+											data-setbg="https://i.ibb.co/27GctTP/about-2.jpg"></div>
 									</div>
 									<div class="col-lg-12">
 										<div class="about__pic__item set-bg"
-											data-setbg="img/about/about-3.jpg"></div>
+											data-setbg="https://i.ibb.co/S7p48m4/about-3.jpg"></div>
 									</div>
 								</div>
 							</div>
@@ -162,7 +162,7 @@
 
 	<!-- Testimonial Section Begin -->
 	<section class="testimonial spad set-bg"
-		data-setbg="img/testimonial-bg.jpg">
+		data-setbg="https://i.ibb.co/ng79nVy/testimonial-bg.jpg">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
@@ -182,7 +182,7 @@
 							</div>
 							<div class="testimonial__author">
 								<div class="testimonial__author__pic">
-									<img src="img/testimonial/ta-1.jpg" alt="">
+									
 								</div>
 								<div class="testimonial__author__text">
 									<h5>Krista Attorn</h5>
@@ -199,7 +199,7 @@
 							</div>
 							<div class="testimonial__author">
 								<div class="testimonial__author__pic">
-									<img src="img/testimonial/ta-2.jpg" alt="">
+									
 								</div>
 								<div class="testimonial__author__text">
 									<h5>Krista Attorn</h5>
@@ -216,7 +216,7 @@
 							</div>
 							<div class="testimonial__author">
 								<div class="testimonial__author__pic">
-									<img src="img/testimonial/ta-3.jpg" alt="">
+									
 								</div>
 								<div class="testimonial__author__text">
 									<h5>Krista Attorn</h5>
@@ -233,7 +233,7 @@
 							</div>
 							<div class="testimonial__author">
 								<div class="testimonial__author__pic">
-									<img src="img/testimonial/ta-1.jpg" alt="">
+									
 								</div>
 								<div class="testimonial__author__text">
 									<h5>Krista Attorn</h5>
@@ -250,7 +250,7 @@
 							</div>
 							<div class="testimonial__author">
 								<div class="testimonial__author__pic">
-									<img src="img/testimonial/ta-2.jpg" alt="">
+									
 								</div>
 								<div class="testimonial__author__text">
 									<h5>Krista Attorn</h5>
@@ -313,7 +313,7 @@
 	<!-- Counter Section End -->
 
 	<!-- Team Section Begin -->
-	<section class="team spad set-bg" data-setbg="img/team-bg.jpg">
+	<section class="team spad set-bg" data-setbg="https://i.ibb.co/vZ4gVDt/team-bg.jpg">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
@@ -325,7 +325,7 @@
 			</div>
 			<div class="row">
 				<div class="col-lg-3 col-md-6 col-sm-6 p-0">
-					<div class="team__item set-bg" data-setbg="img/team/team-1.jpg">
+					<div class="team__item set-bg" data-setbg="https://i.ibb.co/28V27Qk/team-1.jpg">
 						<div class="team__item__text">
 							<h4>AMANDA STONE</h4>
 							<p>Videographer</p>
@@ -340,7 +340,7 @@
 				</div>
 				<div class="col-lg-3 col-md-6 col-sm-6 p-0">
 					<div class="team__item team__item--second set-bg"
-						data-setbg="img/team/team-2.jpg">
+						data-setbg="https://i.ibb.co/FW0hGKc/team-2.jpg">
 						<div class="team__item__text">
 							<h4>AMANDA STONE</h4>
 							<p>Videographer</p>
@@ -355,7 +355,7 @@
 				</div>
 				<div class="col-lg-3 col-md-6 col-sm-6 p-0">
 					<div class="team__item team__item--third set-bg"
-						data-setbg="img/team/team-3.jpg">
+						data-setbg="https://i.ibb.co/7bWftKn/team-3.jpg">
 						<div class="team__item__text">
 							<h4>AMANDA STONE</h4>
 							<p>Videographer</p>
@@ -370,7 +370,7 @@
 				</div>
 				<div class="col-lg-3 col-md-6 col-sm-6 p-0">
 					<div class="team__item team__item--four set-bg"
-						data-setbg="img/team/team-4.jpg">
+						data-setbg="https://i.ibb.co/Tk2Kvcd/team-4.jpg">
 						<div class="team__item__text">
 							<h4>AMANDA STONE</h4>
 							<p>Videographer</p>

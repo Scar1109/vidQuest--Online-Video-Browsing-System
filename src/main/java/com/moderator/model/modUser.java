@@ -24,6 +24,19 @@ public class modUser {
         }
         return instance;
     }
+    
+    // Factory method to create a ModUser with minimal attributes
+    public modUser(int UserID, String firstName,String lastName,String date, String time, String email, String mobile, String password, String username) {
+        this.userID = UserID;
+        this.firstName = firstName;
+        this.lastName=lastName;
+        this.date=date;
+        this.time=time;
+        this.email = email;
+        this.mobile = mobile;
+        this.password = password;
+        this.username = username;
+    }
 
     // Factory method to create a ModUser with all attributes
     public static modUser createModUser(int userID, String firstName, String lastName, String date, String time, String email, String mobile, String password, String username) {

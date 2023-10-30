@@ -40,7 +40,7 @@ public class createVideoServlet extends HttpServlet {
         
         HttpSession session = request.getSession();
 		User us = (User) session.getAttribute("user");
-		int uid = us.getuid();
+		int uid = us.getUid();
 
 		video videol = video.getInstance();
 		videol.createVideo(request.getParameter("title"),

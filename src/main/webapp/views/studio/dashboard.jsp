@@ -15,7 +15,7 @@
 <body>
 	<nav>
 		<div class="profileImg">
-			<img src="asserts/cool-profile-picture-87h46gcobjl5e4xu.jpg" alt="">
+			<img src="https://i.ibb.co/dMvJn2D/cool-profile-picture-87h46gcobjl5e4xu.jpg" alt="">
 		</div>
 		
 		<%

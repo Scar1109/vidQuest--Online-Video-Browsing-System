@@ -21,6 +21,17 @@ public class Comment {
         }
         return instance;
     }
+    
+    // Factory method to create a comment with essential attributes
+    public Comment(int commentID,int videoID,int userID,String comment,String date, String time) {
+        this.commentID = commentID;
+        this.videoID = videoID;
+        this.userID = userID;
+        this.comment = comment;
+        this.date = date;
+        this.time = time;
+        
+    }
 
     // Factory method to create a Comment with all attributes
     public static Comment createComment(int commentID, int videoID, int userID, String comment, String date, String time) {
