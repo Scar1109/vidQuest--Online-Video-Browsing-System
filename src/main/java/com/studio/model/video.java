@@ -13,22 +13,8 @@ public class video {
     private String status;
     private String date;
 
-    // Private constructor to prevent direct instantiation
-    private video() {}
-
-    // Singleton instance
-    private static video instance;
-
-    // Factory method to get the Singleton instance
-    public static video getInstance() {
-        if (instance == null) {
-            instance = new video();
-        }
-        return instance;
-    }
-
-    // Factory method to create a video with minimal attributes
-    public void createVideo(String title, String subTitle, int userID, String description, String thumbnail, String video, String category, String visibility) {
+    // Constructor for creating a video with minimal attributes
+    public video(String title, String subTitle, int userID, String description, String thumbnail, String video, String category, String visibility) {
         this.title = title;
         this.subTitle = subTitle;
         this.userID = userID;
@@ -39,8 +25,8 @@ public class video {
         this.visibility = visibility;
     }
 
-    // Factory method to create a video with all attributes
-    public void createVideoWithAllAttributes(int videoID, String title, String subTitle, int userID, String description, String thumbnail, String video, String category, String visibility, String status, String date) {
+    // Constructor for creating a video with all attributes
+    public video(int videoID, String title, String subTitle, int userID, String description, String thumbnail, String video, String category, String visibility, String status, String date) {
         this.videoID = videoID;
         this.title = title;
         this.subTitle = subTitle;
@@ -53,6 +39,8 @@ public class video {
         this.status = status;
         this.date = date;
     }
+
+    // Getter methods...
 
     public int getVideoID() {
         return videoID;

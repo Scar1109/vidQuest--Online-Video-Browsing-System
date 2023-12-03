@@ -41,9 +41,7 @@ public class videoUtil {
 			ResultSet resultSet = statement.executeQuery();
 			while (resultSet.next()) {
 				
-				video vid = video.getInstance();
-				
-				vid.createVideoWithAllAttributes(resultSet.getInt("VideoID"), resultSet.getString("Title"),
+				video vid = new video(resultSet.getInt("VideoID"), resultSet.getString("Title"),
 						resultSet.getString("SubTitle"), resultSet.getInt("UserID"), resultSet.getString("Description"),
 						resultSet.getString("Thumbnail"), resultSet.getString("Video"), resultSet.getString("Category"),
 						resultSet.getString("Visibility"), resultSet.getString("Status"), resultSet.getString("Date"));
@@ -66,9 +64,7 @@ public class videoUtil {
 			PreparedStatement statement = connection.prepareStatement(sql);
 			ResultSet resultSet = statement.executeQuery();
 			while (resultSet.next()) {
-				video vdo = video.getInstance();
-				
-				vdo.createVideoWithAllAttributes(resultSet.getInt("VideoID"), resultSet.getString("Title"),
+				video vdo = new video(resultSet.getInt("VideoID"), resultSet.getString("Title"),
 						resultSet.getString("SubTitle"), resultSet.getInt("UserID"), resultSet.getString("Description"),
 						resultSet.getString("Thumbnail"), resultSet.getString("Video"), resultSet.getString("Category"),
 						resultSet.getString("Visibility"), resultSet.getString("Status"), resultSet.getString("Date"));
@@ -93,9 +89,7 @@ public class videoUtil {
 			ResultSet resultSet = statement.executeQuery();
 			while (resultSet.next()) {
 				
-				video vid = video.getInstance();
-				
-				vid.createVideoWithAllAttributes(resultSet.getInt("VideoID"), resultSet.getString("Title"),
+				video vid = new video(resultSet.getInt("VideoID"), resultSet.getString("Title"),
 						resultSet.getString("SubTitle"), resultSet.getInt("UserID"), resultSet.getString("Description"),
 						resultSet.getString("Thumbnail"), resultSet.getString("Video"), resultSet.getString("Category"),
 						resultSet.getString("Visibility"), resultSet.getString("Status"), resultSet.getString("Date"));
