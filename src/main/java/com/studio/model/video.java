@@ -40,49 +40,51 @@ public class video {
         this.date = date;
     }
 
+	public int getVideoID() {
+		return videoID;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public String getSubTitle() {
+		return subTitle;
+	}
+
+	public int getUserID() {
+		return userID;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public String getThumbnail() {
+		return thumbnail;
+	}
+
+	public String getVideo() {
+		return video;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public String getVisibility() {
+		return visibility;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public String getDate() {
+		return date;
+	}
+
     // Getter methods...
 
-    public int getVideoID() {
-        return videoID;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public String getSubTitle() {
-        return subTitle;
-    }
-
-    public int getUserID() {
-        return userID;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public String getThumbnail() {
-        return thumbnail;
-    }
-
-    public String getVideo() {
-        return video;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public String getVisibility() {
-        return visibility;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public String getDate() {
-        return date;
-    }
+    
 }
