@@ -27,7 +27,7 @@
 	<nav>
 		<div class="profileImg">
 			<img
-				src="https://i.ibb.co/dMvJn2D/cool-profile-picture-87h46gcobjl5e4xu.jpg"
+				src="https://cdn-icons-png.flaticon.com/512/8090/8090406.png"
 				alt="">
 		</div>
 <%

@@ -73,7 +73,7 @@
             <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <div class="media align-items-center">
                 <span class="avatar avatar-sm rounded-circle">
-                  <img alt="Image placeholder" src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg">
+                  <img alt="Image placeholder" src="https://cdn-icons-png.flaticon.com/512/8090/8090406.png">
                 </span>
                 <div class="media-body ml-2 d-none d-lg-block">
                   <span class="mb-0 text-sm  font-weight-bold"><%=us.getFirstName()%> <%=us.getLastName()%></span>
@@ -128,7 +128,7 @@
               <div class="col-lg-3 order-lg-2">
                 <div class="card-profile-image">
                   <a href="#">
-                    <img src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg" class="rounded-circle">
+                    <img src="https://cdn-icons-png.flaticon.com/512/8090/8090406.png" class="rounded-circle">
                   </a>
                 </div>
               </div>
